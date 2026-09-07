@@ -1,0 +1,2290 @@
+{
+ "response": {
+  "results": [
+   {
+    "matched_terms": [
+     "leche"
+    ],
+    "labels": {},
+    "data": {
+     "id": "prod00508911",
+     "url": "_/R-00508911-00508911-200",
+     "price": [
+      {
+       "id": "pl219_00508911",
+       "store": "219",
+       "listPrice": 2999,
+       "priceList": "priceList219",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl188_00508911",
+       "store": "188",
+       "listPrice": 2999,
+       "priceList": "priceList188",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl160_00508911",
+       "store": "160",
+       "listPrice": 2999,
+       "priceList": "priceList160",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl209_00508911",
+       "store": "209",
+       "listPrice": 2999,
+       "priceList": "priceList209",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl200_00508911",
+       "store": "200",
+       "listPrice": 2999,
+       "priceList": "priceList200",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl092_00508911",
+       "store": "092",
+       "listPrice": 2999,
+       "priceList": "priceList092",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl061_00508911",
+       "store": "061",
+       "listPrice": 2865,
+       "priceList": "priceList061",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2865,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl238_00508911",
+       "store": "238",
+       "listPrice": 2999,
+       "priceList": "priceList238",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl189_00508911",
+       "store": "189",
+       "listPrice": 2999,
+       "priceList": "priceList189",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl091_00508911",
+       "store": "091",
+       "listPrice": 2999,
+       "priceList": "priceList091",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl182_00508911",
+       "store": "182",
+       "listPrice": 2999,
+       "priceList": "priceList182",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl064_00508911",
+       "store": "064",
+       "listPrice": 2999,
+       "priceList": "priceList064",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl129_00508911",
+       "store": "129",
+       "listPrice": 2999,
+       "priceList": "priceList129",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl197_00508911",
+       "store": "197",
+       "listPrice": 2999,
+       "priceList": "priceList197",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl220_00508911",
+       "store": "220",
+       "listPrice": 2999,
+       "priceList": "priceList220",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl204_00508911",
+       "store": "204",
+       "listPrice": 2999,
+       "priceList": "priceList204",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl185_00508911",
+       "store": "185",
+       "listPrice": 2999,
+       "priceList": "priceList185",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl215_00508911",
+       "store": "215",
+       "listPrice": 2999,
+       "priceList": "priceList215",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl178_00508911",
+       "store": "178",
+       "listPrice": 2999,
+       "priceList": "priceList178",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl109_00508911",
+       "store": "109",
+       "listPrice": 2999,
+       "priceList": "priceList109",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl184_00508911",
+       "store": "184",
+       "listPrice": 2999,
+       "priceList": "priceList184",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl060_00508911",
+       "store": "060",
+       "listPrice": 2469,
+       "priceList": "priceList060",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2469,
+       "priceWithoutTax": 2040.5
+      },
+      {
+       "id": "pl131_00508911",
+       "store": "131",
+       "listPrice": 2999,
+       "priceList": "priceList131",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl065_00508911",
+       "store": "065",
+       "listPrice": 2999,
+       "priceList": "priceList065",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl090_00508911",
+       "store": "090",
+       "listPrice": 2999,
+       "priceList": "priceList090",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl085_00508911",
+       "store": "085",
+       "listPrice": 2999,
+       "priceList": "priceList085",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl107_00508911",
+       "store": "107",
+       "listPrice": 2999,
+       "priceList": "priceList107",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl075_00508911",
+       "store": "075",
+       "listPrice": 2999,
+       "priceList": "priceList075",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl056_00508911",
+       "store": "056",
+       "listPrice": 2999,
+       "priceList": "priceList056",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl165_00508911",
+       "store": "165",
+       "listPrice": 2999,
+       "priceList": "priceList165",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl181_00508911",
+       "store": "181",
+       "listPrice": 2999,
+       "priceList": "priceList181",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl063_00508911",
+       "store": "063",
+       "listPrice": 2999,
+       "priceList": "priceList063",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      },
+      {
+       "id": "pl078_00508911",
+       "store": "078",
+       "listPrice": 2999,
+       "priceList": "priceList078",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2999,
+       "priceWithoutTax": 2478.51
+      }
+     ],
+     "sku_id": "sku00508911",
+     "sku_plu": 508911,
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00508900/00508911.jpg",
+     "discounts": [
+      {
+       "id": "37418146",
+       "comments": "No acumulable con otras promos",
+       "takingText": "Llevando 2",
+       "discountText": "50% 2da",
+       "regularPrice": null,
+       "discountImage": null,
+       "discountPrice": "$2249.25",
+       "regularPriceText": "Precio Contado: $2999"
+      }
+     ],
+     "sale_type": [
+      "2da Unid 50% DTO!!",
+      "Todas las Ofertas"
+     ],
+     "product_brand": "LA SERENISIMA",
+     "product_is_noa": 0,
+     "product_format": "Litro",
+     "sku_description": "Leche Protein La Serenisima 1L",
+     "product_main_ean": 7790742358608,
+     "sku_display_name": "Leche Protein La Serenisima 1L",
+     "product_weighable": 0,
+     "store_availability": [
+      "056",
+      "063",
+      "064",
+      "065",
+      "075",
+      "078",
+      "085",
+      "090",
+      "091",
+      "092",
+      "107",
+      "109",
+      "129",
+      "131",
+      "160",
+      "165",
+      "178",
+      "181",
+      "182",
+      "184",
+      "185",
+      "188",
+      "189",
+      "197",
+      "200",
+      "204",
+      "209",
+      "215",
+      "219",
+      "238"
+     ],
+     "product_list_price": 2999,
+     "product_quantity_step": 0,
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 1,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00508900/00508911.jpg",
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00508900/00508911.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [
+      {
+       "id": "80709801",
+       "comentarios": "",
+       "precioCuota": "$2249.25",
+       "cantidadCuotas": "1",
+       "imagenDescuento": "/content/images/cdigi/ofertas/pagando-con-todas-tarjetas.png"
+      }
+     ],
+     "groups": [
+      {
+       "group_id": "catv00001255",
+       "display_name": "Frescos",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001295",
+       "display_name": "Lácteos",
+       "path": "/categoria/catv00001255",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004110",
+       "display_name": "Leches Descremadas",
+       "path": "/categoria/catv00001255/catv00001295/catv00003266/catv00003281",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        },
+        {
+         "id": "catv00003266",
+         "display_name": "Leches"
+        },
+        {
+         "id": "catv00003281",
+         "display_name": "Leches Larga Vida"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00003281",
+       "display_name": "Leches Larga Vida",
+       "path": "/categoria/catv00001255/catv00001295/catv00003266",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        },
+        {
+         "id": "catv00003266",
+         "display_name": "Leches"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00003266",
+       "display_name": "Leches",
+       "path": "/categoria/catv00001255/catv00001295",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Leche Protein La Serenisima 1L",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [
+     "leche"
+    ],
+    "labels": {},
+    "data": {
+     "id": "prod00574312",
+     "url": "_/R-00574312-00574312-200",
+     "price": [
+      {
+       "id": "pl185_00574312",
+       "store": "185",
+       "listPrice": 5100,
+       "priceList": "priceList185",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl220_00574312",
+       "store": "220",
+       "listPrice": 5100,
+       "priceList": "priceList220",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl238_00574312",
+       "store": "238",
+       "listPrice": 5100,
+       "priceList": "priceList238",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl197_00574312",
+       "store": "197",
+       "listPrice": 5100,
+       "priceList": "priceList197",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl131_00574312",
+       "store": "131",
+       "listPrice": 5100,
+       "priceList": "priceList131",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl215_00574312",
+       "store": "215",
+       "listPrice": 5100,
+       "priceList": "priceList215",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl061_00574312",
+       "store": "061",
+       "listPrice": 5018,
+       "priceList": "priceList061",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 13938.88,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl090_00574312",
+       "store": "090",
+       "listPrice": 5100,
+       "priceList": "priceList090",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl204_00574312",
+       "store": "204",
+       "listPrice": 5100,
+       "priceList": "priceList204",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl188_00574312",
+       "store": "188",
+       "listPrice": 5100,
+       "priceList": "priceList188",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl184_00574312",
+       "store": "184",
+       "listPrice": 5100,
+       "priceList": "priceList184",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl182_00574312",
+       "store": "182",
+       "listPrice": 5100,
+       "priceList": "priceList182",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl091_00574312",
+       "store": "091",
+       "listPrice": 5100,
+       "priceList": "priceList091",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl219_00574312",
+       "store": "219",
+       "listPrice": 5100,
+       "priceList": "priceList219",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl078_00574312",
+       "store": "078",
+       "listPrice": 5100,
+       "priceList": "priceList078",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl092_00574312",
+       "store": "092",
+       "listPrice": 5100,
+       "priceList": "priceList092",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl189_00574312",
+       "store": "189",
+       "listPrice": 5100,
+       "priceList": "priceList189",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl129_00574312",
+       "store": "129",
+       "listPrice": 5100,
+       "priceList": "priceList129",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl165_00574312",
+       "store": "165",
+       "listPrice": 5100,
+       "priceList": "priceList165",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl085_00574312",
+       "store": "085",
+       "listPrice": 5100,
+       "priceList": "priceList085",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl160_00574312",
+       "store": "160",
+       "listPrice": 5100,
+       "priceList": "priceList160",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl181_00574312",
+       "store": "181",
+       "listPrice": 5100,
+       "priceList": "priceList181",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl209_00574312",
+       "store": "209",
+       "listPrice": 5100,
+       "priceList": "priceList209",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl075_00574312",
+       "store": "075",
+       "listPrice": 5100,
+       "priceList": "priceList075",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl200_00574312",
+       "store": "200",
+       "listPrice": 5100,
+       "priceList": "priceList200",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl056_00574312",
+       "store": "056",
+       "listPrice": 5100,
+       "priceList": "priceList056",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl064_00574312",
+       "store": "064",
+       "listPrice": 5100,
+       "priceList": "priceList064",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl109_00574312",
+       "store": "109",
+       "listPrice": 5100,
+       "priceList": "priceList109",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl178_00574312",
+       "store": "178",
+       "listPrice": 5100,
+       "priceList": "priceList178",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl060_00574312",
+       "store": "060",
+       "listPrice": 4110,
+       "priceList": "priceList060",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 11416.66,
+       "priceWithoutTax": 3396.69
+      },
+      {
+       "id": "pl063_00574312",
+       "store": "063",
+       "listPrice": 5100,
+       "priceList": "priceList063",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl107_00574312",
+       "store": "107",
+       "listPrice": 5100,
+       "priceList": "priceList107",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      },
+      {
+       "id": "pl065_00574312",
+       "store": "065",
+       "listPrice": 5100,
+       "priceList": "priceList065",
+       "saleImage1": "oferta.png",
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 14166.66,
+       "priceWithoutTax": 4214.88
+      }
+     ],
+     "sku_id": "sku00574312",
+     "sku_plu": 574312,
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00574300/00574312.jpg",
+     "sale_type": [
+      "Hasta 40% DTO!!",
+      "Todas las Ofertas"
+     ],
+     "discounts": [
+      {
+       "id": "37407722",
+       "comments": "No acumulable con otras promos",
+       "takingText": null,
+       "discountText": "40%Dto",
+       "regularPrice": null,
+       "discountImage": null,
+       "discountPrice": "$3060.00",
+       "regularPriceText": "Precio Contado: $5100"
+      }
+     ],
+     "product_brand": "NESQUIK",
+     "product_format": "Kilo",
+     "product_is_noa": 0,
+     "sku_description": "NESQUIK® Original Cacao en Polvo x 360gr",
+     "product_main_ean": 8445291121881,
+     "sku_display_name": "NESQUIK® Original Cacao en Polvo x 360gr",
+     "product_weighable": 0,
+     "store_availability": [
+      "056",
+      "063",
+      "064",
+      "065",
+      "075",
+      "078",
+      "085",
+      "090",
+      "091",
+      "092",
+      "107",
+      "109",
+      "129",
+      "131",
+      "160",
+      "165",
+      "178",
+      "181",
+      "182",
+      "184",
+      "185",
+      "188",
+      "189",
+      "197",
+      "200",
+      "204",
+      "209",
+      "215",
+      "219",
+      "220",
+      "238"
+     ],
+     "product_list_price": 5100,
+     "product_quantity_step": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00574300/00574312.jpg",
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 1,
+     "product_minimum_quantity": 0,
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00574300/00574312.jpg",
+     "discounts_payment_methods": [
+      {
+       "id": "80696539",
+       "comentarios": "",
+       "precioCuota": "$3060",
+       "cantidadCuotas": "1",
+       "imagenDescuento": "/content/images/cdigi/ofertas/pagando-con-todas-tarjetas.png"
+      }
+     ],
+     "groups": [
+      {
+       "group_id": "catv00001254",
+       "display_name": "Almacén",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001275",
+       "display_name": "Infusiones",
+       "path": "/categoria/catv00001254",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001421",
+       "display_name": "Cacao en Polvo",
+       "path": "/categoria/catv00001254/catv00001275",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        },
+        {
+         "id": "catv00001275",
+         "display_name": "Infusiones"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "NESQUIK® Original Cacao en Polvo x 360gr",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [
+     "leche"
+    ],
+    "labels": {},
+    "data": {
+     "id": "prod00251876",
+     "url": "_/R-00251876-00251876-200",
+     "price": [
+      {
+       "id": "pl160_00251876",
+       "store": "160",
+       "listPrice": 2809,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl075_00251876",
+       "store": "075",
+       "listPrice": 2809,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl109_00251876",
+       "store": "109",
+       "listPrice": 2809,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl188_00251876",
+       "store": "188",
+       "listPrice": 2809,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl220_00251876",
+       "store": "220",
+       "listPrice": 2809,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl238_00251876",
+       "store": "238",
+       "listPrice": 2809,
+       "priceList": "priceList238",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl056_00251876",
+       "store": "056",
+       "listPrice": 2809,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl090_00251876",
+       "store": "090",
+       "listPrice": 2809,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl204_00251876",
+       "store": "204",
+       "listPrice": 2809,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl197_00251876",
+       "store": "197",
+       "listPrice": 2809,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl219_00251876",
+       "store": "219",
+       "listPrice": 2809,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl182_00251876",
+       "store": "182",
+       "listPrice": 2809,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl215_00251876",
+       "store": "215",
+       "listPrice": 2809,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl085_00251876",
+       "store": "085",
+       "listPrice": 2809,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl178_00251876",
+       "store": "178",
+       "listPrice": 2809,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl060_00251876",
+       "store": "060",
+       "listPrice": 2300,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2300,
+       "priceWithoutTax": 1900.83
+      },
+      {
+       "id": "pl063_00251876",
+       "store": "063",
+       "listPrice": 2809,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl064_00251876",
+       "store": "064",
+       "listPrice": 2809,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl209_00251876",
+       "store": "209",
+       "listPrice": 2809,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl189_00251876",
+       "store": "189",
+       "listPrice": 2809,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl200_00251876",
+       "store": "200",
+       "listPrice": 2809,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl061_00251876",
+       "store": "061",
+       "listPrice": 2750,
+       "priceList": "priceList061",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2750,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl185_00251876",
+       "store": "185",
+       "listPrice": 2809,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl184_00251876",
+       "store": "184",
+       "listPrice": 2809,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl129_00251876",
+       "store": "129",
+       "listPrice": 2809,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl092_00251876",
+       "store": "092",
+       "listPrice": 2809,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl165_00251876",
+       "store": "165",
+       "listPrice": 2809,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl133_00251876",
+       "store": "133",
+       "listPrice": 2495,
+       "priceList": "priceList133",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 29.05,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl131_00251876",
+       "store": "131",
+       "listPrice": 2809,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl091_00251876",
+       "store": "091",
+       "listPrice": 2809,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl078_00251876",
+       "store": "078",
+       "listPrice": 2809,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl107_00251876",
+       "store": "107",
+       "listPrice": 2809,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl181_00251876",
+       "store": "181",
+       "listPrice": 2809,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      },
+      {
+       "id": "pl065_00251876",
+       "store": "065",
+       "listPrice": 2809,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2809,
+       "priceWithoutTax": 2321.49
+      }
+     ],
+     "sku_id": "sku00251876",
+     "sku_plu": 251876,
+     "discounts": [],
+     "sale_type": [],
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00251800/00251876.jpg",
+     "product_brand": "LA SERENISIMA",
+     "product_is_noa": 0,
+     "product_format": "Litro",
+     "sku_description": "Leche Larga Vida Parcialmente Descremada Liviana 1% La Serenisima 1l",
+     "product_main_ean": 7790742363107,
+     "sku_display_name": "Leche Larga Vida Parcialmente Descremada Liviana 1% La Serenisima 1l",
+     "product_weighable": 0,
+     "store_availability": [
+      "056",
+      "063",
+      "064",
+      "065",
+      "075",
+      "078",
+      "085",
+      "090",
+      "091",
+      "092",
+      "107",
+      "109",
+      "129",
+      "131",
+      "160",
+      "165",
+      "178",
+      "181",
+      "182",
+      "184",
+      "185",
+      "188",
+      "189",
+      "197",
+      "200",
+      "204",
+      "209",
+      "215",
+      "219",
+      "220",
+      "238"
+     ],
+     "product_list_price": 2809,
+     "product_quantity_step": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00251800/00251876.jpg",
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 1,
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00251800/00251876.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00001295",
+       "display_name": "Lácteos",
+       "path": "/categoria/catv00001255",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00003266",
+       "display_name": "Leches",
+       "path": "/categoria/catv00001255/catv00001295",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004110",
+       "display_name": "Leches Descremadas",
+       "path": "/categoria/catv00001255/catv00001295/catv00003266/catv00003281",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        },
+        {
+         "id": "catv00003266",
+         "display_name": "Leches"
+        },
+        {
+         "id": "catv00003281",
+         "display_name": "Leches Larga Vida"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00003281",
+       "display_name": "Leches Larga Vida",
+       "path": "/categoria/catv00001255/catv00001295/catv00003266",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        },
+        {
+         "id": "catv00003266",
+         "display_name": "Leches"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001255",
+       "display_name": "Frescos",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Leche Larga Vida Parcialmente Descremada Liviana 1% La Serenisima 1l",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [
+     "leche"
+    ],
+    "labels": {},
+    "data": {
+     "id": "prod00008899",
+     "url": "_/R-00008899-00008899-200",
+     "price": [
+      {
+       "id": "pl181_00008899",
+       "store": "181",
+       "listPrice": 2399,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl710_00008899",
+       "store": "710",
+       "listPrice": 2299,
+       "priceList": "priceList710",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2299,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl204_00008899",
+       "store": "204",
+       "listPrice": 2399,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl065_00008899",
+       "store": "065",
+       "listPrice": 2399,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl131_00008899",
+       "store": "131",
+       "listPrice": 2399,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl090_00008899",
+       "store": "090",
+       "listPrice": 2399,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl064_00008899",
+       "store": "064",
+       "listPrice": 2399,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl182_00008899",
+       "store": "182",
+       "listPrice": 2399,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl238_00008899",
+       "store": "238",
+       "listPrice": 2399,
+       "priceList": "priceList238",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl061_00008899",
+       "store": "061",
+       "listPrice": 2199,
+       "priceList": "priceList061",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2199,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl063_00008899",
+       "store": "063",
+       "listPrice": 2399,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl056_00008899",
+       "store": "056",
+       "listPrice": 2399,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl209_00008899",
+       "store": "209",
+       "listPrice": 2399,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl085_00008899",
+       "store": "085",
+       "listPrice": 2399,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl060_00008899",
+       "store": "060",
+       "listPrice": 1390,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 1390,
+       "priceWithoutTax": 1148.76
+      },
+      {
+       "id": "pl075_00008899",
+       "store": "075",
+       "listPrice": 2399,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl189_00008899",
+       "store": "189",
+       "listPrice": 2399,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl197_00008899",
+       "store": "197",
+       "listPrice": 2399,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl178_00008899",
+       "store": "178",
+       "listPrice": 2399,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl215_00008899",
+       "store": "215",
+       "listPrice": 2399,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl109_00008899",
+       "store": "109",
+       "listPrice": 2399,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl185_00008899",
+       "store": "185",
+       "listPrice": 2399,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl220_00008899",
+       "store": "220",
+       "listPrice": 2399,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl188_00008899",
+       "store": "188",
+       "listPrice": 2399,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl165_00008899",
+       "store": "165",
+       "listPrice": 2399,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl129_00008899",
+       "store": "129",
+       "listPrice": 2399,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl160_00008899",
+       "store": "160",
+       "listPrice": 2399,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl219_00008899",
+       "store": "219",
+       "listPrice": 2399,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl091_00008899",
+       "store": "091",
+       "listPrice": 2399,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl184_00008899",
+       "store": "184",
+       "listPrice": 2399,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl200_00008899",
+       "store": "200",
+       "listPrice": 2399,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl133_00008899",
+       "store": "133",
+       "listPrice": 1389,
+       "priceList": "priceList133",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 21.39,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl107_00008899",
+       "store": "107",
+       "listPrice": 2399,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl078_00008899",
+       "store": "078",
+       "listPrice": 2399,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      },
+      {
+       "id": "pl092_00008899",
+       "store": "092",
+       "listPrice": 2399,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": 2399,
+       "priceWithoutTax": 1982.64
+      }
+     ],
+     "sku_id": "sku00008899",
+     "sku_plu": 8899,
+     "discounts": [],
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00008800/00008899.jpg",
+     "sale_type": [],
+     "product_brand": "COTO",
+     "product_format": "Litro",
+     "product_is_noa": 0,
+     "sku_description": "Leche Larga Vida Entera COTO Ttb 1 L",
+     "sku_display_name": "Leche Larga Vida Entera COTO Ttb 1 L",
+     "product_main_ean": 7798039600034,
+     "product_weighable": 0,
+     "store_availability": [
+      "056",
+      "063",
+      "064",
+      "065",
+      "075",
+      "078",
+      "085",
+      "090",
+      "091",
+      "092",
+      "107",
+      "109",
+      "129",
+      "131",
+      "160",
+      "165",
+      "178",
+      "181",
+      "182",
+      "184",
+      "185",
+      "188",
+      "189",
+      "197",
+      "200",
+      "204",
+      "209",
+      "215",
+      "219",
+      "220",
+      "238",
+      "710"
+     ],
+     "product_list_price": 2399,
+     "product_quantity_step": 0,
+     "product_format_quantity": 1,
+     "product_unit_of_measure": "UNI",
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00008800/00008899.jpg",
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00008800/00008899.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00001255",
+       "display_name": "Frescos",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00003281",
+       "display_name": "Leches Larga Vida",
+       "path": "/categoria/catv00001255/catv00001295/catv00003266",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        },
+        {
+         "id": "catv00003266",
+         "display_name": "Leches"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001295",
+       "display_name": "Lácteos",
+       "path": "/categoria/catv00001255",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00003266",
+       "display_name": "Leches",
+       "path": "/categoria/catv00001255/catv00001295",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004111",
+       "display_name": "Leches Enteras",
+       "path": "/categoria/catv00001255/catv00001295/catv00003266/catv00003281",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001255",
+         "display_name": "Frescos"
+        },
+        {
+         "id": "catv00001295",
+         "display_name": "Lácteos"
+        },
+        {
+         "id": "catv00003266",
+         "display_name": "Leches"
+        },
+        {
+         "id": "catv00003281",
+         "display_name": "Leches Larga Vida"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Leche Larga Vida Entera COTO Ttb 1 L",
+    "is_slotted": false
+   }
+  ],
+  "total_num_results": 1227,
+  "groups": [
+   {
+    "group_id": "categoria",
+    "display_name": "Categorias",
+    "count": 1227,
+    "data": {
+     "url": "/categoria/categorias/"
+    },
+    "children": [
+     {
+      "group_id": "catv00001255",
+      "display_name": "Frescos",
+      "count": 599,
+      "data": {
+       "url": "/categoria/frescos/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001254",
+      "display_name": "Almacén",
+      "count": 523,
+      "data": {
+       "url": "/categoria/almacén/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001296",
+      "display_name": "Congelados",
+      "count": 47,
+      "data": {
+       "url": "/categoria/congelados/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001990",
+      "display_name": "Electro",
+      "count": 6,
+      "data": {
+       "url": "/categoria/electro/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001260",
+      "display_name": "Hogar",
+      "count": 23,
+      "data": {
+       "url": "/categoria/hogar/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001257",
+      "display_name": "Perfumería",
+      "count": 21,
+      "data": {
+       "url": "/categoria/perfumería/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001256",
+      "display_name": "Bebidas",
+      "count": 6,
+      "data": {
+       "url": "/categoria/bebidas/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001259",
+      "display_name": "Textil",
+      "count": 2,
+      "data": {
+       "url": "/categoria/textil/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001258",
+      "display_name": "Limpieza",
+      "count": 1,
+      "data": {
+       "url": "/categoria/limpieza/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     }
+    ],
+    "parents": []
+   }
+  ]
+ }
+}

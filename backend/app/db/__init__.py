@@ -1,0 +1,1 @@
+"""Persistencia: esquema y repositorios."""

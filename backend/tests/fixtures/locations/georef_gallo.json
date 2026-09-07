@@ -1,0 +1,100 @@
+{
+ "cantidad": 2,
+ "direcciones": [
+  {
+   "altura": {
+    "unidad": null,
+    "valor": 250
+   },
+   "calle": {
+    "categoria": "CALLE",
+    "id": "0202101005750",
+    "nombre": "GALLO"
+   },
+   "calle_cruce_1": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "calle_cruce_2": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "departamento": {
+    "id": "02021",
+    "nombre": "Comuna 3"
+   },
+   "localidad_censal": {
+    "id": "02000010",
+    "nombre": "Ciudad Autónoma de Buenos Aires"
+   },
+   "nomenclatura": "GALLO 250, Comuna 3, Ciudad Autónoma de Buenos Aires",
+   "piso": null,
+   "provincia": {
+    "id": "02",
+    "nombre": "Ciudad Autónoma de Buenos Aires"
+   },
+   "ubicacion": {
+    "lat": -34.60561798844715,
+    "lon": -58.413528727994844
+   }
+  },
+  {
+   "altura": {
+    "unidad": null,
+    "valor": 250
+   },
+   "calle": {
+    "categoria": "CALLE",
+    "id": "0203501005750",
+    "nombre": "GALLO"
+   },
+   "calle_cruce_1": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "calle_cruce_2": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "departamento": {
+    "id": "02035",
+    "nombre": "Comuna 5"
+   },
+   "localidad_censal": {
+    "id": "02000010",
+    "nombre": "Ciudad Autónoma de Buenos Aires"
+   },
+   "nomenclatura": "GALLO 250, Comuna 5, Ciudad Autónoma de Buenos Aires",
+   "piso": null,
+   "provincia": {
+    "id": "02",
+    "nombre": "Ciudad Autónoma de Buenos Aires"
+   },
+   "ubicacion": {
+    "lat": -34.60561798844715,
+    "lon": -58.413528727994844
+   }
+  }
+ ],
+ "inicio": 0,
+ "parametros": {
+  "direccion": {
+   "altura": {
+    "unidad": null,
+    "valor": "250"
+   },
+   "calles": [
+    "Gallo"
+   ],
+   "piso": null,
+   "tipo": "simple"
+  },
+  "max": 3,
+  "provincia": "CABA"
+ },
+ "total": 2
+}

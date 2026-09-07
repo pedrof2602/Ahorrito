@@ -1,0 +1,397 @@
+{
+ "paging": {
+  "page": 1,
+  "pageSize": 30,
+  "total": 6,
+  "pages": 1
+ },
+ "items": [
+  {
+   "distance": 0.25861451029777527,
+   "pickupPoint": {
+    "friendlyName": "Av Corrientes 5573 Express",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "0780PR",
+     "isDisposable": true,
+     "postalCode": "1414",
+     "city": "Ciudad Autónoma de Buenos Aires",
+     "state": "Ciudad Autónoma de Buenos Aires",
+     "country": "ARG",
+     "street": "Avenida Corrientes",
+     "number": "5573",
+     "neighborhood": "Villa Crespo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -58.442158,
+      -34.59662
+     ]
+    },
+    "additionalInfo": null,
+    "id": "carrefourar0899_0780PR",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.26887357234954834,
+   "pickupPoint": {
+    "friendlyName": "Malabia 494 Express",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "0748PR",
+     "isDisposable": true,
+     "postalCode": "1414",
+     "city": "Ciudad Autónoma de Buenos Aires",
+     "state": "Ciudad Autónoma de Buenos Aires",
+     "country": "ARG",
+     "street": "Malabia",
+     "number": "494",
+     "neighborhood": "Villa Crespo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -58.438774,
+      -34.59824
+     ]
+    },
+    "additionalInfo": null,
+    "id": "carrefourar0899_0748PR",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.3220987021923065,
+   "pickupPoint": {
+    "friendlyName": "Serrano 280 Express",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "0608PR",
+     "isDisposable": true,
+     "postalCode": "1414",
+     "city": "Ciudad Autónoma de Buenos Aires",
+     "state": "Ciudad Autónoma de Buenos Aires",
+     "country": "ARG",
+     "street": "Serrano",
+     "number": "280",
+     "neighborhood": "Villa Crespo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -58.445007,
+      -34.598175
+     ]
+    },
+    "additionalInfo": null,
+    "id": "carrefourar0899_0608PR",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.4139423668384552,
+   "pickupPoint": {
+    "friendlyName": "J R VELASCO 745 Express",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "0759PR",
+     "isDisposable": true,
+     "postalCode": "1414",
+     "city": "Comuna 15",
+     "state": "Ciudad Autónoma de Buenos Aires",
+     "country": "ARG",
+     "street": "Juan Ramírez de Velasco",
+     "number": "745",
+     "neighborhood": "Villa Crespo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      -58.43861,
+      -34.596107
+     ]
+    },
+    "additionalInfo": null,
+    "id": "carrefourar0899_0759PR",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.25861451029777527,
+   "pickupPoint": {
+    "friendlyName": "Sin coordenadas",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "0780PR",
+     "isDisposable": true,
+     "postalCode": "1414",
+     "city": "Ciudad Autónoma de Buenos Aires",
+     "state": "Ciudad Autónoma de Buenos Aires",
+     "country": "ARG",
+     "street": "Avenida Corrientes",
+     "number": "5573",
+     "neighborhood": "Villa Crespo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": []
+    },
+    "additionalInfo": null,
+    "id": "carrefourar0000_SINCOORD",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  },
+  {
+   "distance": 0.26887357234954834,
+   "pickupPoint": {
+    "friendlyName": "Coordenadas en cero",
+    "address": {
+     "addressType": "pickup",
+     "receiverName": null,
+     "addressId": "0748PR",
+     "isDisposable": true,
+     "postalCode": "1414",
+     "city": "Ciudad Autónoma de Buenos Aires",
+     "state": "Ciudad Autónoma de Buenos Aires",
+     "country": "ARG",
+     "street": "Malabia",
+     "number": "494",
+     "neighborhood": "Villa Crespo",
+     "complement": null,
+     "reference": null,
+     "geoCoordinates": [
+      0,
+      0
+     ]
+    },
+    "additionalInfo": null,
+    "id": "carrefourar0000_CERO",
+    "isActive": true,
+    "businessHours": [
+     {
+      "DayOfWeek": 0,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 1,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 2,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 3,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 4,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 5,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     },
+     {
+      "DayOfWeek": 6,
+      "OpeningTime": "08:00:00",
+      "ClosingTime": "21:00:00"
+     }
+    ]
+   }
+  }
+ ]
+}

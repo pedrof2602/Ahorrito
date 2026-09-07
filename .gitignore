@@ -1,0 +1,20 @@
+# Python / FastAPI
+backend/__pycache__/
+backend/*/__pycache__/
+backend/*/*/__pycache__/
+backend/venv/
+backend/.env
+
+# Node / React Vite
+frontend/node_modules/
+frontend/dist/
+
+# General
+.DS_Store
+*.log
+.vscode/
+.idea/
+.env
+
+# Claude
+.claude/

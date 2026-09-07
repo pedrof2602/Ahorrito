@@ -1,0 +1,232 @@
+/*
+ * Sistema visual del comparador.
+ *
+ * Un solo set de tokens, definido entero en `:root` para el tema claro y
+ * redefinido dos veces: bajo `prefers-color-scheme` (el default, sistema) y bajo
+ * `[data-theme]` (el toggle manual). El orden importa — el selector de atributo
+ * viene último para que elegir un tema a mano gane en las dos direcciones, no
+ * solo cuando coincide con el del sistema.
+ *
+ * La jerarquía se lee por ELEVACIÓN, no por color: el veredicto flota en la
+ * superficie más elevada, la comparación de cadenas en una intermedia (tarjetas
+ * de "wallet"), el detalle línea por línea es plano. El color sigue siendo
+ * escaso y semántico — verde = te conviene, ámbar = estimación, coral = falta un
+ * dato — y se suma un acento de marca (verde azulado) para acciones y foco, que
+ * no compite con esos tres porque no significa lo mismo que ninguno.
+ *
+ * Las cadenas sí tienen color, pero solo en un punto de 6px al lado del nombre:
+ * alcanza para reconocer la columna de un vistazo y no llega a pintar un
+ * número, que es donde el color tendría que significar algo. Ninguno de esos
+ * puntos es verde: ese ya está tomado por "esto es lo más barato".
+ */
+
+:root {
+  /* --- superficies -------------------------------------------------------
+     Fondo con un sesgo frío hacia el acento, no gris puro: es lo que hace que
+     las cards de superficie blanca floten en vez de fundirse con la página. */
+  --bg: #f1f2f7;
+  --stage: #e9eaf2;
+  --surface: #ffffff;
+  --surface-2: #f4f5f9;
+  --border: #e3e4ee;
+  --border-strong: #cfd1e2;
+
+  /* --- texto ------------------------------------------------------------ */
+  --text: #14151f;
+  --text-2: #5a5c72;
+  --text-3: #8b8da3;
+
+  /* --- semántica -------------------------------------------------------- */
+  --win: #12915e;
+  --win-tint: #e6f6ee;
+  --warn: #ad7a0c;
+  --warn-tint: #faf1de;
+  --danger: #c2412f;
+  --danger-tint: #fbeae7;
+
+  /* --- acento de marca ---------------------------------------------------
+     Verde azulado: vive en el logotipo, las acciones primarias y el foco —
+     nunca en un número de precio. Es deliberadamente más frío y más azul que
+     `--win`: los dos son verdosos, así que lo que los separa es dónde
+     aparecen (marca contra veredicto) y el sesgo azul, no el brillo. */
+  --accent: #0e8f7e;
+  --accent-tint: #e2f4f1;
+  --accent-strong: #0a6d61;
+
+  /* --- identidad de cadena -----------------------------------------------
+     Un punto de color al lado del nombre, y nada más: identifica la columna
+     de un vistazo sin pintar un número. Ninguno es verde, ámbar ni coral —
+     esos tres significan conviene / estimado / falta un dato, y una cadena
+     que se llevara uno estaría diciendo algo que no quiso decir. La cadena
+     que no tenga color asignado cae en gris, que es una respuesta honesta. */
+  --chain-carrefour: #4f7fd8;
+  --chain-disco: #d9534f;
+  --chain-dia: #d9a441;
+  --chain-coto: #dd7f3c;
+
+  /* Sombras con presencia real: son las que separan una card elevada del
+     `--stage` en vez de un borde. En oscuro el negro no sostiene sombra, así
+     que ahí la elevación la da el salto de superficie, no esto. */
+  --shadow-sm: 0 1px 2px rgb(20 21 32 / 0.05);
+  --shadow-pop: 0 1px 1px rgb(20 21 32 / 0.05), 0 2px 6px rgb(20 21 32 / 0.06);
+  --shadow-md: 0 1px 2px rgb(20 21 32 / 0.04), 0 12px 32px -12px rgb(20 21 32 / 0.18);
+  --shadow-sheet: 0 -8px 40px rgb(20 21 32 / 0.16);
+
+  /* --- espaciado, en múltiplos de 4 ------------------------------------- */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 20px;
+  --s6: 24px;
+  --s8: 32px;
+  --s12: 48px;
+
+  /* --- radios -------------------------------------------------------------
+     Radios grandes son parte del lenguaje "wallet": una superficie elevada se
+     ve más flotante cuanto más redondeada, hasta el punto en que empieza a
+     leerse como una tarjeta física. */
+  --r-control: 10px;
+  --r-chip-card: 16px;
+  --r-card: 20px;
+  --r-sheet: 26px;
+  --r-pill: 999px;
+
+  /* --- tipografía ---------------------------------------------------------
+     Dos familias con roles distintos: Sora en los números y títulos grandes
+     —le da carácter a la plata—, Inter en todo lo que se lee como texto
+     corrido o interfaz. Mezclar las dos en la misma pantalla es la decisión;
+     usar Sora en un chip de 11px la deshace. */
+  --font: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Sora Variable', 'Sora', 'Inter Variable', 'Inter',
+    system-ui, sans-serif;
+  /* La fuente de los números. En un teléfono es la display, que es donde el
+     precio grande tiene que verse rotundo; de 1040px en adelante pasa a
+     monoespaciada, porque ahí la pantalla es una tabla de cuatro columnas de
+     precios y lo que importa deja de ser el peso de un número y pasa a ser
+     que los cuatro caigan exactamente uno debajo del otro. */
+  --font-num: var(--font-display);
+
+  /* La escala vive acá y no repartida por los componentes: es lo que mantiene
+     la jerarquía legible cuando se agrega una pantalla nueva. */
+  --t-display: 44px;
+  --t-title: 28px;
+  --t-total: 22px;
+  --t-body: 15px;
+  --t-sm: 13px;
+  --t-label: 12px;
+  --t-micro: 11px;
+
+  --lh-tight: 1.1;
+  --lh-snug: 1.3;
+  --lh-normal: 1.5;
+
+  --tr-display: -0.03em;
+  --tr-title: -0.02em;
+  --tr-body: -0.006em;
+  --tr-label: 0.02em;
+
+  /* --- movimiento ------------------------------------------------------- */
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-fast: 120ms;
+  --dur-sheet: 200ms;
+
+  /* Alto de las barras fijas. Lo consumen el `top` de los sticky y el padding
+     inferior del scroll, así que vive como token en vez de repetirse. */
+  --header-h: 52px;
+  --context-h: 34px;
+
+  /* El shell de escritorio: barra lateral y encabezado de página. Mismo
+     motivo que arriba — los `top` de los sticky se calculan con esto. */
+  --sidenav-w: 216px;
+  --pagehead-h: 92px;
+
+  color-scheme: light;
+}
+
+/* De acá en adelante la pantalla es una tabla de precios, y los números pasan
+   a monoespaciados. En un teléfono no: ahí manda el precio grande del
+   veredicto, y para eso la display es mejor. */
+@media (min-width: 1040px) {
+  :root {
+    --font-num: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace,
+      SFMono-Regular, Menlo, monospace;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #101118;
+    --stage: #0b0c12;
+    --surface: #191a23;
+    --surface-2: #14151d;
+    --border: #262837;
+    --border-strong: #34364a;
+
+    --text: #f1f2f8;
+    --text-2: #a4a6bb;
+    --text-3: #696b81;
+
+    --win: #3ecf8e;
+    --win-tint: #12241c;
+    --warn: #e8b44a;
+    --warn-tint: #2a2113;
+    --danger: #f0705e;
+    --danger-tint: #2b1714;
+
+    --accent: #2fbfa8;
+    --accent-tint: #102e2a;
+    --accent-strong: #58d6c2;
+
+    --chain-carrefour: #6f9df0;
+    --chain-disco: #ef7a75;
+    --chain-dia: #e8c063;
+    --chain-coto: #ee9a5c;
+
+    /* Sobre un fondo casi negro una sombra no se ve; la elevación la da el
+       salto de superficie. Se dejan definidas para no heredar las claras. */
+    --shadow-sm: none;
+    --shadow-pop: 0 1px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 1px 0 rgb(0 0 0 / 0.3), 0 20px 44px -16px rgb(0 0 0 / 0.55);
+    --shadow-sheet: 0 -8px 40px rgb(0 0 0 / 0.5);
+
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #101118;
+  --stage: #0b0c12;
+  --surface: #191a23;
+  --surface-2: #14151d;
+  --border: #262837;
+  --border-strong: #34364a;
+
+  --text: #f1f2f8;
+  --text-2: #a4a6bb;
+  --text-3: #696b81;
+
+  --win: #3ecf8e;
+  --win-tint: #12241c;
+  --warn: #e8b44a;
+  --warn-tint: #2a2113;
+  --danger: #f0705e;
+  --danger-tint: #2b1714;
+
+  --accent: #2fbfa8;
+  --accent-tint: #102e2a;
+  --accent-strong: #58d6c2;
+
+  --chain-carrefour: #6f9df0;
+  --chain-disco: #ef7a75;
+  --chain-dia: #e8c063;
+  --chain-coto: #ee9a5c;
+
+  --shadow-sm: none;
+  --shadow-pop: 0 1px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 1px 0 rgb(0 0 0 / 0.3), 0 20px 44px -16px rgb(0 0 0 / 0.55);
+  --shadow-sheet: 0 -8px 40px rgb(0 0 0 / 0.5);
+
+  color-scheme: dark;
+}

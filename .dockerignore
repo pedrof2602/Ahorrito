@@ -1,0 +1,21 @@
+# Lo que no tiene que entrar a la imagen. Además de achicarla, esto es una
+# segunda red bajo el .gitignore: la base con datos reales no debería viajar a
+# un registry ni aunque alguien la designore por error.
+backend/venv/
+backend/**/__pycache__/
+backend/.pytest_cache/
+backend/*.db
+backend/*.db.*
+backend/.env
+
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+
+.git/
+.github/
+.claude/
+.vscode/
+.env
+*.log

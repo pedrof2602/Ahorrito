@@ -1,0 +1,216 @@
+/* Cargando, vacío, error y error parcial. */
+
+/* --- Skeleton ------------------------------------------------------------ */
+
+.sk {
+  border-radius: var(--r-control);
+  background: var(--surface-2);
+}
+
+/* Un pulso lento y de poco contraste. Un shimmer rápido, en una espera de
+   varios segundos, cansa más de lo que informa. */
+.sk-pulse {
+  animation: sk-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes sk-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* Con la misma forma —card elevada, wallet de tarjetas— que el resultado real:
+   sin eso, el esqueleto es de un sistema visual y el dato que lo reemplaza es
+   de otro, y el salto entre los dos se nota más que la espera misma. */
+.skeleton-verdict {
+  margin: var(--s4);
+  border-radius: var(--r-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-md);
+  padding: var(--s6) var(--s5) var(--s5);
+}
+
+.skeleton-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: var(--s2);
+  margin: 0 var(--s4) var(--s4);
+}
+
+.skeleton-strip > div {
+  border-radius: var(--r-chip-card);
+  background: var(--surface);
+  box-shadow: var(--shadow-pop);
+  padding: var(--s3);
+}
+
+.skeleton-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 82px 82px;
+  gap: var(--s2);
+  align-items: center;
+  margin: 0 var(--s4);
+  padding: var(--s4) var(--s1);
+  border-bottom: 1px solid var(--border);
+}
+
+.skeleton-status {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s3) var(--s5);
+  font-size: var(--t-sm);
+  color: var(--text-3);
+}
+
+/* En una pantalla ancha esto es un estado transitorio, no la tabla final: se
+   acota para no estirar sus barras a un container de 1280px, donde el nombre
+   de producto simulado quedaría kilométrico y la fila real que reemplaza esto
+   en un instante ni se le parecería. */
+.skeleton {
+  max-width: 640px;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+/* --- Vacío --------------------------------------------------------------- */
+
+.empty {
+  padding: var(--s12) var(--s5);
+  text-align: center;
+  /* Es un estado centrado por diseño, no un mensaje al margen: en una pantalla
+     ancha se centra entero en vez de quedar pegado al borde izquierdo, y se
+     acota para que el texto no se estire en una sola línea larguísima. */
+  max-width: 480px;
+  margin-inline: auto;
+}
+
+.empty-title {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: var(--tr-title);
+}
+
+.empty-text {
+  margin-top: var(--s2);
+  color: var(--text-2);
+  font-size: var(--t-sm);
+  line-height: var(--lh-normal);
+}
+
+.empty-action {
+  margin-top: var(--s5);
+}
+
+/* --- Error --------------------------------------------------------------- */
+
+.errorpanel {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s3);
+  margin: var(--s4) var(--s5);
+  padding: var(--s4);
+  border-radius: var(--r-card);
+  background: var(--danger-tint);
+  /* Una caja de mensaje corto no debería estirarse a los 1280px del container
+     en desktop: quedaría bajísima y anchísima, todo lo contrario de una tarjeta
+     de aviso. Se acota y queda pegada a la izquierda, en línea con el resto. */
+  max-width: 640px;
+}
+
+.errorpanel svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--danger);
+}
+
+.errorpanel-title {
+  font-weight: 550;
+  font-size: var(--t-sm);
+  color: var(--danger);
+}
+
+.errorpanel-text {
+  margin-top: var(--s1);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-2);
+}
+
+.errorpanel-actions {
+  margin-top: var(--s3);
+  display: flex;
+  gap: var(--s2);
+}
+
+.errorpanel .btn {
+  min-height: 36px;
+}
+
+/* --- Error parcial ------------------------------------------------------- */
+
+.partial {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s2);
+  margin: var(--s4) var(--s4) 0;
+  padding: var(--s3);
+  border-radius: var(--r-control);
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  max-width: 640px;
+}
+
+.partial svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.partial-chain {
+  font-weight: 550;
+}
+
+/* --- Precios servidos vencidos ------------------------------------------- */
+
+/* Misma forma que `.partial` porque son el mismo tipo de aviso —algo del
+   resultado vale menos de lo normal—, pero en el tono neutro: acá no falta
+   nada, hay un dato de menor calidad. El ámbar de `.partial` señala ausencia,
+   y gastarlo también en esto le sacaría el filo al que sí importa. */
+.stale-note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s2);
+  margin: var(--s4) var(--s4) 0;
+  padding: var(--s3);
+  border-radius: var(--r-control);
+  background: var(--surface-2);
+  color: var(--text-2);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  max-width: 640px;
+}
+
+.stale-note svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--text-3);
+}
+
+.stale-note-action {
+  margin-top: var(--s2);
+  font-size: var(--t-sm);
+  font-weight: 550;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}

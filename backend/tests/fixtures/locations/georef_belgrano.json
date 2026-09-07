@@ -1,0 +1,139 @@
+{
+ "cantidad": 3,
+ "direcciones": [
+  {
+   "altura": {
+    "unidad": null,
+    "valor": 950
+   },
+   "calle": {
+    "categoria": "AV",
+    "id": "0683310000135",
+    "nombre": "AV BELGRANO"
+   },
+   "calle_cruce_1": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "calle_cruce_2": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "departamento": {
+    "id": "06833",
+    "nombre": "Tres Arroyos"
+   },
+   "localidad_censal": {
+    "id": "06833100",
+    "nombre": "Tres Arroyos"
+   },
+   "nomenclatura": "AV BELGRANO 950, Tres Arroyos, Buenos Aires",
+   "piso": null,
+   "provincia": {
+    "id": "06",
+    "nombre": "Buenos Aires"
+   },
+   "ubicacion": {
+    "lat": -38.3696627018816,
+    "lon": -60.26682546379442
+   }
+  },
+  {
+   "altura": {
+    "unidad": null,
+    "valor": 950
+   },
+   "calle": {
+    "categoria": "AV",
+    "id": "0200701001040",
+    "nombre": "AV BELGRANO"
+   },
+   "calle_cruce_1": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "calle_cruce_2": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "departamento": {
+    "id": "02007",
+    "nombre": "Comuna 1"
+   },
+   "localidad_censal": {
+    "id": "02000010",
+    "nombre": "Ciudad Autónoma de Buenos Aires"
+   },
+   "nomenclatura": "AV BELGRANO 950, Comuna 1, Ciudad Autónoma de Buenos Aires",
+   "piso": null,
+   "provincia": {
+    "id": "02",
+    "nombre": "Ciudad Autónoma de Buenos Aires"
+   },
+   "ubicacion": {
+    "lat": -34.612992187180886,
+    "lon": -58.37975008931151
+   }
+  },
+  {
+   "altura": {
+    "unidad": null,
+    "valor": 950
+   },
+   "calle": {
+    "categoria": "AV",
+    "id": "0670705000095",
+    "nombre": "AV BELGRANO"
+   },
+   "calle_cruce_1": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "calle_cruce_2": {
+    "categoria": null,
+    "id": null,
+    "nombre": null
+   },
+   "departamento": {
+    "id": "06707",
+    "nombre": "Saladillo"
+   },
+   "localidad_censal": {
+    "id": "06707050",
+    "nombre": "Saladillo"
+   },
+   "nomenclatura": "AV BELGRANO 950, Saladillo, Buenos Aires",
+   "piso": null,
+   "provincia": {
+    "id": "06",
+    "nombre": "Buenos Aires"
+   },
+   "ubicacion": {
+    "lat": -35.63272592650919,
+    "lon": -59.788840271807466
+   }
+  }
+ ],
+ "inicio": 0,
+ "parametros": {
+  "direccion": {
+   "altura": {
+    "unidad": null,
+    "valor": "950"
+   },
+   "calles": [
+    "Av. Belgrano"
+   ],
+   "piso": null,
+   "tipo": "simple"
+  },
+  "max": 3,
+  "provincia": "Buenos Aires"
+ },
+ "total": 6
+}

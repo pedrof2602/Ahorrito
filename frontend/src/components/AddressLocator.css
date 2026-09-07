@@ -1,0 +1,127 @@
+.loc {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+/* --- la ubicación que ya está puesta -------------------------------------- */
+
+.loc-set {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: var(--s2);
+  padding: var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-control);
+  background: var(--win-tint);
+  color: var(--win);
+}
+
+.loc-set-main {
+  min-width: 0;
+}
+
+.loc-set-label {
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  color: var(--text);
+}
+
+.loc-set-coords {
+  margin-top: 2px;
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+/* --- buscar --------------------------------------------------------------- */
+
+.loc-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.loc-hint,
+.loc-manual-help {
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-3);
+}
+
+.loc-error {
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--danger);
+}
+
+/* --- elegir entre las que encontró ---------------------------------------- */
+
+.loc-picks {
+  padding: var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-control);
+  background: var(--surface-2);
+}
+
+.loc-picks-title {
+  margin-bottom: var(--s2);
+  font-size: var(--t-micro);
+  color: var(--text-2);
+}
+
+.loc-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  list-style: none;
+  padding: 0;
+}
+
+/* Cada opción es un botón de ancho completo y no un ítem con un botón adentro:
+   la fila entera es el área tocable, que en el teléfono es la diferencia entre
+   elegir bien y elegir la de al lado. */
+.loc-pick {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  width: 100%;
+  padding: var(--s2) var(--s3);
+  border: 1px solid transparent;
+  border-radius: var(--r-control);
+  background: var(--surface);
+  font: inherit;
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  text-align: left;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.loc-pick:hover,
+.loc-pick:focus-visible {
+  border-color: var(--border-strong);
+}
+
+.loc-pick svg {
+  flex: none;
+  color: var(--text-3);
+}
+
+/* --- la salida a mano ----------------------------------------------------- */
+
+.loc-manual > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--t-micro);
+  color: var(--text-2);
+  cursor: pointer;
+}
+
+.loc-manual-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s2);
+  margin-top: var(--s2);
+}

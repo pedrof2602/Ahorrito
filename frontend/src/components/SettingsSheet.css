@@ -1,0 +1,44 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  padding: var(--s5);
+}
+
+/* Los datos personales van separados por una línea, no solo por espacio: lo de
+   arriba cambia los precios y lo de abajo no, y esa diferencia tiene que verse
+   antes de leer los campos. */
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s5);
+  padding-top: var(--s6);
+  border-top: 1px solid var(--border);
+}
+
+.settings-group-title {
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* --- cuenta ---------------------------------------------------------------
+   Separada del resto por una línea y no solo por espacio: cerrar sesión no es
+   otra preferencia de la lista, es salir de la app. */
+
+.settings-account {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  margin-top: var(--s4);
+  padding-top: var(--s4);
+  border-top: 1px solid var(--border);
+}
+
+.settings-account-who {
+  margin: 0;
+  font-size: var(--t-sm);
+  color: var(--text-3);
+  /* Un email largo no tiene por qué ensanchar el panel ni cortar el layout. */
+  overflow-wrap: anywhere;
+}

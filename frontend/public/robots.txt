@@ -1,0 +1,9 @@
+# Este proyecto es personal y educativo, y no está pensado para ser encontrado
+# por buscadores: se comparte por link directo a quien corresponda.
+#
+# Esto es una convención, no un control de acceso: los buscadores serios la
+# respetan y los crawlers que no, la ignoran. Lo que efectivamente restringe el
+# acceso es el login de la app y la clave de deploy, no este archivo.
+
+User-agent: *
+Disallow: /

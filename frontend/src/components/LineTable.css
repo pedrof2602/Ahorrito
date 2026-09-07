@@ -1,0 +1,383 @@
+/*
+ * El detalle producto por producto.
+ *
+ * Tiene dos formas, y las dos son la misma tabla:
+ *
+ * - **En un teléfono** los precios no entran como columnas: con cuatro cadenas,
+ *   cada una se queda con 60px y el nombre del producto con lo que sobra. Así
+ *   que el producto ocupa su propia línea y los precios se acomodan en una
+ *   grilla debajo, cada uno con el nombre corto de su cadena. Se siguen viendo
+ *   los cuatro de un vistazo, que es lo que importa.
+ * - **De 720px en adelante** vuelve a ser una tabla de verdad: una fila por
+ *   producto, columnas alineadas con su cabecera, que queda fija al scrollear.
+ *   Comparar hacia abajo por columna solo funciona si los números están
+ *   efectivamente alineados, y por eso la grilla se declara una sola vez y la
+ *   comparten cabecera y filas.
+ */
+
+.table {
+  --grid: minmax(0, 1fr) repeat(var(--cols, 2), minmax(62px, 82px));
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-pop);
+  /* `clip` y no `hidden`: los dos recortan a las esquinas redondeadas, pero
+     `hidden` convierte a la card en contenedor de scroll y eso deja la
+     cabecera pegajosa anclada a una caja que no scrollea — es decir, la
+     desactiva. `clip` no crea ese contenedor y el sticky sigue midiendo
+     contra el viewport. */
+  overflow: clip;
+}
+
+@media (min-width: 1040px) {
+  .table {
+    /* Las columnas de precio se ensanchan porque ahora la tabla usa el ancho
+       de la pantalla entera: con 82px, en un monitor grande el nombre del
+       producto quedaba a media pantalla de su precio. El tope de 132px es lo
+       que mantiene los cuatro números juntos y comparables aunque sobre
+       ancho. */
+    --grid: minmax(0, 1fr) repeat(var(--cols, 2), minmax(96px, 132px));
+  }
+
+}
+
+.table-summary {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  padding: var(--s4) var(--s4) var(--s3);
+}
+
+.table-summary-note {
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+/* --- cabecera de columnas: solo cuando hay columnas ----------------------- */
+
+.line-head {
+  display: none;
+}
+
+.line-head-label {
+  /* Oculto pero sigue en el flujo del grid: a diferencia de `.visually-hidden`
+     (que usa `position:absolute` y por eso deja de contar como celda), esto
+     necesita ocupar la primera columna para que las cadenas de al lado no se
+     corran un lugar. */
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.line-head-chain {
+  text-align: right;
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: var(--tr-label);
+  color: var(--text-3);
+}
+
+/* --- filas --------------------------------------------------------------- */
+
+.line {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  width: 100%;
+  padding: var(--s3) var(--s4);
+  text-align: left;
+  border-top: 1px solid var(--border);
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.line:active,
+.line--open {
+  background: var(--surface-2);
+}
+
+.line-main {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--s2);
+  min-width: 0;
+}
+
+.line-name {
+  font-size: var(--t-body);
+  font-weight: 450;
+  line-height: var(--lh-snug);
+  /* Los nombres de góndola son larguísimos ("Leche Entera La Serenísima Sachet
+     1 L"); dos líneas alcanzan para reconocer el producto sin empujar la
+     siguiente fila fuera de la pantalla. */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-qty {
+  color: var(--text-3);
+  font-weight: 500;
+}
+
+/* Los precios, en grilla: entran los que haya, y si no alcanza el ancho bajan
+   de fila en vez de comprimirse hasta lo ilegible. */
+.line-prices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+  gap: var(--s1);
+}
+
+/* Borde y no relleno: la fila entera se tiñe al tocarla para abrir el detalle,
+   y dos superficies grises una encima de la otra harían desaparecer las
+   celdas justo mientras se las está tocando. */
+.line-price {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: var(--s2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-control);
+  min-width: 0;
+}
+
+.line-price-chain {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  color: var(--text-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-price-value {
+  font-size: var(--t-body);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+}
+
+.line-price--win {
+  border-color: color-mix(in srgb, var(--win) 35%, transparent);
+  background: var(--win-tint);
+}
+
+.line-price--win .line-price-chain,
+.line-price--win .line-price-value {
+  color: var(--win);
+}
+
+.line-price--win .line-price-value {
+  font-weight: 600;
+}
+
+.line-price--missing .line-price-value {
+  color: var(--text-3);
+  font-weight: 400;
+}
+
+/* --- tabla de verdad: columnas alineadas con su cabecera ------------------ */
+
+@media (min-width: 720px) {
+  .line-head {
+    position: sticky;
+    /* Se apoya justo debajo de las dos barras fijas de arriba. */
+    top: calc(var(--header-h) + var(--context-h));
+    z-index: 2;
+    display: grid;
+    grid-template-columns: var(--grid);
+    gap: var(--s2);
+    padding: var(--s2) var(--s5);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border-strong);
+    /* Lo que hace que la cabecera se lea como una capa por encima de las filas
+       que le pasan por debajo, y no como dos textos encimados. En tema oscuro
+       una sombra negra sobre fondo casi negro no separa nada, así que el
+       trabajo lo hace el borde de abajo, que sí se ve en los dos temas. */
+    box-shadow: 0 10px 12px -10px rgb(0 0 0 / 0.6);
+  }
+
+  /* Fondo propio y opaco: una fila que se desliza por debajo de la cabecera
+     tiene que desaparecer detrás de ella, no transparentarse contra su texto. */
+  .line,
+  .table-rows {
+    background: var(--surface);
+  }
+
+  .line--open,
+  .line:active {
+    background: var(--surface-2);
+  }
+
+  .line {
+    display: grid;
+    grid-template-columns: var(--grid);
+    gap: var(--s2);
+    align-items: baseline;
+    padding: var(--s3) var(--s5);
+    border-top: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .line--open {
+    border-bottom-color: transparent;
+  }
+
+  .line-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s1);
+  }
+
+  /* Las celdas vuelven a ser hijas del grid de la fila, así que caen en las
+     columnas de la cabecera en vez de en una grilla propia. */
+  .line-prices {
+    display: contents;
+  }
+
+  .line-price {
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+    text-align: right;
+    font-size: var(--t-body);
+    font-weight: 500;
+    line-height: var(--lh-snug);
+  }
+
+  .line-price-chain {
+    display: none;
+  }
+
+  .line-price--win {
+    border: none;
+    background: none;
+  }
+}
+
+/* --- detalle expandido --------------------------------------------------- */
+
+.line-detail {
+  padding: 0 var(--s4) var(--s4);
+  background: var(--surface-2);
+  font-size: var(--t-sm);
+  animation: line-open var(--dur-fast) var(--ease);
+}
+
+@media (min-width: 720px) {
+  .line-detail {
+    padding: 0 var(--s5) var(--s4);
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+@keyframes line-open {
+  from {
+    opacity: 0;
+  }
+}
+
+.line-detail-hint {
+  color: var(--text-2);
+  line-height: var(--lh-snug);
+  padding-bottom: var(--s2);
+}
+
+.line-detail-ean {
+  font-size: var(--t-micro);
+  color: var(--text-3);
+  padding-bottom: var(--s2);
+}
+
+.line-detail-chains {
+  display: grid;
+  gap: 0;
+}
+
+.line-detail-chain {
+  padding-top: var(--s3);
+  border-top: 1px solid var(--border);
+}
+
+/* Apiladas es lo correcto en un teléfono; a partir de acá ya entran una al
+   lado de la otra, que es más fácil de comparar que scrollear entre las dos. */
+@media (min-width: 480px) {
+  .line-detail-chains {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: var(--s5);
+  }
+
+  .line-detail-chain:not(:first-child) {
+    border-top: none;
+    border-left: 1px solid var(--border);
+    padding-left: var(--s4);
+  }
+}
+
+.line-detail-chain-name {
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.line-detail-product {
+  margin-top: var(--s1);
+  line-height: var(--lh-snug);
+}
+
+.line-detail-brand {
+  color: var(--text-2);
+}
+
+.line-detail-brand::after {
+  content: ' · ';
+  color: var(--text-3);
+}
+
+.line-detail-facts {
+  margin-top: var(--s1);
+  color: var(--text-2);
+}
+
+.line-detail-scope,
+.line-detail-none {
+  margin-top: var(--s1);
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+/* --- escritorio ------------------------------------------------------------
+   Va al final del archivo a propósito: son ajustes sobre reglas declaradas más
+   arriba —la cabecera pegajosa vive en el bloque de 720px y el rótulo oculto
+   en el base—, y una media query no gana por ser más específica, gana por
+   venir después. */
+
+@media (min-width: 1040px) {
+  .line-head {
+    /* Debajo del encabezado de página, que en escritorio es la barra fija. */
+    top: var(--pagehead-h);
+  }
+
+  /* Con el ancho de una notebook el rótulo ya entra escrito, y una columna
+     rotulada se lee mejor que una que hay que deducir. */
+  .line-head-label {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    font-size: var(--t-micro);
+    font-weight: 500;
+    letter-spacing: var(--tr-label);
+    text-transform: uppercase;
+    color: var(--text-3);
+  }
+}

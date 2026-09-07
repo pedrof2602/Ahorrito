@@ -1,0 +1,117 @@
+.addr-note,
+.addr-error {
+  padding: var(--s4) var(--s5);
+  font-size: var(--t-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-2);
+}
+
+.addr-error {
+  color: var(--danger);
+}
+
+.addr-list {
+  list-style: none;
+  padding: 0;
+}
+
+.addr {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s2);
+  padding: var(--s4) var(--s5);
+  border-top: 1px solid var(--border);
+}
+
+.addr-main {
+  min-width: 0;
+}
+
+.addr-label {
+  font-weight: 500;
+}
+
+.addr-street {
+  margin-top: 2px;
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-2);
+}
+
+.addr-meta {
+  margin-top: 2px;
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+.addr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin-top: var(--s2);
+}
+
+.addr-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s1);
+}
+
+/* --- alta ---------------------------------------------------------------- */
+
+.addr-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s5);
+  padding: var(--s5);
+  border-top: 1px solid var(--border);
+}
+
+/* Calle y altura en una fila: la altura es corta y ponerla sola desperdicia
+   una línea entera de un panel que ya scrollea. Misma idea con piso y depto. */
+.addr-row {
+  display: grid;
+  grid-template-columns: 1fr 88px;
+  gap: var(--s3);
+}
+
+.addr-row--even {
+  grid-template-columns: 1fr 1fr;
+}
+
+.addr-toggle {
+  min-height: 34px;
+  padding: 0 var(--s3);
+  font-size: var(--t-sm);
+  cursor: pointer;
+}
+
+.addr-toggle--on {
+  background: var(--accent);
+  color: white;
+}
+
+.addr-form-actions {
+  display: flex;
+  gap: var(--s2);
+}
+
+.addr-form-actions .btn {
+  flex: 1;
+}
+
+/* El localizador de un domicilio ya guardado se abre debajo de sus datos y no
+   en un panel aparte: hay que poder leer la dirección mientras se elige entre
+   las opciones que devolvió el buscador. */
+.addr-locator {
+  margin-top: var(--s3);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--border);
+}
+
+.addr-hint {
+  margin-top: var(--s2);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-3);
+}

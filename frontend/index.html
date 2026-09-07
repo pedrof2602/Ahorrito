@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Compras · dónde conviene hoy</title>
+    <meta
+      name="description"
+      content="Compará tu lista de compras entre supermercados, con el descuento de tus tarjetas ya aplicado."
+    />
+
+    <!-- Segunda capa sobre robots.txt, y la que más sirve de las dos: el
+         robots.txt pide que no *rastreen* la página, pero una URL enlazada desde
+         otro lado igual puede terminar listada sin haber sido visitada. El
+         noindex se lee al servir la página y saca la URL del índice.
+
+         El backend manda lo mismo por `X-Robots-Tag` en todas sus respuestas,
+         que es lo que cubre /docs y la API, donde no hay <head> donde poner
+         esto. -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <!-- El color de la barra del navegador sigue al tema, si no queda una
+         franja blanca arriba de una app oscura. -->
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfbfa" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c0d0f" />
+
+    <script>
+      // El tema se aplica antes del primer pixel. Si esperara a que React monte,
+      // una app configurada en oscuro abriría con un flash blanco en la cara,
+      // que es justo lo que se elige evitar al elegir el tema oscuro.
+      try {
+        var t = JSON.parse(localStorage.getItem('compras.settings.v1') || '{}').theme;
+        if (t === 'dark' || t === 'light') {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      } catch (e) {
+        /* Sin acceso al almacenamiento se usa el tema del sistema. */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

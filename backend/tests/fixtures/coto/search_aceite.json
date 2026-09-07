@@ -1,0 +1,1669 @@
+{
+ "response": {
+  "results": [
+   {
+    "matched_terms": [
+     "aceite"
+    ],
+    "labels": {},
+    "data": {
+     "id": "prod00497066",
+     "url": "_/R-00497066-00497066-200",
+     "price": [
+      {
+       "id": "pl065_00497066",
+       "store": "065",
+       "listPrice": 6980,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl197_00497066",
+       "store": "197",
+       "listPrice": 6980,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl092_00497066",
+       "store": "092",
+       "listPrice": 6980,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl189_00497066",
+       "store": "189",
+       "listPrice": 6980,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl165_00497066",
+       "store": "165",
+       "listPrice": 6980,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl178_00497066",
+       "store": "178",
+       "listPrice": 6980,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl090_00497066",
+       "store": "090",
+       "listPrice": 6980,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl215_00497066",
+       "store": "215",
+       "listPrice": 6980,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl064_00497066",
+       "store": "064",
+       "listPrice": 6980,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl160_00497066",
+       "store": "160",
+       "listPrice": 6980,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl181_00497066",
+       "store": "181",
+       "listPrice": 6980,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl075_00497066",
+       "store": "075",
+       "listPrice": 6980,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl238_00497066",
+       "store": "238",
+       "listPrice": 6980,
+       "priceList": "priceList238",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl061_00497066",
+       "store": "061",
+       "listPrice": 6980,
+       "priceList": "priceList061",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl091_00497066",
+       "store": "091",
+       "listPrice": 6980,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl131_00497066",
+       "store": "131",
+       "listPrice": 6980,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl184_00497066",
+       "store": "184",
+       "listPrice": 6980,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl188_00497066",
+       "store": "188",
+       "listPrice": 6980,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl078_00497066",
+       "store": "078",
+       "listPrice": 6980,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl129_00497066",
+       "store": "129",
+       "listPrice": 6980,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl085_00497066",
+       "store": "085",
+       "listPrice": 6980,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl204_00497066",
+       "store": "204",
+       "listPrice": 6980,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl063_00497066",
+       "store": "063",
+       "listPrice": 6980,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl182_00497066",
+       "store": "182",
+       "listPrice": 6980,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl200_00497066",
+       "store": "200",
+       "listPrice": 6980,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl060_00497066",
+       "store": "060",
+       "listPrice": 4830,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 3220,
+       "priceWithoutTax": 3991.74
+      },
+      {
+       "id": "pl056_00497066",
+       "store": "056",
+       "listPrice": 6980,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl219_00497066",
+       "store": "219",
+       "listPrice": 6980,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl107_00497066",
+       "store": "107",
+       "listPrice": 6980,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl220_00497066",
+       "store": "220",
+       "listPrice": 6980,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl209_00497066",
+       "store": "209",
+       "listPrice": 6980,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl185_00497066",
+       "store": "185",
+       "listPrice": 6980,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      },
+      {
+       "id": "pl109_00497066",
+       "store": "109",
+       "listPrice": 6980,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4653.34,
+       "priceWithoutTax": 5768.6
+      }
+     ],
+     "sku_id": "sku00497066",
+     "sku_plu": 497066,
+     "discounts": [
+      {
+       "id": "37413668",
+       "comments": "No acumulable con otras promos",
+       "takingText": null,
+       "discountText": "25%Dto",
+       "regularPrice": null,
+       "discountImage": null,
+       "discountPrice": "$5234.30",
+       "regularPriceText": "Precio Contado: $6980"
+      }
+     ],
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00497000/00497066.jpg",
+     "sale_type": [
+      "Hasta 30% DTO!!",
+      "Todas las Ofertas"
+     ],
+     "product_brand": "PUREZA",
+     "product_format": "Litro",
+     "product_is_noa": 0,
+     "sku_description": "Aceite Girasol PUREZA Botella 1.5 L",
+     "sku_display_name": "Aceite Girasol PUREZA Botella 1.5 L",
+     "product_main_ean": 7792180137944,
+     "product_weighable": 0,
+     "store_availability": [
+      "056",
+      "063",
+      "064",
+      "065",
+      "078",
+      "090",
+      "091",
+      "092",
+      "107",
+      "129",
+      "131",
+      "160",
+      "165",
+      "178",
+      "181",
+      "182",
+      "184",
+      "185",
+      "188",
+      "197",
+      "200",
+      "204",
+      "215",
+      "219",
+      "220",
+      "238"
+     ],
+     "product_list_price": 6980,
+     "product_quantity_step": 0,
+     "product_format_quantity": 1,
+     "product_unit_of_measure": "UNI",
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00497000/00497066.jpg",
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00497000/00497066.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [
+      {
+       "id": "80705337",
+       "comentarios": "",
+       "precioCuota": "$5234.3",
+       "cantidadCuotas": "1",
+       "imagenDescuento": "/content/images/cdigi/ofertas/pagando-con-todas-tarjetas.png"
+      }
+     ],
+     "groups": [
+      {
+       "group_id": "catv00001264",
+       "display_name": "Aceites",
+       "path": "/categoria/catv00001254/catv00002975",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        },
+        {
+         "id": "catv00002975",
+         "display_name": "Aceites y Condimentos"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001254",
+       "display_name": "Almacén",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00002222",
+       "display_name": "Aceite Girasol",
+       "path": "/categoria/catv00001254/catv00002975/catv00001264",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        },
+        {
+         "id": "catv00002975",
+         "display_name": "Aceites y Condimentos"
+        },
+        {
+         "id": "catv00001264",
+         "display_name": "Aceites"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00002975",
+       "display_name": "Aceites y Condimentos",
+       "path": "/categoria/catv00001254",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Aceite Girasol PUREZA Botella 1.5 L",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [
+     "aceite"
+    ],
+    "labels": {},
+    "data": {
+     "id": "prod00099437",
+     "url": "_/R-00099437-00099437-200",
+     "price": [
+      {
+       "id": "pl133_00099437",
+       "store": "133",
+       "listPrice": 5925,
+       "priceList": "priceList133",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 3948.99,
+       "priceWithoutTax": 3263.63
+      },
+      {
+       "id": "pl065_00099437",
+       "store": "065",
+       "listPrice": 6530,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl182_00099437",
+       "store": "182",
+       "listPrice": 6530,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl185_00099437",
+       "store": "185",
+       "listPrice": 6530,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl220_00099437",
+       "store": "220",
+       "listPrice": 6530,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl238_00099437",
+       "store": "238",
+       "listPrice": 6530,
+       "priceList": "priceList238",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl061_00099437",
+       "store": "061",
+       "listPrice": 6530,
+       "priceList": "priceList061",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl060_00099437",
+       "store": "060",
+       "listPrice": 4520,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 3013.34,
+       "priceWithoutTax": 3735.54
+      },
+      {
+       "id": "pl129_00099437",
+       "store": "129",
+       "listPrice": 6530,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl189_00099437",
+       "store": "189",
+       "listPrice": 6530,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl085_00099437",
+       "store": "085",
+       "listPrice": 6530,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl056_00099437",
+       "store": "056",
+       "listPrice": 6530,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl063_00099437",
+       "store": "063",
+       "listPrice": 6530,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl209_00099437",
+       "store": "209",
+       "listPrice": 6530,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl075_00099437",
+       "store": "075",
+       "listPrice": 6530,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl064_00099437",
+       "store": "064",
+       "listPrice": 6530,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl215_00099437",
+       "store": "215",
+       "listPrice": 6530,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl204_00099437",
+       "store": "204",
+       "listPrice": 6530,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl197_00099437",
+       "store": "197",
+       "listPrice": 6530,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl178_00099437",
+       "store": "178",
+       "listPrice": 6530,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl109_00099437",
+       "store": "109",
+       "listPrice": 6530,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl710_00099437",
+       "store": "710",
+       "listPrice": 6530,
+       "priceList": "priceList710",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl165_00099437",
+       "store": "165",
+       "listPrice": 6530,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl078_00099437",
+       "store": "078",
+       "listPrice": 6530,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl219_00099437",
+       "store": "219",
+       "listPrice": 6530,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl092_00099437",
+       "store": "092",
+       "listPrice": 6530,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl107_00099437",
+       "store": "107",
+       "listPrice": 6530,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl131_00099437",
+       "store": "131",
+       "listPrice": 6530,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl090_00099437",
+       "store": "090",
+       "listPrice": 6530,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl091_00099437",
+       "store": "091",
+       "listPrice": 6530,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl181_00099437",
+       "store": "181",
+       "listPrice": 6530,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl200_00099437",
+       "store": "200",
+       "listPrice": 6530,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl160_00099437",
+       "store": "160",
+       "listPrice": 6530,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl184_00099437",
+       "store": "184",
+       "listPrice": 6530,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      },
+      {
+       "id": "pl188_00099437",
+       "store": "188",
+       "listPrice": 6530,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4353.34,
+       "priceWithoutTax": 5396.69
+      }
+     ],
+     "sku_id": "sku00099437",
+     "sku_plu": 99437,
+     "discounts": [],
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00099400/00099437.jpg",
+     "sale_type": [],
+     "product_brand": "CAÑUELAS",
+     "product_format": "Litro",
+     "product_is_noa": 0,
+     "sku_description": "Aceite Girasol CAÑUELAS Botella 1.5 L",
+     "product_main_ean": 7792180001665,
+     "sku_display_name": "Aceite Girasol CAÑUELAS Botella 1.5 L",
+     "product_weighable": 0,
+     "store_availability": [
+      "056",
+      "063",
+      "064",
+      "065",
+      "075",
+      "078",
+      "085",
+      "090",
+      "091",
+      "092",
+      "107",
+      "109",
+      "129",
+      "131",
+      "160",
+      "165",
+      "178",
+      "181",
+      "182",
+      "184",
+      "185",
+      "188",
+      "189",
+      "197",
+      "200",
+      "204",
+      "209",
+      "215",
+      "219",
+      "220",
+      "238",
+      "710"
+     ],
+     "product_list_price": 6530,
+     "product_quantity_step": 0,
+     "product_format_quantity": 1,
+     "product_unit_of_measure": "UNI",
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00099400/00099437.jpg",
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00099400/00099437.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00002222",
+       "display_name": "Aceite Girasol",
+       "path": "/categoria/catv00001254/catv00002975/catv00001264",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        },
+        {
+         "id": "catv00002975",
+         "display_name": "Aceites y Condimentos"
+        },
+        {
+         "id": "catv00001264",
+         "display_name": "Aceites"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001264",
+       "display_name": "Aceites",
+       "path": "/categoria/catv00001254/catv00002975",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        },
+        {
+         "id": "catv00002975",
+         "display_name": "Aceites y Condimentos"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001254",
+       "display_name": "Almacén",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00002975",
+       "display_name": "Aceites y Condimentos",
+       "path": "/categoria/catv00001254",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Aceite Girasol CAÑUELAS Botella 1.5 L",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [
+     "aceite"
+    ],
+    "labels": {},
+    "data": {
+     "id": "prod00014076",
+     "url": "_/R-00014076-00014076-200",
+     "price": [
+      {
+       "id": "pl200_00014076",
+       "store": "200",
+       "listPrice": 6975,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl065_00014076",
+       "store": "065",
+       "listPrice": 6975,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl189_00014076",
+       "store": "189",
+       "listPrice": 6975,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl238_00014076",
+       "store": "238",
+       "listPrice": 6975,
+       "priceList": "priceList238",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl056_00014076",
+       "store": "056",
+       "listPrice": 6975,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl061_00014076",
+       "store": "061",
+       "listPrice": 6645,
+       "priceList": "priceList061",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4430,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl182_00014076",
+       "store": "182",
+       "listPrice": 6975,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl085_00014076",
+       "store": "085",
+       "listPrice": 6975,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl060_00014076",
+       "store": "060",
+       "listPrice": 4827,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 3218,
+       "priceWithoutTax": 3989.26
+      },
+      {
+       "id": "pl107_00014076",
+       "store": "107",
+       "listPrice": 6975,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl063_00014076",
+       "store": "063",
+       "listPrice": 6975,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl209_00014076",
+       "store": "209",
+       "listPrice": 6975,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl075_00014076",
+       "store": "075",
+       "listPrice": 6975,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl064_00014076",
+       "store": "064",
+       "listPrice": 6975,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl215_00014076",
+       "store": "215",
+       "listPrice": 6975,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl204_00014076",
+       "store": "204",
+       "listPrice": 6975,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl197_00014076",
+       "store": "197",
+       "listPrice": 6975,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl178_00014076",
+       "store": "178",
+       "listPrice": 6975,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl109_00014076",
+       "store": "109",
+       "listPrice": 6975,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl185_00014076",
+       "store": "185",
+       "listPrice": 6975,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl220_00014076",
+       "store": "220",
+       "listPrice": 6975,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl710_00014076",
+       "store": "710",
+       "listPrice": 6975,
+       "priceList": "priceList710",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl219_00014076",
+       "store": "219",
+       "listPrice": 6975,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl091_00014076",
+       "store": "091",
+       "listPrice": 6975,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl133_00014076",
+       "store": "133",
+       "listPrice": 6329,
+       "priceList": "priceList133",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 29.46,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl078_00014076",
+       "store": "078",
+       "listPrice": 6975,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl165_00014076",
+       "store": "165",
+       "listPrice": 6975,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl184_00014076",
+       "store": "184",
+       "listPrice": 6975,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl129_00014076",
+       "store": "129",
+       "listPrice": 6975,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl090_00014076",
+       "store": "090",
+       "listPrice": 6975,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl160_00014076",
+       "store": "160",
+       "listPrice": 6975,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl188_00014076",
+       "store": "188",
+       "listPrice": 6975,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl131_00014076",
+       "store": "131",
+       "listPrice": 6975,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl181_00014076",
+       "store": "181",
+       "listPrice": 6975,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      },
+      {
+       "id": "pl092_00014076",
+       "store": "092",
+       "listPrice": 6975,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": "NoAcumulable.png",
+       "saleImage3": null,
+       "formatPrice": 4650,
+       "priceWithoutTax": 5764.46
+      }
+     ],
+     "sku_id": "sku00014076",
+     "sku_plu": 14076,
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00014000/00014076.jpg",
+     "discounts": [],
+     "sale_type": [],
+     "product_brand": "NATURA",
+     "product_is_noa": 0,
+     "product_format": "Litro",
+     "sku_description": "Aceite Girasol NATURA Botella 1.5 L",
+     "sku_display_name": "Aceite Girasol NATURA Botella 1.5 L",
+     "product_main_ean": 7790272001029,
+     "product_weighable": 0,
+     "product_list_price": 6975,
+     "store_availability": [
+      "056",
+      "063",
+      "064",
+      "065",
+      "075",
+      "085",
+      "090",
+      "091",
+      "092",
+      "107",
+      "129",
+      "131",
+      "160",
+      "178",
+      "182",
+      "184",
+      "185",
+      "188",
+      "189",
+      "197",
+      "200",
+      "204",
+      "209",
+      "215",
+      "219",
+      "220",
+      "238",
+      "710"
+     ],
+     "product_quantity_step": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00014000/00014076.jpg",
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 1,
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00014000/00014076.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00001254",
+       "display_name": "Almacén",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00002222",
+       "display_name": "Aceite Girasol",
+       "path": "/categoria/catv00001254/catv00002975/catv00001264",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        },
+        {
+         "id": "catv00002975",
+         "display_name": "Aceites y Condimentos"
+        },
+        {
+         "id": "catv00001264",
+         "display_name": "Aceites"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00002975",
+       "display_name": "Aceites y Condimentos",
+       "path": "/categoria/catv00001254",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001264",
+       "display_name": "Aceites",
+       "path": "/categoria/catv00001254/catv00002975",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001254",
+         "display_name": "Almacén"
+        },
+        {
+         "id": "catv00002975",
+         "display_name": "Aceites y Condimentos"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Aceite Girasol NATURA Botella 1.5 L",
+    "is_slotted": false
+   }
+  ],
+  "total_num_results": 900,
+  "groups": [
+   {
+    "group_id": "categoria",
+    "display_name": "Categorias",
+    "count": 900,
+    "data": {
+     "url": "/categoria/categorias/"
+    },
+    "children": [
+     {
+      "group_id": "catv00001254",
+      "display_name": "Almacén",
+      "count": 622,
+      "data": {
+       "url": "/categoria/almacén/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001260",
+      "display_name": "Hogar",
+      "count": 93,
+      "data": {
+       "url": "/categoria/hogar/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001257",
+      "display_name": "Perfumería",
+      "count": 157,
+      "data": {
+       "url": "/categoria/perfumería/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001255",
+      "display_name": "Frescos",
+      "count": 7,
+      "data": {
+       "url": "/categoria/frescos/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001258",
+      "display_name": "Limpieza",
+      "count": 20,
+      "data": {
+       "url": "/categoria/limpieza/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001990",
+      "display_name": "Electro",
+      "count": 1,
+      "data": {
+       "url": "/categoria/electro/"
+      },
+      "children": [],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     }
+    ],
+    "parents": []
+   }
+  ]
+ }
+}

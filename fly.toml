@@ -1,0 +1,69 @@
+# Configuración de Fly.io.
+#
+# `app` y `primary_region` los completa `fly launch --no-deploy`, que es el
+# primer paso del deploy. El resto ya está resuelto acá.
+
+app = "CAMBIAR-despues-de-fly-launch"
+primary_region = "eze"                  # Buenos Aires (Ezeiza)
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  # La base y el histórico viven en el volumen, no en la imagen.
+  DATABASE_URL = "sqlite+aiosqlite:////data/compras.db"
+
+  # El SPA compilado que dejó el Dockerfile.
+  STATIC_DIR = "/app/static"
+
+  # Frontend y API comparten origen, así que la cookie de sesión puede quedarse
+  # en `lax` y conservar la protección CSRF.
+  COOKIE_SECURE = "true"
+  COOKIE_SAMESITE = "lax"
+
+  # Nadie se crea una cuenta solo: las das de alta vos con
+  # `fly ssh console -C "python scripts/set_password.py"`.
+  REGISTRATION_OPEN = "false"
+
+  # Mismo origen: no hace falta habilitar ninguno cruzado.
+  CORS_ORIGINS = "[]"
+
+# ACCESS_KEY no va acá: es un secreto y se carga con
+#   fly secrets set ACCESS_KEY="$(openssl rand -base64 24 | tr -d /+=)"
+# Lo que va en [env] queda en texto plano en el repo.
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+
+  # Sin escalado automático: el rate limiter de login y el espaciado de requests
+  # a los supermercados viven en memoria del proceso. Con dos máquinas, cada una
+  # cuenta por su lado y el techo real se duplica.
+  auto_stop_machines = "suspend"
+  auto_start_machines = true
+  min_machines_running = 0
+  max_machines_running = 1
+
+  [http_service.concurrency]
+    type = "requests"
+    soft_limit = 20
+    hard_limit = 40
+
+  [[http_service.checks]]
+    # Exento de la puerta de acceso a propósito: Fly no tiene cómo presentar la
+    # clave, y un 401 acá haría que el deploy se considere caído y se reinicie
+    # en loop.
+    path = "/api/v1/health"
+    interval = "30s"
+    timeout = "5s"
+    grace_period = "10s"
+
+[[mounts]]
+  source = "compras_data"
+  destination = "/data"
+
+[[vm]]
+  # 512 MB alcanzan: un uvicorn con un worker y SQLite. Argon2 pide 64 MiB por
+  # login, que entra sin problema con uno o dos usuarios.
+  size = "shared-cpu-1x"
+  memory = "512mb"

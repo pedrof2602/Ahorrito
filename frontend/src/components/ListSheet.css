@@ -1,0 +1,101 @@
+.listsheet-add {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  gap: var(--s2);
+  padding: var(--s4) var(--s5) var(--s3);
+  background: var(--surface);
+}
+
+.listsheet-lines {
+  list-style: none;
+  padding: 0;
+}
+
+.listsheet-line {
+  padding: var(--s1) var(--s4) var(--s2);
+  border-top: 1px solid var(--border);
+}
+
+/* Los controles bajan a 38px en vez de los 44 del resto de la app: ya están
+   separados del texto y entre sí, así que no se pierde precisión al tocarlos, y
+   se gana una fila más de lista visible. */
+.listsheet-line-controls .btn--icon,
+.listsheet-line-controls .stepper-btn {
+  min-height: 38px;
+  min-width: 38px;
+}
+
+.listsheet-line-controls {
+  display: flex;
+  align-items: center;
+  /* Los controles se van a la derecha, bajo el pulgar; el chip de «fijado»
+     queda a la izquierda porque es información, no acción. */
+  justify-content: flex-end;
+  gap: var(--s1);
+}
+
+.listsheet-pinned {
+  margin-right: auto;
+  margin-left: var(--s2);
+}
+
+/* El texto se edita en el lugar: un modo de edición aparte para cambiar
+   «leche» por «leche entera» sería más ceremonia que la tarea. */
+.listsheet-line-input {
+  width: 100%;
+  padding: 6px var(--s2);
+  border: 1px solid transparent;
+  border-radius: var(--r-control);
+  background: none;
+  font-size: 16px;
+}
+
+.listsheet-line-input:focus {
+  outline: none;
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+
+.listsheet-pin--on {
+  color: var(--win);
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  flex: none;
+}
+
+.stepper-btn {
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.stepper-value {
+  min-width: 22px;
+  text-align: center;
+  font-size: var(--t-sm);
+  font-weight: 500;
+}
+
+.listsheet-empty {
+  padding: var(--s4) var(--s5) var(--s6);
+  font-size: var(--t-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-2);
+}
+
+.listsheet-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s3) var(--s5);
+  border-top: 1px solid var(--border);
+}
+
+.listsheet-count {
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}

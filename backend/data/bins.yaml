@@ -1,0 +1,48 @@
+# Emisores y sus BIN conocidos.
+#
+# El BIN son los primeros 6 a 8 dígitos de la tarjeta e identifican al emisor,
+# no a la persona. Es lo único que la simulación de VTEX necesita para decidir si
+# una promo aplica.
+#
+# ────────────────────────────────────────────────────────────────────────────
+# ACÁ SOLO VAN BIN MEDIDOS.
+#
+# Un BIN equivocado no falla: devuelve el precio de góndola como si esa tarjeta
+# no tuviera beneficio, o —peor— activa la promo de otra tarjeta. En los dos
+# casos el usuario ve un número creíble y falso.
+#
+# Para agregar un emisor: cargá la tarjeta con `bin_source: user` y corré
+#   POST /api/v1/payment-instruments/{id}/verify
+# que prueba el BIN contra el checkout real y contesta qué promos desbloquea.
+# Si activa algo, pasa a `verified` y recién ahí conviene traerlo a este archivo.
+# ────────────────────────────────────────────────────────────────────────────
+
+- issuer_slug: carrefour-banco
+  display_name: Carrefour Banco
+  # Medidos el 2026-08-31: los 9 salen de `RestrictionsBins` del teaser
+  # "Tarjeta Carrefour 15%" y los 9 activan el descuento en la simulación.
+  # Ojo: hay que mandar `paymentSystem` junto al BIN o no aplica nada.
+  bins:
+    - "507858"
+    - "858110"
+    - "858111"
+    - "585274"
+    - "538156"
+    - "520225"
+    - "539958"
+    - "527061"
+    - "898989"
+  verified_on: 2026-08-31
+  notes: >-
+    Tarjeta Carrefour Mastercard. Activa "Tarjeta Carrefour 15%".
+
+- issuer_slug: carrefour-cuenta-digital
+  display_name: Cuenta Digital Carrefour
+  # Medido el 2026-08-31: activa "Exclusivo online Cuenta Digital Crf 20% Off
+  # Lunes", un descuento mayor que el de la tarjeta física.
+  bins:
+    - "223364"
+  verified_on: 2026-08-31
+  notes: >-
+    Es un emisor aparte de la tarjeta física: mismo grupo, otra promo y mejor
+    porcentaje. Tratarlos como uno solo da el descuento equivocado.

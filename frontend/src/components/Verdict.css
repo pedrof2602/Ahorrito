@@ -1,0 +1,202 @@
+/* La superficie más elevada de la pantalla: todo lo demás existe para
+   respaldar lo que dice esta card, así que es la que más se despega del
+   fondo. El halo detrás es sutil a propósito — refuerza la elevación, no
+   compite con ella. */
+.verdict-stage {
+  position: relative;
+}
+
+.verdict-stage::before {
+  content: '';
+  position: absolute;
+  inset: -28px -8px 20px;
+  background: radial-gradient(closest-side, var(--accent-tint), transparent 72%);
+  opacity: 0.8;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.verdict {
+  position: relative;
+  z-index: 1;
+  background: var(--surface);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-md);
+  padding: var(--s6) var(--s5) var(--s5);
+}
+
+.verdict .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--win);
+  box-shadow: 0 0 0 3px var(--win-tint);
+}
+
+.verdict-chain {
+  margin-top: var(--s2);
+  font-size: var(--t-title);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-title);
+}
+
+.verdict-total {
+  margin-top: var(--s1);
+  font-size: var(--t-display);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  /* El tracking negativo es el ajuste óptico que le da a un número grande la
+     densidad que tiene impreso; sin esto se ve inflado y disperso. */
+  letter-spacing: var(--tr-display);
+}
+
+.verdict-saving {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  margin-top: var(--s2);
+  font-size: var(--t-body);
+  font-weight: 500;
+  color: var(--win);
+}
+
+.verdict-tie,
+.verdict-blocked {
+  margin-top: var(--s2);
+  font-size: var(--t-body);
+  color: var(--text-2);
+}
+
+.verdict-caveat {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s2);
+  margin-top: var(--s3);
+  padding: var(--s3);
+  border-radius: var(--r-control);
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+}
+
+.verdict-caveat svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+/* El ámbar está reservado para lo que hace que el total esté mal —productos que
+   faltan—. Un precio viejo es un total correcto de antes, y darle el mismo
+   color le sacaría el filo al aviso que sí tiene que frenar la lectura. */
+.verdict-caveat--soft {
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+.verdict-caveat--soft svg {
+  color: var(--text-3);
+}
+
+.verdict-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2);
+  margin-top: var(--s4);
+  padding-top: var(--s4);
+  border-top: 1px dashed var(--border-strong);
+  font-size: var(--t-sm);
+  color: var(--text-2);
+}
+
+.verdict-instrument {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.verdict-instrument-icon {
+  flex: none;
+  color: var(--text-3);
+}
+
+.verdict-card strong {
+  font-weight: 500;
+  color: var(--text);
+}
+
+.verdict-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.verdict-nocard {
+  color: var(--text-3);
+}
+
+.verdict-promo {
+  margin-top: var(--s2);
+  font-size: var(--t-sm);
+  color: var(--text-3);
+  line-height: var(--lh-snug);
+}
+
+/* --- escritorio: el veredicto es una línea, no una card -------------------
+   Arriba están las cuatro cadenas con su total, así que repetir el número de
+   la ganadora en 44px sería decir dos veces lo mismo con la letra más grande
+   de la pantalla. Acá el veredicto hace lo único que las tarjetas no hacen:
+   nombrar al ganador y decir por cuánto gana. Lo que no se toca es la
+   segunda línea —medio de pago, confianza, promo— ni el aviso de faltantes:
+   son las advertencias que evitan que un total convenza de más. */
+
+@media (min-width: 1040px) {
+  .verdict-stage::before {
+    display: none;
+  }
+
+  .verdict {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 var(--s3);
+    padding: var(--s3) var(--s5);
+    border-radius: var(--r-chip-card);
+    box-shadow: var(--shadow-pop);
+  }
+
+  .verdict-total {
+    display: none;
+  }
+
+  .verdict-chain {
+    margin-top: 0;
+    font-size: var(--t-body);
+    font-weight: 600;
+  }
+
+  .verdict-saving,
+  .verdict-tie {
+    margin-top: 0;
+    margin-left: auto;
+    font-size: var(--t-sm);
+  }
+
+  .verdict-caveat,
+  .verdict-promo,
+  .verdict-card {
+    flex-basis: 100%;
+  }
+
+  .verdict-card {
+    margin-top: var(--s3);
+    padding-top: var(--s3);
+  }
+}

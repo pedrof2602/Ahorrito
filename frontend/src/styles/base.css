@@ -1,0 +1,119 @@
+/*
+ * Reset y primitivas compartidas.
+ *
+ * `.num` es la clase más importante del archivo: todo lo que sea plata la lleva.
+ * `tabular-nums` hace que los dígitos ocupen el mismo ancho, y eso es lo que
+ * permite comparar dos columnas de precios por posición en vez de leyéndolas —
+ * que es el gesto que la app tiene que hacer rápido.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  /* En iOS, el foco de un input con font-size < 16px hace zoom y descoloca el
+     layout. Los inputs se declaran a 16px por eso, no por preferencia. */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--t-body);
+  line-height: var(--lh-normal);
+  letter-spacing: var(--tr-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Sin esto, el scroll de un sheet abierto arrastra la página de atrás. */
+  overscroll-behavior-y: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--r-control);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --- primitivas tipográficas ------------------------------------------- */
+
+/* Sora, reservada para títulos grandes — ver tokens.css. Un chip o una nota al
+   pie en esta fuente deshace la razón por la que existe. */
+.display {
+  font-family: var(--font-display);
+}
+
+/* Va después de `.display` a propósito: los elementos que llevan las dos
+   clases son números con presencia de título, y ahí manda la fuente de los
+   números, que es la que cambia de familia según el ancho de la pantalla. */
+.num {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+.eyebrow {
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- movimiento --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

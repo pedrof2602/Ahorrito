@@ -1,0 +1,295 @@
+.map {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.map-split {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  min-width: 0;
+}
+
+/* Las sucursales en texto, al lado del mapa. Ver el comentario del
+   componente: el marker dice dónde, la lista deja comparar. */
+.map-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: var(--s2);
+  min-width: 0;
+}
+
+.map-store {
+  padding: var(--s3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-chip-card);
+  background: var(--surface);
+  min-width: 0;
+}
+
+.map-store--win {
+  border-color: color-mix(in srgb, var(--win) 35%, transparent);
+  background: linear-gradient(180deg, var(--win-tint), var(--surface) 60%);
+}
+
+.map-store-chain {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin: 0;
+  font-size: var(--t-sm);
+  font-weight: 500;
+  line-height: var(--lh-snug);
+}
+
+.map-store-addr {
+  margin: 2px 0 0;
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+.map-store-total {
+  margin: var(--s2) 0 0;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: var(--tr-title);
+}
+
+.map-store-total--win {
+  color: var(--win);
+}
+
+.map-store-dist {
+  margin: 1px 0 0;
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+/* El mapa se mide contra la pantalla, no contra un alto fijo: es la vista, no
+   una ilustración al costado del detalle. `clamp` le pone piso —abajo de 400px
+   no se distingue una sucursal de otra— y techo, para que en un monitor alto
+   no quede un mapa de dos metros con el resto de la página perdido abajo. */
+.map-canvas {
+  height: clamp(400px, calc(100dvh - 280px), 680px);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  /* Leaflet dibuja los tiles fuera del radio del contenedor si no se recorta. */
+  overflow: hidden;
+  background: var(--surface-2);
+  z-index: 0;
+}
+
+/* Los paneles de la app se abren por encima del mapa. Leaflet le pone z-index
+   400 a sus propios paneles y 1000 a los popups, que sin esto quedan flotando
+   arriba de una hoja abierta. */
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 1;
+}
+
+/* Aviso de que el fondo del mapa no cargó. Se destaca más que `.map-missing`
+   porque contesta una pregunta que el usuario ya se está haciendo al ver el
+   rectángulo vacío, y aclara que los precios no están en duda. */
+.map-warn {
+  margin: 0;
+  padding: var(--s3) var(--s4);
+  border: 1px solid var(--border);
+  border-radius: var(--r-control);
+  background: var(--surface-2);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-2);
+}
+
+/* Tema oscuro sin cambiar de proveedor de tiles.
+   Los tiles de OSM son solo claros, y sobre el fondo oscuro de la app quedan
+   como un cartel encendido. El basemap oscuro de CARTO sería la salida obvia,
+   pero hoy exige API key y devuelve los tiles con «API KEY REQUIRED» encima.
+   Invertir por CSS no agrega ni dependencia ni credencial: el `invert` da el
+   fondo oscuro y el `hue-rotate` evita que cada color termine en su
+   complementario, que es lo que dejaría el mapa en naranjas y violetas.
+   No es una conversión fiel y conviene no venderla como tal: mirado en Palermo,
+   las calles quedan asalmonadas y los parques marrones en vez de verdes. Se
+   sostiene igual porque lo que el mapa tiene que comunicar —dónde está cada
+   sucursal— se lee perfecto, y el precio de la alternativa fiel es una API key.
+   Va sobre el panel de tiles y no sobre el mapa: los markers y los popups viven
+   en otros paneles y tienen que conservar sus colores. */
+.map--dark .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(180deg) brightness(0.92) contrast(0.9);
+}
+
+/* En escritorio la lista se va al costado: el mapa se queda con el ancho que
+   necesita para que se vea el barrio, y las sucursales quedan a la derecha en
+   una columna que se lee de arriba abajo, sin tapar el plano. */
+@media (min-width: 1040px) {
+  .map-split {
+    flex-direction: row;
+    align-items: stretch;
+    gap: var(--s3);
+  }
+
+  .map-canvas {
+    flex: 1;
+    min-width: 0;
+    /* Lo que queda de pantalla debajo del encabezado, las cadenas, el
+       veredicto y el selector. */
+    height: calc(100dvh - 420px);
+    min-height: 420px;
+  }
+
+  .map-list {
+    flex: 0 0 clamp(240px, 26%, 320px);
+    grid-template-columns: minmax(0, 1fr);
+    align-content: start;
+    /* Con muchas cadenas la columna sería más alta que el mapa; scrollea sola
+       en vez de estirar la fila y dejar el mapa corto. */
+    max-height: calc(100dvh - 420px);
+    min-height: 420px;
+    overflow-y: auto;
+  }
+}
+
+.map-note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--s3);
+  padding: var(--s6) var(--s5);
+  font-size: var(--t-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-2);
+}
+
+.map-missing {
+  padding: 0 var(--s1);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-3);
+}
+
+/* --- markers -------------------------------------------------------------- */
+
+/* Pastilla y no círculo: la etiqueta son tres letras (`CAR`, `DIA`, `COT`), y en
+   un círculo de 26px no entran sin achicar la tipografía hasta lo ilegible. */
+.map-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 24px;
+  border: 2px solid var(--surface);
+  border-radius: 999px;
+  background: var(--text-3);
+  box-shadow: var(--shadow-md);
+  color: var(--surface);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* El mismo verde que el chip «más barato» del ChainStrip, incluido su valor
+   propio en tema oscuro: si el mapa usara otro, serían dos verdes distintos
+   diciendo lo mismo. */
+.map-pin--win {
+  background: var(--win);
+  /* Más grande, no solo de otro color: para quien no distingue el verde, el
+     tamaño es lo que separa al ganador del resto. */
+  width: 46px;
+  height: 28px;
+  margin: -2px 0 0 -4px;
+  font-size: 11px;
+}
+
+/* --- popup ---------------------------------------------------------------- */
+
+/* Leaflet trae su propio look; se lo alinea con el de la app en vez de dejar
+   una ventanita de otro sistema de diseño en el medio de la pantalla. */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  border-radius: var(--r-control);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-md);
+}
+
+.leaflet-popup-content {
+  margin: var(--s3) var(--s4);
+  font-family: inherit;
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+}
+
+.leaflet-container {
+  font-family: inherit;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--text-3);
+}
+
+.map-pop-chain {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin: 0;
+  font-weight: 600;
+}
+
+.map-pop-total {
+  margin: 2px 0 0;
+  font-size: var(--t-lg, 18px);
+  font-weight: 600;
+}
+
+.map-pop-store {
+  margin: var(--s2) 0 0;
+  color: var(--text-2);
+}
+
+.map-pop-addr {
+  margin: 1px 0 0;
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+.map-pop-caveat {
+  margin: var(--s2) 0 0;
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-3);
+}
+
+/* La atribución es requisito de licencia de OSM, no un detalle estético: se
+   integra al tema, no se esconde. Queda fuera del panel de tiles, así que el
+   filtro del modo oscuro no la toca y se lee igual en los dos temas. */
+.leaflet-control-attribution {
+  background: color-mix(in srgb, var(--surface) 85%, transparent);
+  color: var(--text-3);
+  font-size: 10px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--text-2);
+}
+
+/* El punto desde el que se miden las distancias. Deliberadamente distinto de un
+   marker de sucursal: un círculo chico y hueco, sin etiqueta, que se lee como
+   referencia y no como una opción más para ir a comprar. */
+.map-home {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border: 3px solid var(--surface);
+  border-radius: 50%;
+  background: var(--text);
+  box-shadow: var(--shadow-md);
+}
+
+.map-add {
+  align-self: flex-start;
+}

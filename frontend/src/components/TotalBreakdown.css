@@ -1,0 +1,70 @@
+.breakdown {
+  margin: var(--s4);
+  padding: var(--s5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-pop);
+  /* Es un ticket: estirado a lo ancho de un monitor, entre el concepto y su
+     importe quedan treinta centímetros de nada y la resta deja de leerse. */
+  max-width: 620px;
+}
+
+@media (min-width: 720px) {
+  .breakdown {
+    margin: var(--s4) var(--s5) var(--s5);
+  }
+}
+
+.breakdown-rows {
+  margin-top: var(--s3);
+}
+
+.breakdown-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--s4);
+  padding: var(--s2) 0;
+  font-size: var(--t-sm);
+  color: var(--text-2);
+}
+
+.breakdown-row dd {
+  margin: 0;
+  /* Los importes se alinean a la derecha y en tabular: la resta se sigue
+     leyendo hacia abajo por la columna, como en un ticket. */
+  text-align: right;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+.breakdown-off {
+  color: var(--win) !important;
+}
+
+.breakdown-row--total {
+  margin-top: var(--s2);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--border);
+  font-size: var(--t-body);
+  color: var(--text);
+}
+
+.breakdown-row--total dt {
+  font-weight: 500;
+}
+
+.breakdown-row--total dd {
+  font-family: var(--font-display);
+  font-size: var(--t-total);
+  font-weight: 700;
+  letter-spacing: var(--tr-title);
+}
+
+.breakdown-note {
+  margin-top: var(--s3);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-3);
+}

@@ -1,0 +1,214 @@
+# Promociones bancarias — catálogo curado a mano.
+#
+# ────────────────────────────────────────────────────────────────────────────
+# QUÉ VA ACÁ Y QUÉ NO
+#
+# Solo promos que NINGUNA API publica: las que financia el banco y se liquidan
+# fuera del motor de promociones del super (BNA, MODO, Cuenta DNI, Mercado Pago).
+#
+# NO van las promos de la propia cadena — "Tarjeta Carrefour 15%", "Cuenta
+# Digital Crf 20% Off Lunes", los "2do al 50%". Esas las aplica el checkout de
+# Carrefour cuando se simula con el BIN, y cargarlas también acá las contaría dos
+# veces. Regla simple: si la simulación la aplica, no se cura.
+#
+# Disco es la excepción: no tiene checkout consultable ni publica teasers, así
+# que para Disco no hay nada medido y todo su descuento sale de este archivo.
+# Carrefour, DIA y Coto sí publican las suyas y no se curan acá:
+#
+#   Carrefour  "Tarjeta Carrefour 15%", "Tarjeta Carrefour 20% Off Martes",
+#              "40% Off Tarjeta Carrefour o Cuenta digital", y los "2do al 50%
+#              Mi Crf" que exigen la comunidad Mi Carrefour.
+#   Coto       "Precio con tarjeta: $X" (la TCI), que llega por
+#              `discounts_payment_methods` en cada producto.
+#   DIA        promos de producto ("2x1", "3x2", "2do al 70%") sin marca de
+#              tarjeta propia en el catálogo.
+#
+# Las tres se miden simulando la canasta con el BIN; ver `bins.yaml`.
+# ────────────────────────────────────────────────────────────────────────────
+#
+# Campos que parecen detalles y no lo son:
+#
+#   cap_period    un tope mensual NO es un tope por compra. Con $15.000 al mes,
+#                 la segunda compra grande de la semana ya casi no ahorra.
+#   benefit_type  `reintegro` = pagás todo hoy y te devuelven después. Mismo
+#                 ahorro, distinto desembolso; para el presupuesto de la semana
+#                 no es lo mismo.
+#   rails         el riel es parte de la promo. La misma Visa puede tener 25%
+#                 pagando por MODO y nada pasándola por el posnet.
+#   stacks_...    los supers declaran que sus promos no se acumulan con
+#                 reintegros bancarios. Asumir que sí infla el ahorro.
+#   unverified    true mientras nadie la haya contrastado contra la página del
+#                 banco. Viaja hasta la respuesta de la API.
+#
+# Al tocar una regla, actualizá `verified_on`: el test `live` falla si alguna
+# pasa de 60 días, porque una promo vieja manda a comprar donde no conviene.
+
+- id: bna-miercoles-supermercados
+  name: "Banco Nación 25% los miércoles"
+  issuer_slug: banco-nacion
+  percent: 25
+  weekdays: [mie]
+  rails: [modo, card]
+  card_kinds: [credit, debit]
+  chain_slugs: [carrefour-ar, disco-ar]
+  cap_cents: 1500000        # $15.000
+  cap_period: monthly
+  benefit_type: reintegro
+  channels: [in_store, online]
+  stacks_with_provider_promos: false
+  valid_from: 2026-01-01
+  valid_to: 2026-12-31
+  verified_on: 2026-08-31
+  source_url: "https://www.bna.com.ar/Personas/Promociones"
+  unverified: true
+  notes: >-
+    Valores de arranque, sin contrastar contra la página del BNA. Se reintentó
+    el 2026-09-01 y bna.com.ar/Personas/Promociones devolvió HTTP 500, así que
+    sigue sin verificar. Confirmar porcentaje, tope y si sigue pidiendo MODO
+    antes de confiar en el número. No se agregó DIA a las cadenas porque no hay
+    ninguna fuente que lo respalde, y sumarlo "por las dudas" es justamente lo
+    que este archivo no debe tener.
+
+# ── Cuenta DNI ───────────────────────────────────────────────────────────────
+# Contrastadas el 2026-09-01 contra la página oficial del Banco Provincia
+# (cuentadni/contenidos/cdniBeneficios/detalle/supermercados), que es la fuente
+# primaria. Reemplazan a la vieja regla única "Cuenta DNI 35% los sábados", que
+# estaba equivocada en las tres cosas que importan: el porcentaje (no hay 35%),
+# el día (no es sábado) y las cadenas (Disco no está en la lista y DIA sí).
+#
+# El día y el porcentaje cambian por cadena, así que va una regla por cadena en
+# lugar de una sola con `chain_slugs` múltiple: con una sola, a Carrefour le
+# tocaba el día de DIA.
+#
+# **Lo que sigue sin confirmarse es el tope**: la página publica el porcentaje y
+# el día pero no el tope, y a algunas cadenas les pone "sin límites" en el copy
+# (Toledo, La Coope) y a DIA y Carrefour no les aclara nada. Quedan sin tope
+# modelado —que es lo que significa `cap_cents` vacío—, así que en una compra
+# grande el ahorro que calculamos puede quedar por encima del real. Por eso las
+# tres siguen en `unverified: true` pese a venir de la fuente primaria.
+#
+# Ojo con algo que el modelo no sabe expresar: Cuenta DNI es del Banco
+# Provincia y el beneficio rige en la provincia de Buenos Aires.
+
+- id: cuenta-dni-dia-lunes
+  name: "Cuenta DNI 10% en DIA los lunes"
+  issuer_slug: banco-provincia
+  percent: 10
+  weekdays: [lun]
+  rails: [cuenta_dni]
+  card_kinds: [account_balance]
+  chain_slugs: [dia-ar]
+  cap_period: monthly
+  benefit_type: reintegro
+  channels: [in_store]
+  stacks_with_provider_promos: false
+  valid_from: 2026-01-01
+  valid_to: 2026-12-31
+  verified_on: 2026-09-01
+  source_url: "https://www.bancoprovincia.com.ar/cuentadni/contenidos/cdniBeneficios/detalle/supermercados"
+  unverified: true
+  notes: >-
+    Día y porcentaje salen de la página oficial (2026-09-01). Falta confirmar el
+    tope, que la página no publica, y si aplica a la compra online o solo en
+    sucursal.
+
+- id: cuenta-dni-carrefour-miercoles
+  name: "Cuenta DNI 10% en Carrefour los miércoles"
+  issuer_slug: banco-provincia
+  percent: 10
+  weekdays: [mie]
+  rails: [cuenta_dni]
+  card_kinds: [account_balance]
+  chain_slugs: [carrefour-ar]
+  cap_period: monthly
+  benefit_type: reintegro
+  channels: [in_store]
+  stacks_with_provider_promos: false
+  valid_from: 2026-01-01
+  valid_to: 2026-12-31
+  verified_on: 2026-09-01
+  source_url: "https://www.bancoprovincia.com.ar/cuentadni/contenidos/cdniBeneficios/detalle/supermercados"
+  unverified: true
+  notes: >-
+    Día y porcentaje de la página oficial (2026-09-01). Falta el tope. Cae el
+    mismo miércoles que la promo del BNA: son de bancos distintos y no se
+    acumulan entre sí, se elige una.
+
+- id: cuenta-dni-coto-jueves
+  name: "Cuenta DNI 30% en Coto los jueves"
+  issuer_slug: banco-provincia
+  percent: 30
+  weekdays: [jue]
+  rails: [cuenta_dni]
+  card_kinds: [account_balance]
+  chain_slugs: [coto-ar]
+  cap_period: monthly
+  benefit_type: reintegro
+  channels: [in_store]
+  stacks_with_provider_promos: false
+  valid_from: 2026-01-01
+  valid_to: 2026-12-31
+  verified_on: 2026-09-01
+  source_url: "https://www.bancoprovincia.com.ar/cuentadni/contenidos/cdniBeneficios/detalle/supermercados"
+  unverified: true
+  notes: >-
+    La página la muestra como promo de pago con NFC (celular), no con cualquier
+    medio, y es la de porcentaje más alto de todas las curadas. Confirmar el
+    tope y la condición de NFC antes de confiar en el número: un 30% sin tope
+    sobre una compra grande gana cualquier comparación, y si el tope existe la
+    gana sin merecerlo.
+
+- id: modo-disco-finde
+  name: "MODO 20% en Disco los fines de semana"
+  issuer_slug: modo
+  percent: 20
+  weekdays: [vie, sab, dom]
+  rails: [modo]
+  card_kinds: [credit, debit]
+  chain_slugs: [disco-ar]
+  cap_cents: 2500000        # $25.000 por banco por mes
+  cap_period: monthly
+  benefit_type: reintegro
+  channels: [in_store]
+  stacks_with_provider_promos: false
+  valid_from: 2026-01-01
+  valid_to: 2026-12-31
+  verified_on: 2026-09-01
+  source_url: "https://www.iproup.com/economia-digital/65293-descuentos-en-supermercados-con-modo-y-mercado-pago-como-ahorrar-en-coto-dia-y-carrefour"
+  unverified: true
+  notes: >-
+    **Fuente secundaria (prensa), no la página de MODO.** Es la única promo
+    curada que le pone un número a Disco, que es justo la cadena sin checkout
+    consultable: acá todo el ahorro sale de esta regla y nada está medido.
+    Verificar contra modo.com.ar antes de usarla para decidir. El tope declarado
+    es "por banco por mes", un matiz que el modelo no distingue: si se paga con
+    tarjetas de dos bancos, el tope real es más alto que el que calculamos.
+    Además la promo es del riel, no del emisor: aplica con la tarjeta de
+    cualquier banco mientras se pague por QR MODO. Como `matches()` exige que el
+    `issuer_slug` coincida, para que esta regla se dispare hay que tener cargado
+    un medio de pago con `issuer_slug: modo`.
+
+- id: mercadopago-supermercados
+  name: "Mercado Pago con dinero en cuenta"
+  issuer_slug: mercado-pago
+  percent: 10
+  weekdays: [lun, mar, mie, jue, vie, sab, dom]
+  rails: [mercado_pago]
+  card_kinds: [account_balance, prepaid]
+  chain_slugs: [carrefour-ar, disco-ar, dia-ar, coto-ar]
+  cap_cents: 400000         # $4.000
+  cap_period: monthly
+  benefit_type: discount
+  channels: [in_store, online]
+  stacks_with_provider_promos: false
+  valid_from: 2026-01-01
+  valid_to: 2026-12-31
+  verified_on: 2026-08-31
+  source_url: "https://www.mercadopago.com.ar/promociones"
+  unverified: true
+  notes: >-
+    Las promos de MP rotan por semana y por rubro; esta es una regla de piso.
+    Verificar en la app, que es donde figura el beneficio vigente. Se sumaron
+    DIA y Coto el 2026-09-01: la prensa las lista entre las cadenas con
+    beneficio MP, pero es fuente secundaria y el 10% acá es el piso genérico, no
+    un número medido para esas dos cadenas.

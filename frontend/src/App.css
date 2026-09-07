@@ -1,0 +1,354 @@
+/* Shell: barra lateral, barra superior, encabezado y avisos de la pantalla. */
+
+.shell {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100dvh;
+}
+
+.shell-body {
+  flex: 1;
+  min-width: 0;
+}
+
+/* El encabezado de escritorio no existe en el teléfono: ahí lo dicen la barra
+   superior y su fila de contexto. */
+.pagehead {
+  display: none;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  /* En un teléfono con notch la barra tiene que empezar por debajo de ella. */
+  padding-top: env(safe-area-inset-top);
+}
+
+.topbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2);
+  height: var(--header-h);
+  padding: 0 var(--s3) 0 var(--s5);
+}
+
+.topbar-title {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: var(--tr-title);
+}
+
+/* La única marca de la app: el resto de la pantalla es números y nombres de
+   cadena, y necesita algo que diga "esto es Compras" sin gritarlo. */
+.topbar-mark {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: linear-gradient(155deg, var(--accent), var(--accent-strong));
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 3px 8px -2px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+}
+
+.topbar-list {
+  min-height: 36px;
+  padding: 0 var(--s3);
+  background: var(--surface);
+  box-shadow: var(--shadow-pop);
+  font-size: var(--t-sm);
+  gap: var(--s1);
+}
+
+.topbar-list .num {
+  display: inline-grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  color: white;
+  font-size: 11px;
+}
+
+.topbar-context {
+  display: flex;
+  align-items: center;
+  gap: var(--s1);
+  width: 100%;
+  height: var(--context-h);
+  padding: 0 var(--s5);
+  font-size: var(--t-micro);
+  color: var(--text-3);
+  text-align: left;
+}
+
+.topbar-dot {
+  opacity: 0.5;
+}
+
+.topbar-stale {
+  color: var(--warn);
+}
+
+/* --- avisos -------------------------------------------------------------- */
+
+main {
+  /* Un tono apenas distinto del topbar: es el "piso" sobre el que flotan las
+     cards elevadas de abajo — sin este salto de superficie, la sombra de una
+     card no tiene contra qué separarse. */
+  background: var(--stage);
+  /* Aire al final y respeto por la barra de gestos del teléfono, para que la
+     última fila no quede pegada al borde ni debajo de ella. */
+  padding-bottom: calc(var(--s12) + env(safe-area-inset-bottom));
+}
+
+.stalebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  margin: var(--s4) var(--s4) 0;
+  padding: var(--s3) var(--s4);
+  border-radius: var(--r-control);
+  background: var(--warn-tint);
+  color: var(--warn);
+  font-size: var(--t-sm);
+  font-weight: 500;
+}
+
+/* Mientras se refresca, el resultado viejo se atenúa: sigue ahí para leerlo,
+   pero deja de parecer el número recién traído. */
+.is-refreshing {
+  opacity: 0.55;
+  transition: opacity var(--dur-fast) var(--ease);
+  pointer-events: none;
+}
+
+.notes {
+  list-style: none;
+  padding: 0 var(--s5) var(--s8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-3);
+}
+
+/* --- respuesta y detalle: las dos zonas de contenido ----------------------
+   Cada una controla su propio padding y el espacio entre lo que contiene —
+   así una card (el veredicto, el wallet de cadenas) flota sobre `--stage` en
+   vez de tocar el borde de la pantalla. */
+.layout-answer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+  padding: var(--s4);
+}
+
+.layout-detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  padding: 0 var(--s4) var(--s4);
+}
+
+/* --- teléfono angosto: la marca sola alcanza ------------------------------ */
+
+@media (max-width: 359px) {
+  .topbar-wordmark {
+    display: none;
+  }
+}
+
+/* --- tablet: más aire, todavía una columna -------------------------------- */
+
+@media (min-width: 720px) {
+  .topbar,
+  main {
+    max-width: 900px;
+    margin-inline: auto;
+  }
+
+  .topbar {
+    border-inline: 1px solid var(--border);
+  }
+
+  main {
+    border-inline: 1px solid var(--border);
+    min-height: 100dvh;
+  }
+
+  .layout-answer,
+  .layout-detail {
+    padding-inline: var(--s5);
+  }
+}
+
+/* --- selector tabla / mapa ------------------------------------------------ */
+
+/* Reusa `.seg` del panel de ajustes: es el mismo gesto —elegir uno de dos— y
+   no hay motivo para inventarle otro control. */
+.detail-tabs {
+  margin: 0;
+}
+
+/* Estirado a lo ancho de una pantalla grande, un selector de dos opciones se
+   lee como una barra de navegación y no como un control. */
+@media (min-width: 720px) {
+  .detail-tabs {
+    align-self: flex-start;
+    min-width: 260px;
+  }
+}
+
+.detail-loading {
+  padding: var(--s6) var(--s5);
+  font-size: var(--t-sm);
+  color: var(--text-2);
+}
+
+/* --- escritorio: barra lateral, encabezado y una sola columna de contenido -
+   De acá en adelante la app deja de ser una pantalla de teléfono estirada. La
+   navegación se va al costado con sus nombres escritos, el encabezado dice qué
+   estás mirando, y el contenido se ordena en bloques a lo ancho: las cadenas
+   arriba en fila, el veredicto como una línea que las resume, y abajo el
+   detalle —tabla o mapa— con todo el ancho, que es lo que necesitan cuatro
+   columnas de precios y un plano del barrio. */
+
+@media (min-width: 1040px) {
+  /* La barra superior del teléfono se apaga entera: su trabajo lo hacen la
+     barra lateral y el encabezado. */
+  .topbar {
+    display: none;
+  }
+
+  .pagehead {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--s5);
+    height: var(--pagehead-h);
+    padding: var(--s6) var(--s6) var(--s4);
+    background: var(--bg);
+  }
+
+  .pagehead-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: var(--tr-title);
+  }
+
+  .pagehead-sub {
+    margin-top: 2px;
+    font-size: var(--t-sm);
+    color: var(--text-3);
+  }
+
+  .pagehead-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--s2);
+    flex: none;
+  }
+
+  .pagehead-cp {
+    display: flex;
+    align-items: center;
+    gap: var(--s1);
+    min-height: 32px;
+    padding: 0 var(--s3);
+    border-radius: var(--r-pill);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-pop);
+    font-size: var(--t-sm);
+    color: var(--text-2);
+  }
+
+  .pagehead-cp svg {
+    color: var(--accent);
+  }
+
+  .pagehead-cp:hover {
+    color: var(--text);
+  }
+
+  /* El contenido tiene tope de ancho pero la ventana puede ser mucho más
+     grande: en un monitor de 27" una tabla de 2000px deja el nombre del
+     producto a treinta centímetros de su precio. */
+  main {
+    max-width: 1320px;
+    margin-inline: 0;
+    border-inline: none;
+    background: var(--bg);
+    padding-inline: var(--s6);
+    padding-bottom: var(--s12);
+  }
+
+  .layout,
+  .layout-answer,
+  .layout-detail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s4);
+    padding: 0;
+  }
+
+  /* Las cuatro cadenas encabezan y el veredicto las resume debajo: es el orden
+     de lectura de una pantalla ancha, al revés que en el teléfono, donde la
+     respuesta tiene que estar antes que su desglose porque no entran juntas. */
+  .layout-answer .verdict-stage {
+    order: 2;
+  }
+
+  .layout-detail {
+    margin-top: var(--s2);
+  }
+
+  /* Los avisos y el desglose traen su propio margen lateral, que es el que
+     necesitan cuando el contenido va a sangre en un teléfono. Acá el margen
+     lo pone `main`, así que el propio sobra y los desalinea del resto. */
+  .stalebar,
+  .errorpanel,
+  .partial,
+  .breakdown {
+    margin-inline: 0;
+  }
+
+  .notes {
+    padding-inline: 0;
+  }
+}
+
+/* --- monitor grande: el contenido se centra, no se estira ----------------- */
+
+@media (min-width: 1560px) {
+  .pagehead,
+  main {
+    max-width: 1320px;
+    margin-inline: auto;
+  }
+}

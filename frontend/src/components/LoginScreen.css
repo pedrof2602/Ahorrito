@@ -1,0 +1,74 @@
+/* La pantalla de login. Usa los mismos tokens y las mismas clases (.btn, .field,
+   .input) que el resto de la app: es la primera pantalla que se ve y si tuviera
+   su propio estilo, la app parecería empezar en otro producto. */
+
+.login {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--s5);
+  background: var(--stage);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+  padding: var(--s6);
+  border-radius: var(--r-card);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.login-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  /* Un poco más de aire debajo del encabezado que entre los campos: separa el
+     "qué es esto" del "qué tengo que hacer". */
+  margin-bottom: var(--s1);
+}
+
+.login-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--t-title);
+  letter-spacing: var(--tr-title);
+  line-height: var(--lh-tight);
+  color: var(--text);
+}
+
+.login-sub {
+  margin: 0;
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-2);
+}
+
+.login-note,
+.login-error {
+  margin: 0;
+  padding: var(--s3);
+  border-radius: var(--r-control);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+}
+
+.login-note {
+  background: var(--warn-tint);
+  color: var(--warn);
+}
+
+.login-error {
+  background: var(--danger-tint);
+  color: var(--danger);
+}
+
+/* El botón secundario queda pegado al primario por el `gap` del formulario, que
+   es más aire del que necesita un par de acciones relacionadas. */
+.login-card .btn--quiet {
+  margin-top: calc(var(--s3) * -1);
+}

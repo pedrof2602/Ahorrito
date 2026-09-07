@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Base de datos local. El `*.db.*` cubre los backups a mano (compras.db.bak,
+# .bak2): tienen datos reales y `*.db` solo no los agarra.
+*.db
+*.db.*
+*.db-wal
+*.db-shm

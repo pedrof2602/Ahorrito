@@ -1,0 +1,8 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
+addopts = "-m 'not live' --strict-markers"
+markers = [
+    "live: golpea las APIs reales de los supermercados; detecta que VTEX cambió algo (deseleccionado por defecto)",
+]

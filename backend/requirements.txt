@@ -1,0 +1,30 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.28.0
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+python-dotenv>=1.0.1
+
+# Cliente HTTP para los proveedores (VTEX y futuros)
+httpx[http2]>=0.27.0
+tenacity>=8.2.0
+
+# Catálogo curado de promociones bancarias (data/payment_promos.yaml)
+PyYAML>=6.0
+
+# Similitud de nombres para descartar candidatos mal matcheados
+rapidfuzz>=3.9.0
+
+# Hash de contraseñas. Argon2id es la primera recomendación de OWASP y lo que
+# ganó la Password Hashing Competition; bcrypt sigue siendo aceptable pero tiene
+# el límite de 72 bytes que trunca contraseñas largas en silencio.
+argon2-cffi>=23.1.0
+
+# Persistencia e histórico de precios
+sqlalchemy>=2.0.0
+aiosqlite>=0.20.0
+alembic>=1.13.0
+
+# Testing
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+respx>=0.21.0

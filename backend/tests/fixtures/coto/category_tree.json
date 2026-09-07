@@ -1,0 +1,6830 @@
+{
+ "response": {
+  "groups": [
+   {
+    "group_id": "categoria",
+    "display_name": "Categorias",
+    "count": 5323,
+    "data": {
+     "url": "/categoria/categorias/"
+    },
+    "children": [
+     {
+      "group_id": "catv00001255",
+      "display_name": "Frescos",
+      "count": 204,
+      "data": {
+       "url": "/categoria/frescos/"
+      },
+      "children": [
+       {
+        "group_id": "catv00001295",
+        "display_name": "Lácteos",
+        "count": 151,
+        "data": {
+         "url": "/categoria/frescos/lácteos/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003266",
+          "display_name": "Leches",
+          "count": 94,
+          "data": {
+           "url": "/categoria/frescos/lácteos/leches/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Lácteos",
+            "group_id": "catv00001295"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003761",
+          "display_name": "Alimentos Vegetales",
+          "count": 41,
+          "data": {
+           "url": "/categoria/frescos/lácteos/alimentos-vegetales/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Lácteos",
+            "group_id": "catv00001295"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003251",
+          "display_name": "Yogures",
+          "count": 10,
+          "data": {
+           "url": "/categoria/frescos/lácteos/yogures/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Lácteos",
+            "group_id": "catv00001295"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003277",
+          "display_name": "Mantecas y Margarinas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/frescos/lácteos/mantecas-y-margarinas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Lácteos",
+            "group_id": "catv00001295"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003958",
+          "display_name": "Salsas y Aderezos",
+          "count": 2,
+          "data": {
+           "url": "/categoria/frescos/lácteos/salsas-y-aderezos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Lácteos",
+            "group_id": "catv00001295"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004233",
+          "display_name": "Alimento Lácteo",
+          "count": 2,
+          "data": {
+           "url": "/categoria/frescos/lácteos/alimento-lácteo/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Lácteos",
+            "group_id": "catv00001295"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003250",
+          "display_name": "Dulce de Leche",
+          "count": 1,
+          "data": {
+           "url": "/categoria/frescos/lácteos/dulce-de-leche/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Lácteos",
+            "group_id": "catv00001295"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Frescos",
+          "group_id": "catv00001255"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003285",
+        "display_name": "Frutas y Verduras",
+        "count": 11,
+        "data": {
+         "url": "/categoria/frescos/frutas-y-verduras/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003308",
+          "display_name": "Verduras",
+          "count": 2,
+          "data": {
+           "url": "/categoria/frescos/frutas-y-verduras/verduras/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Frutas y Verduras",
+            "group_id": "catv00003285"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003314",
+          "display_name": "Legumbres",
+          "count": 9,
+          "data": {
+           "url": "/categoria/frescos/frutas-y-verduras/legumbres/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Frutas y Verduras",
+            "group_id": "catv00003285"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Frescos",
+          "group_id": "catv00001255"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003769",
+        "display_name": "Quesos",
+        "count": 16,
+        "data": {
+         "url": "/categoria/frescos/quesos/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003800",
+          "display_name": "Queso Rallado",
+          "count": 3,
+          "data": {
+           "url": "/categoria/frescos/quesos/queso-rallado/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Quesos",
+            "group_id": "catv00003769"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006849",
+          "display_name": "Tofu",
+          "count": 1,
+          "data": {
+           "url": "/categoria/frescos/quesos/tofu/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Quesos",
+            "group_id": "catv00003769"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003273",
+          "display_name": "Queso Crema y Untables",
+          "count": 7,
+          "data": {
+           "url": "/categoria/frescos/quesos/queso-crema-y-untables/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Quesos",
+            "group_id": "catv00003769"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004620",
+          "display_name": "Quesos Blandos",
+          "count": 2,
+          "data": {
+           "url": "/categoria/frescos/quesos/quesos-blandos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Quesos",
+            "group_id": "catv00003769"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001523",
+          "display_name": "Dulces",
+          "count": 3,
+          "data": {
+           "url": "/categoria/frescos/quesos/dulces/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Quesos",
+            "group_id": "catv00003769"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Frescos",
+          "group_id": "catv00001255"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001299",
+        "display_name": "Fiambres",
+        "count": 8,
+        "data": {
+         "url": "/categoria/frescos/fiambres/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003333",
+          "display_name": "Fiambres",
+          "count": 8,
+          "data": {
+           "url": "/categoria/frescos/fiambres/fiambres/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Fiambres",
+            "group_id": "catv00001299"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Frescos",
+          "group_id": "catv00001255"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001298",
+        "display_name": "Comidas Elaboradas",
+        "count": 10,
+        "data": {
+         "url": "/categoria/frescos/comidas-elaboradas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003350",
+          "display_name": "Pizzas, Tartas y Empanadas",
+          "count": 3,
+          "data": {
+           "url": "/categoria/frescos/comidas-elaboradas/pizzas,-tartas-y-empanadas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Comidas Elaboradas",
+            "group_id": "catv00001298"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003986",
+          "display_name": "X Kg",
+          "count": 5,
+          "data": {
+           "url": "/categoria/frescos/comidas-elaboradas/x-kg/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Comidas Elaboradas",
+            "group_id": "catv00001298"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003351",
+          "display_name": "Platos y Guarniciones",
+          "count": 2,
+          "data": {
+           "url": "/categoria/frescos/comidas-elaboradas/platos-y-guarniciones/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Comidas Elaboradas",
+            "group_id": "catv00001298"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Frescos",
+          "group_id": "catv00001255"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001464",
+        "display_name": "Huevos",
+        "count": 2,
+        "data": {
+         "url": "/categoria/frescos/huevos/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004083",
+          "display_name": "Huevos Color",
+          "count": 2,
+          "data": {
+           "url": "/categoria/frescos/huevos/huevos-color/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Huevos",
+            "group_id": "catv00001464"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Frescos",
+          "group_id": "catv00001255"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001297",
+        "display_name": "Pastas Frescas y Tapas",
+        "count": 6,
+        "data": {
+         "url": "/categoria/frescos/pastas-frescas-y-tapas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001864",
+          "display_name": "Fideos y Ñoquis",
+          "count": 5,
+          "data": {
+           "url": "/categoria/frescos/pastas-frescas-y-tapas/fideos-y-ñoquis/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Pastas Frescas y Tapas",
+            "group_id": "catv00001297"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001869",
+          "display_name": "Pastas Rellenas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/frescos/pastas-frescas-y-tapas/pastas-rellenas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Frescos",
+            "group_id": "catv00001255"
+           },
+           {
+            "display_name": "Pastas Frescas y Tapas",
+            "group_id": "catv00001297"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Frescos",
+          "group_id": "catv00001255"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001254",
+      "display_name": "Almacén",
+      "count": 115,
+      "data": {
+       "url": "/categoria/almacén/"
+      },
+      "children": [
+       {
+        "group_id": "catv00001274",
+        "display_name": "Harinas",
+        "count": 3,
+        "data": {
+         "url": "/categoria/almacén/harinas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001411",
+          "display_name": "Harina de Maíz",
+          "count": 2,
+          "data": {
+           "url": "/categoria/almacén/harinas/harina-de-maíz/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Harinas",
+            "group_id": "catv00001274"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001414",
+          "display_name": "Premezcla",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/harinas/premezcla/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Harinas",
+            "group_id": "catv00001274"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004273",
+        "display_name": "Suplementos Dietarios",
+        "count": 9,
+        "data": {
+         "url": "/categoria/almacén/suplementos-dietarios/"
+        },
+        "children": [],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003541",
+        "display_name": "Snacks",
+        "count": 14,
+        "data": {
+         "url": "/categoria/almacén/snacks/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003639",
+          "display_name": "Papas Fritas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/snacks/papas-fritas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Snacks",
+            "group_id": "catv00003541"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003638",
+          "display_name": "Palitos",
+          "count": 3,
+          "data": {
+           "url": "/categoria/almacén/snacks/palitos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Snacks",
+            "group_id": "catv00003541"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003641",
+          "display_name": "Snacks Especiales",
+          "count": 4,
+          "data": {
+           "url": "/categoria/almacén/snacks/snacks-especiales/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Snacks",
+            "group_id": "catv00003541"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003633",
+          "display_name": "Bastones de Maiz",
+          "count": 3,
+          "data": {
+           "url": "/categoria/almacén/snacks/bastones-de-maiz/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Snacks",
+            "group_id": "catv00003541"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003635",
+          "display_name": "Maiz Saborizado",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/snacks/maiz-saborizado/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Snacks",
+            "group_id": "catv00003541"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003637",
+          "display_name": "Nachos",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/snacks/nachos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Snacks",
+            "group_id": "catv00003541"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003636",
+          "display_name": "Mani",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/snacks/mani/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Snacks",
+            "group_id": "catv00003541"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002981",
+        "display_name": "Sopas, Caldos, Puré y Saborizantes",
+        "count": 2,
+        "data": {
+         "url": "/categoria/almacén/sopas,-caldos,-puré-y-saborizantes/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001271",
+          "display_name": "Sopas y Saborizantes",
+          "count": 2,
+          "data": {
+           "url": "/categoria/almacén/sopas,-caldos,-puré-y-saborizantes/sopas-y-saborizantes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Sopas, Caldos, Puré y Saborizantes",
+            "group_id": "catv00002981"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002976",
+        "display_name": "Alimento de Bebés y Niños",
+        "count": 6,
+        "data": {
+         "url": "/categoria/almacén/alimento-de-bebés-y-niños/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001268",
+          "display_name": "Alimentos para Bebé",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/alimento-de-bebés-y-niños/alimentos-para-bebé/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Alimento de Bebés y Niños",
+            "group_id": "catv00002976"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002811",
+          "display_name": "Infusiones Infantiles",
+          "count": 5,
+          "data": {
+           "url": "/categoria/almacén/alimento-de-bebés-y-niños/infusiones-infantiles/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Alimento de Bebés y Niños",
+            "group_id": "catv00002976"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002977",
+        "display_name": "Arroz y Legumbres",
+        "count": 3,
+        "data": {
+         "url": "/categoria/almacén/arroz-y-legumbres/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001279",
+          "display_name": "Arroz",
+          "count": 3,
+          "data": {
+           "url": "/categoria/almacén/arroz-y-legumbres/arroz/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Arroz y Legumbres",
+            "group_id": "catv00002977"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002980",
+        "display_name": "Polvo para Postres y Reposteria",
+        "count": 15,
+        "data": {
+         "url": "/categoria/almacén/polvo-para-postres-y-reposteria/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002360",
+          "display_name": "Premezcla Postres",
+          "count": 15,
+          "data": {
+           "url": "/categoria/almacén/polvo-para-postres-y-reposteria/premezcla-postres/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Polvo para Postres y Reposteria",
+            "group_id": "catv00002980"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002211",
+        "display_name": "Aderezos y Salsas",
+        "count": 16,
+        "data": {
+         "url": "/categoria/almacén/aderezos-y-salsas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002214",
+          "display_name": "Ketchup",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/aderezos-y-salsas/ketchup/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aderezos y Salsas",
+            "group_id": "catv00002211"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002742",
+          "display_name": "Barbacoa",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/aderezos-y-salsas/barbacoa/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aderezos y Salsas",
+            "group_id": "catv00002211"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002741",
+          "display_name": "Aderezo Dkt",
+          "count": 2,
+          "data": {
+           "url": "/categoria/almacén/aderezos-y-salsas/aderezo-dkt/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aderezos y Salsas",
+            "group_id": "catv00002211"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002212",
+          "display_name": "Mayonesas",
+          "count": 7,
+          "data": {
+           "url": "/categoria/almacén/aderezos-y-salsas/mayonesas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aderezos y Salsas",
+            "group_id": "catv00002211"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002224",
+          "display_name": "Aderezo de Soja",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/aderezos-y-salsas/aderezo-de-soja/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aderezos y Salsas",
+            "group_id": "catv00002211"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002747",
+          "display_name": "Condimentos Saborizantes",
+          "count": 2,
+          "data": {
+           "url": "/categoria/almacén/aderezos-y-salsas/condimentos-saborizantes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aderezos y Salsas",
+            "group_id": "catv00002211"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002213",
+          "display_name": "Mostazas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/aderezos-y-salsas/mostazas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aderezos y Salsas",
+            "group_id": "catv00002211"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003530",
+        "display_name": "Panaderia",
+        "count": 15,
+        "data": {
+         "url": "/categoria/almacén/panaderia/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004082",
+          "display_name": "Galletitas",
+          "count": 4,
+          "data": {
+           "url": "/categoria/almacén/panaderia/galletitas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Panaderia",
+            "group_id": "catv00003530"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004580",
+          "display_name": "Panaderia Propia",
+          "count": 10,
+          "data": {
+           "url": "/categoria/almacén/panaderia/panaderia-propia/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Panaderia",
+            "group_id": "catv00003530"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003433",
+          "display_name": "Turrones y Confituras",
+          "count": 1,
+          "data": {
+           "url": "/categoria/catalogo/almacén/panaderia/turrones-y-confituras/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Panaderia",
+            "group_id": "catv00003530"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003539",
+        "display_name": "Golosinas",
+        "count": 5,
+        "data": {
+         "url": "/categoria/almacén/golosinas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003603",
+          "display_name": "Gomitas y Gelatinas",
+          "count": 3,
+          "data": {
+           "url": "/categoria/almacén/golosinas/gomitas-y-gelatinas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Golosinas",
+            "group_id": "catv00003539"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003600",
+          "display_name": "Chocolates",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/golosinas/chocolates/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Golosinas",
+            "group_id": "catv00003539"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004361",
+        "display_name": "Leche en Polvo",
+        "count": 2,
+        "data": {
+         "url": "/categoria/almacén/leche-en-polvo/"
+        },
+        "children": [],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002978",
+        "display_name": "Especias",
+        "count": 1,
+        "data": {
+         "url": "/categoria/almacén/especias/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002219",
+          "display_name": "Especias",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/especias/especias/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Especias",
+            "group_id": "catv00002978"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002979",
+        "display_name": "Pasta Seca, Lista y Rellenas",
+        "count": 2,
+        "data": {
+         "url": "/categoria/almacén/pasta-seca,-lista-y-rellenas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002794",
+          "display_name": "Pastas Secas",
+          "count": 2,
+          "data": {
+           "url": "/categoria/almacén/pasta-seca,-lista-y-rellenas/pastas-secas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Pasta Seca, Lista y Rellenas",
+            "group_id": "catv00002979"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001273",
+        "display_name": "Mermeladas y Dulces",
+        "count": 5,
+        "data": {
+         "url": "/categoria/almacén/mermeladas-y-dulces/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001407",
+          "display_name": "Miel",
+          "count": 5,
+          "data": {
+           "url": "/categoria/almacén/mermeladas-y-dulces/miel/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Mermeladas y Dulces",
+            "group_id": "catv00001273"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001266",
+        "display_name": "Conservas",
+        "count": 5,
+        "data": {
+         "url": "/categoria/almacén/conservas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001401",
+          "display_name": "Conservas de Pescado",
+          "count": 4,
+          "data": {
+           "url": "/categoria/almacén/conservas/conservas-de-pescado/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Conservas",
+            "group_id": "catv00001266"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001403",
+          "display_name": "Conservas de Carne",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/conservas/conservas-de-carne/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Conservas",
+            "group_id": "catv00001266"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002808",
+        "display_name": "Salsas y Puré de Tomate",
+        "count": 1,
+        "data": {
+         "url": "/categoria/almacén/salsas-y-puré-de-tomate/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002935",
+          "display_name": "Salsas Preparadas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/salsas-y-puré-de-tomate/salsas-preparadas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Salsas y Puré de Tomate",
+            "group_id": "catv00002808"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001270",
+        "display_name": "Endulzantes",
+        "count": 1,
+        "data": {
+         "url": "/categoria/almacén/endulzantes/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002784",
+          "display_name": "Azúcar",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/endulzantes/azúcar/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Endulzantes",
+            "group_id": "catv00001270"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001267",
+        "display_name": "Encurtidos",
+        "count": 6,
+        "data": {
+         "url": "/categoria/almacén/encurtidos/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002860",
+          "display_name": "Aceitunas",
+          "count": 6,
+          "data": {
+           "url": "/categoria/almacén/encurtidos/aceitunas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Encurtidos",
+            "group_id": "catv00001267"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002975",
+        "display_name": "Aceites y Condimentos",
+        "count": 2,
+        "data": {
+         "url": "/categoria/almacén/aceites-y-condimentos/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002795",
+          "display_name": "Condimentos",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/aceites-y-condimentos/condimentos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aceites y Condimentos",
+            "group_id": "catv00002975"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002800",
+          "display_name": "Vinagres",
+          "count": 1,
+          "data": {
+           "url": "/categoria/almacén/aceites-y-condimentos/vinagres/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Aceites y Condimentos",
+            "group_id": "catv00002975"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001275",
+        "display_name": "Infusiones",
+        "count": 2,
+        "data": {
+         "url": "/categoria/almacén/infusiones/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001415",
+          "display_name": "Té",
+          "count": 2,
+          "data": {
+           "url": "/categoria/almacén/infusiones/té/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Almacén",
+            "group_id": "catv00001254"
+           },
+           {
+            "display_name": "Infusiones",
+            "group_id": "catv00001275"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Almacén",
+          "group_id": "catv00001254"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001259",
+      "display_name": "Textil",
+      "count": 4067,
+      "data": {
+       "url": "/categoria/textil/"
+      },
+      "children": [
+       {
+        "group_id": "catv00004888",
+        "display_name": "Indumentaria Niños",
+        "count": 2723,
+        "data": {
+         "url": "/categoria/textil/indumentaria-niños/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004890",
+          "display_name": "Camperas",
+          "count": 531,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/camperas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004895",
+          "display_name": "Pijamas",
+          "count": 243,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/pijamas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004894",
+          "display_name": "Pantalones",
+          "count": 412,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/pantalones/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004889",
+          "display_name": "Buzos",
+          "count": 536,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/buzos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004893",
+          "display_name": "Musculosas",
+          "count": 113,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/musculosas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004896",
+          "display_name": "Remeras",
+          "count": 527,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/remeras/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004892",
+          "display_name": "Chalecos",
+          "count": 188,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/chalecos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006820",
+          "display_name": "Batas",
+          "count": 50,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/batas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005417",
+          "display_name": "Calzas",
+          "count": 32,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/calzas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005418",
+          "display_name": "Polleras",
+          "count": 6,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/polleras/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005458",
+          "display_name": "Remeras para Agua",
+          "count": 4,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/remeras-para-agua/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004899",
+          "display_name": "Sweater",
+          "count": 45,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/sweater/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004897",
+          "display_name": "Ropa Interior",
+          "count": 28,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/ropa-interior/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00007037",
+          "display_name": "Pilotos",
+          "count": 7,
+          "data": {
+           "url": "/categoria/textil/indumentaria-niños/pilotos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Niños",
+            "group_id": "catv00004888"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00005401",
+        "display_name": "Indumentaria Bebés",
+        "count": 1007,
+        "data": {
+         "url": "/categoria/textil/indumentaria-bebés/"
+        },
+        "children": [
+         {
+          "group_id": "catv00005404",
+          "display_name": "Bodies",
+          "count": 437,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/bodies/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005408",
+          "display_name": "Enteritos",
+          "count": 162,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/enteritos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005406",
+          "display_name": "Calzas",
+          "count": 44,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/calzas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005410",
+          "display_name": "Pantalones",
+          "count": 121,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/pantalones/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005405",
+          "display_name": "Buzos",
+          "count": 131,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/buzos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005411",
+          "display_name": "Ranitas",
+          "count": 10,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/ranitas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005412",
+          "display_name": "Remeras",
+          "count": 83,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/remeras/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006854",
+          "display_name": "Chalecos",
+          "count": 7,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/chalecos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005407",
+          "display_name": "Camperas",
+          "count": 6,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/camperas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006819",
+          "display_name": "Pijamas",
+          "count": 4,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/pijamas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005414",
+          "display_name": "Suéteres",
+          "count": 2,
+          "data": {
+           "url": "/categoria/textil/indumentaria-bebés/suéteres/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria Bebés",
+            "group_id": "catv00005401"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001353",
+        "display_name": "Calzado",
+        "count": 204,
+        "data": {
+         "url": "/categoria/textil/calzado/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001653",
+          "display_name": "Pantuflas",
+          "count": 102,
+          "data": {
+           "url": "/categoria/textil/calzado/pantuflas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Calzado",
+            "group_id": "catv00001353"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004732",
+          "display_name": "Botas",
+          "count": 38,
+          "data": {
+           "url": "/categoria/textil/calzado/botas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Calzado",
+            "group_id": "catv00001353"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001651",
+          "display_name": "Medias",
+          "count": 63,
+          "data": {
+           "url": "/categoria/textil/calzado/medias/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Calzado",
+            "group_id": "catv00001353"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002076",
+          "display_name": "Zapatillas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/calzado/zapatillas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Calzado",
+            "group_id": "catv00001353"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004835",
+        "display_name": "Indumentaria de Mujer",
+        "count": 87,
+        "data": {
+         "url": "/categoria/textil/indumentaria-de-mujer/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004838",
+          "display_name": "Camperas",
+          "count": 6,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-mujer/camperas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Mujer",
+            "group_id": "catv00004835"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004836",
+          "display_name": "Buzos",
+          "count": 24,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-mujer/buzos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Mujer",
+            "group_id": "catv00004835"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005479",
+          "display_name": "Batas y Pijamas",
+          "count": 35,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-mujer/batas-y-pijamas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Mujer",
+            "group_id": "catv00004835"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004840",
+          "display_name": "Chalecos",
+          "count": 12,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-mujer/chalecos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Mujer",
+            "group_id": "catv00004835"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004837",
+          "display_name": "Camisas",
+          "count": 3,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-mujer/camisas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Mujer",
+            "group_id": "catv00004835"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004853",
+          "display_name": "Ropa Interior",
+          "count": 3,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-mujer/ropa-interior/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Mujer",
+            "group_id": "catv00004835"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004857",
+          "display_name": "Sweaters",
+          "count": 4,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-mujer/sweaters/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Mujer",
+            "group_id": "catv00004835"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004793",
+        "display_name": "Accesorios para Bebé",
+        "count": 13,
+        "data": {
+         "url": "/categoria/textil/accesorios-para-bebé/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004800",
+          "display_name": "Cunas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/accesorios-para-bebé/cunas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Accesorios para Bebé",
+            "group_id": "catv00004793"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004798",
+          "display_name": "Chupetes",
+          "count": 6,
+          "data": {
+           "url": "/categoria/textil/accesorios-para-bebé/chupetes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Accesorios para Bebé",
+            "group_id": "catv00004793"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004802",
+          "display_name": "Mamaderas",
+          "count": 6,
+          "data": {
+           "url": "/categoria/textil/accesorios-para-bebé/mamaderas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Accesorios para Bebé",
+            "group_id": "catv00004793"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001354",
+        "display_name": "Marroquineria",
+        "count": 7,
+        "data": {
+         "url": "/categoria/textil/marroquineria/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002350",
+          "display_name": "Paraguas",
+          "count": 4,
+          "data": {
+           "url": "/categoria/textil/marroquineria/paraguas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Marroquineria",
+            "group_id": "catv00001354"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005052",
+          "display_name": "Accesorios de Verano",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/marroquineria/accesorios-de-verano/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Marroquineria",
+            "group_id": "catv00001354"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005478",
+          "display_name": "Accesorios de Invierno",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/marroquineria/accesorios-de-invierno/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Marroquineria",
+            "group_id": "catv00001354"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006872",
+          "display_name": "Carteras y Accesorios",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/marroquineria/carteras-y-accesorios/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Marroquineria",
+            "group_id": "catv00001354"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004961",
+        "display_name": "Mundo Kids",
+        "count": 3,
+        "data": {
+         "url": "/categoria/textil/mundo-kids/"
+        },
+        "children": [
+         {
+          "group_id": "catv00005450",
+          "display_name": "Cochecitos",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/mundo-kids/cochecitos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Mundo Kids",
+            "group_id": "catv00004961"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005451",
+          "display_name": "Butacas y Buster",
+          "count": 2,
+          "data": {
+           "url": "/categoria/textil/mundo-kids/butacas-y-buster/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Mundo Kids",
+            "group_id": "catv00004961"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004812",
+        "display_name": "Indumentaria de Hombre",
+        "count": 12,
+        "data": {
+         "url": "/categoria/textil/indumentaria-de-hombre/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004824",
+          "display_name": "Ropa de Dormir",
+          "count": 5,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-hombre/ropa-de-dormir/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Hombre",
+            "group_id": "catv00004812"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004823",
+          "display_name": "Remeras",
+          "count": 5,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-hombre/remeras/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Hombre",
+            "group_id": "catv00004812"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004815",
+          "display_name": "Camisas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-hombre/camisas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Hombre",
+            "group_id": "catv00004812"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004829",
+          "display_name": "Ropa Interior",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/indumentaria-de-hombre/ropa-interior/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Indumentaria de Hombre",
+            "group_id": "catv00004812"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004646",
+        "display_name": "Colegial",
+        "count": 10,
+        "data": {
+         "url": "/categoria/textil/colegial/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004705",
+          "display_name": "Medias Colegial",
+          "count": 10,
+          "data": {
+           "url": "/categoria/textil/colegial/medias-colegial/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Colegial",
+            "group_id": "catv00004646"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004929",
+        "display_name": "Baño",
+        "count": 1,
+        "data": {
+         "url": "/categoria/textil/baño/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004932",
+          "display_name": "Barrales y Accesorios",
+          "count": 1,
+          "data": {
+           "url": "/categoria/textil/baño/barrales-y-accesorios/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Textil",
+            "group_id": "catv00001259"
+           },
+           {
+            "display_name": "Baño",
+            "group_id": "catv00004929"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Textil",
+          "group_id": "catv00001259"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001990",
+      "display_name": "Electro",
+      "count": 309,
+      "data": {
+       "url": "/categoria/electro/"
+      },
+      "children": [
+       {
+        "group_id": "catv00002002",
+        "display_name": "Coccion",
+        "count": 75,
+        "data": {
+         "url": "/categoria/electro/coccion/"
+        },
+        "children": [
+         {
+          "group_id": "catv00000641",
+          "display_name": "Anafes",
+          "count": 11,
+          "data": {
+           "url": "/categoria/electro/coccion/anafes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Coccion",
+            "group_id": "catv00002002"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00000639",
+          "display_name": "Cocinas",
+          "count": 60,
+          "data": {
+           "url": "/categoria/electro/coccion/cocinas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Coccion",
+            "group_id": "catv00002002"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005378",
+          "display_name": "Hornos Empotrables",
+          "count": 2,
+          "data": {
+           "url": "/categoria/electro/coccion/hornos-empotrables/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Coccion",
+            "group_id": "catv00002002"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00000644",
+          "display_name": "Microondas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/coccion/microondas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Coccion",
+            "group_id": "catv00002002"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002774",
+          "display_name": "Freidoras",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/coccion/freidoras/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Coccion",
+            "group_id": "catv00002002"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002005",
+        "display_name": "Hogar",
+        "count": 50,
+        "data": {
+         "url": "/categoria/electro/hogar/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004091",
+          "display_name": "Planchas",
+          "count": 48,
+          "data": {
+           "url": "/categoria/electro/hogar/planchas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00002005"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005053",
+          "display_name": "Limpiadores de Vapor",
+          "count": 2,
+          "data": {
+           "url": "/categoria/electro/hogar/limpiadores-de-vapor/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00002005"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001993",
+        "display_name": "Tv",
+        "count": 65,
+        "data": {
+         "url": "/categoria/electro/tv/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004219",
+          "display_name": "Accesorios Tv",
+          "count": 65,
+          "data": {
+           "url": "/categoria/electro/tv/accesorios-tv/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Tv",
+            "group_id": "catv00001993"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002001",
+        "display_name": "Calefones y Termotanques",
+        "count": 21,
+        "data": {
+         "url": "/categoria/electro/calefones-y-termotanques/"
+        },
+        "children": [
+         {
+          "group_id": "catv00000637",
+          "display_name": "Termotanques",
+          "count": 21,
+          "data": {
+           "url": "/categoria/electro/calefones-y-termotanques/termotanques/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Calefones y Termotanques",
+            "group_id": "catv00002001"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002000",
+        "display_name": "Climatización",
+        "count": 33,
+        "data": {
+         "url": "/categoria/electro/climatización/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004493",
+          "display_name": "Calefacción",
+          "count": 33,
+          "data": {
+           "url": "/categoria/electro/climatización/calefacción/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Climatización",
+            "group_id": "catv00002000"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001997",
+        "display_name": "Gaming",
+        "count": 29,
+        "data": {
+         "url": "/categoria/electro/gaming/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004320",
+          "display_name": "Auriculares",
+          "count": 6,
+          "data": {
+           "url": "/categoria/electro/gaming/auriculares/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Gaming",
+            "group_id": "catv00001997"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006058",
+          "display_name": "Combo Mouse y Teclado",
+          "count": 23,
+          "data": {
+           "url": "/categoria/electro/gaming/combo-mouse-y-teclado/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Gaming",
+            "group_id": "catv00001997"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002006",
+        "display_name": "Salud",
+        "count": 2,
+        "data": {
+         "url": "/categoria/electro/salud/"
+        },
+        "children": [
+         {
+          "group_id": "catv00000678",
+          "display_name": "Nebulizadores",
+          "count": 2,
+          "data": {
+           "url": "/categoria/electro/salud/nebulizadores/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Salud",
+            "group_id": "catv00002006"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001994",
+        "display_name": "Informatica",
+        "count": 53,
+        "data": {
+         "url": "/categoria/electro/informatica/"
+        },
+        "children": [
+         {
+          "group_id": "catv00000602",
+          "display_name": "Accesorios y Cables",
+          "count": 6,
+          "data": {
+           "url": "/categoria/electro/informatica/accesorios-y-cables/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00000597",
+          "display_name": "Tablet",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/informatica/tablet/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006057",
+          "display_name": "Combo Mouse y Teclado",
+          "count": 22,
+          "data": {
+           "url": "/categoria/electro/informatica/combo-mouse-y-teclado/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002658",
+          "display_name": "Mouse",
+          "count": 9,
+          "data": {
+           "url": "/categoria/electro/informatica/mouse-y-teclados/mouse/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00000713",
+          "display_name": "Auriculares Pc",
+          "count": 5,
+          "data": {
+           "url": "/categoria/electro/informatica/auriculares-pc/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002185",
+          "display_name": "Teclados",
+          "count": 8,
+          "data": {
+           "url": "/categoria/electro/informatica/mouse-y-teclados/teclados/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002597",
+          "display_name": "Parlantes Pc",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/informatica/parlantes-pc/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004452",
+          "display_name": "Webcam",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/informatica/webcam/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Informatica",
+            "group_id": "catv00001994"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001996",
+        "display_name": "Audio",
+        "count": 6,
+        "data": {
+         "url": "/categoria/electro/audio/"
+        },
+        "children": [
+         {
+          "group_id": "catv00000612",
+          "display_name": "Auriculares",
+          "count": 6,
+          "data": {
+           "url": "/categoria/electro/audio/auriculares/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Audio",
+            "group_id": "catv00001996"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001999",
+        "display_name": "Lavado",
+        "count": 2,
+        "data": {
+         "url": "/categoria/electro/lavado/"
+        },
+        "children": [
+         {
+          "group_id": "catv00000632",
+          "display_name": "Lavarropas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/lavado/lavarropas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Lavado",
+            "group_id": "catv00001999"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00000634",
+          "display_name": "Secarropas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/lavado/secarropas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Lavado",
+            "group_id": "catv00001999"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002027",
+        "display_name": "Cuidado Personal",
+        "count": 2,
+        "data": {
+         "url": "/categoria/electro/cuidado-personal/"
+        },
+        "children": [
+         {
+          "group_id": "catv00000698",
+          "display_name": "Secadores de Cabello",
+          "count": 2,
+          "data": {
+           "url": "/categoria/catalogo/electro/cuidado-personal/secadores-de-cabello/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Cuidado Personal",
+            "group_id": "catv00002027"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00000696",
+          "display_name": "Planchas de Cabello",
+          "count": 2,
+          "data": {
+           "url": "/categoria/catalogo/electro/cuidado-personal/planchas-de-cabello/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Cuidado Personal",
+            "group_id": "catv00002027"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001998",
+        "display_name": "Heladeras y Freezer",
+        "count": 1,
+        "data": {
+         "url": "/categoria/electro/heladeras-y-freezer/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002664",
+          "display_name": "Freezer",
+          "count": 1,
+          "data": {
+           "url": "/categoria/electro/heladeras-y-freezer/freezer/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Electro",
+            "group_id": "catv00001990"
+           },
+           {
+            "display_name": "Heladeras y Freezer",
+            "group_id": "catv00001998"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Electro",
+          "group_id": "catv00001990"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001296",
+      "display_name": "Congelados",
+      "count": 32,
+      "data": {
+       "url": "/categoria/congelados/"
+      },
+      "children": [
+       {
+        "group_id": "catv00003238",
+        "display_name": "Comidas Congeladas",
+        "count": 10,
+        "data": {
+         "url": "/categoria/congelados/comidas-congeladas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003211",
+          "display_name": "Pizzas y Pizzetas",
+          "count": 10,
+          "data": {
+           "url": "/categoria/congelados/comidas-congeladas/pizzas-y-pizzetas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Comidas Congeladas",
+            "group_id": "catv00003238"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Congelados",
+          "group_id": "catv00001296"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003146",
+        "display_name": "Helados y Postres",
+        "count": 9,
+        "data": {
+         "url": "/categoria/congelados/helados-y-postres/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003247",
+          "display_name": "Helados en Pote",
+          "count": 9,
+          "data": {
+           "url": "/categoria/congelados/helados-y-postres/helados-en-pote/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Helados y Postres",
+            "group_id": "catv00003146"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Congelados",
+          "group_id": "catv00001296"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003237",
+        "display_name": "Hamburguesas y Milanesas",
+        "count": 6,
+        "data": {
+         "url": "/categoria/congelados/hamburguesas-y-milanesas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003149",
+          "display_name": "Milanesas y Supremas",
+          "count": 2,
+          "data": {
+           "url": "/categoria/congelados/hamburguesas-y-milanesas/milanesas-y-supremas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Hamburguesas y Milanesas",
+            "group_id": "catv00003237"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003159",
+          "display_name": "Hamburguesas y Medallones",
+          "count": 4,
+          "data": {
+           "url": "/categoria/congelados/hamburguesas-y-milanesas/hamburguesas-y-medallones/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Hamburguesas y Milanesas",
+            "group_id": "catv00003237"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Congelados",
+          "group_id": "catv00001296"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003239",
+        "display_name": "Nuggets, Patitas y Bocaditos",
+        "count": 3,
+        "data": {
+         "url": "/categoria/congelados/nuggets,-patitas-y-bocaditos/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004516",
+          "display_name": "Bastones de Mozzarella",
+          "count": 1,
+          "data": {
+           "url": "/categoria/congelados/nuggets,-patitas-y-bocaditos/bastones-de-mozzarella/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Nuggets, Patitas y Bocaditos",
+            "group_id": "catv00003239"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004514",
+          "display_name": "Bocaditos y Formitas",
+          "count": 2,
+          "data": {
+           "url": "/categoria/congelados/nuggets,-patitas-y-bocaditos/bocaditos-y-formitas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Nuggets, Patitas y Bocaditos",
+            "group_id": "catv00003239"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Congelados",
+          "group_id": "catv00001296"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003240",
+        "display_name": "Pescaderia",
+        "count": 4,
+        "data": {
+         "url": "/categoria/congelados/pescaderia/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004500",
+          "display_name": "Rebozados",
+          "count": 3,
+          "data": {
+           "url": "/categoria/congelados/pescaderia/rebozados/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Pescaderia",
+            "group_id": "catv00003240"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003760",
+          "display_name": "Mariscos",
+          "count": 1,
+          "data": {
+           "url": "/categoria/congelados/pescaderia/mariscos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Congelados",
+            "group_id": "catv00001296"
+           },
+           {
+            "display_name": "Pescaderia",
+            "group_id": "catv00003240"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Congelados",
+          "group_id": "catv00001296"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001260",
+      "display_name": "Hogar",
+      "count": 408,
+      "data": {
+       "url": "/categoria/hogar/"
+      },
+      "children": [
+       {
+        "group_id": "catv00002061",
+        "display_name": "Rodados",
+        "count": 52,
+        "data": {
+         "url": "/categoria/hogar/rodados/"
+        },
+        "children": [
+         {
+          "group_id": "catv00006305",
+          "display_name": "Rodados con Motor",
+          "count": 27,
+          "data": {
+           "url": "/categoria/hogar/rodados/rodados-con-motor/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Rodados",
+            "group_id": "catv00002061"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006306",
+          "display_name": "Rodados sin Motor",
+          "count": 24,
+          "data": {
+           "url": "/categoria/hogar/rodados/rodados-sin-motor/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Rodados",
+            "group_id": "catv00002061"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006304",
+          "display_name": "Accesorios",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/rodados/accesorios/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Rodados",
+            "group_id": "catv00002061"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00004335",
+        "display_name": "Juguetería",
+        "count": 122,
+        "data": {
+         "url": "/categoria/hogar/juguetería/"
+        },
+        "children": [
+         {
+          "group_id": "catv00005247",
+          "display_name": "Vehículos y Pistas",
+          "count": 75,
+          "data": {
+           "url": "/categoria/hogar/juguetería/vehículos-y-pistas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Juguetería",
+            "group_id": "catv00004335"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005395",
+          "display_name": "Primera Infancia",
+          "count": 7,
+          "data": {
+           "url": "/categoria/hogar/juguetería/primera-infancia/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Juguetería",
+            "group_id": "catv00004335"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005227",
+          "display_name": "Disfraces y Accesorios",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/juguetería/disfraces-y-accesorios/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Juguetería",
+            "group_id": "catv00004335"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005310",
+          "display_name": "Juegos y Creatividad",
+          "count": 15,
+          "data": {
+           "url": "/categoria/hogar/juguetería/juegos-y-creatividad/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Juguetería",
+            "group_id": "catv00004335"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005317",
+          "display_name": "Juguetes Aire Libre",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/juguetería/juguetes-aire-libre/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Juguetería",
+            "group_id": "catv00004335"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005235",
+          "display_name": "Muñecas y Muñecos",
+          "count": 22,
+          "data": {
+           "url": "/categoria/hogar/juguetería/muñecas-y-muñecos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Juguetería",
+            "group_id": "catv00004335"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005234",
+          "display_name": "Juegos de Rol Herramientas, Armas, Otros",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/juguetería/juegos-de-rol-herramientas,-armas,-otros/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Juguetería",
+            "group_id": "catv00004335"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001374",
+        "display_name": "Libros",
+        "count": 164,
+        "data": {
+         "url": "/categoria/hogar/libros/"
+        },
+        "children": [],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00006487",
+        "display_name": "Automotor",
+        "count": 4,
+        "data": {
+         "url": "/categoria/hogar/automotor/"
+        },
+        "children": [
+         {
+          "group_id": "catv00006496",
+          "display_name": "Repuestos",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/automotor/repuestos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Automotor",
+            "group_id": "catv00006487"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006490",
+          "display_name": "Accesorios",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/automotor/accesorios/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Automotor",
+            "group_id": "catv00006487"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00005764",
+        "display_name": "Uso Diario",
+        "count": 7,
+        "data": {
+         "url": "/categoria/hogar/uso-diario/"
+        },
+        "children": [
+         {
+          "group_id": "catv00005809",
+          "display_name": "Cestos de Basura",
+          "count": 7,
+          "data": {
+           "url": "/categoria/hogar/uso-diario/cestos-de-basura/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Uso Diario",
+            "group_id": "catv00005764"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00005757",
+        "display_name": "Bazar",
+        "count": 17,
+        "data": {
+         "url": "/categoria/hogar/bazar/"
+        },
+        "children": [
+         {
+          "group_id": "catv00005758",
+          "display_name": "Coccion",
+          "count": 7,
+          "data": {
+           "url": "/categoria/hogar/bazar/coccion/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Bazar",
+            "group_id": "catv00005757"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005765",
+          "display_name": "Utensilios y Cubiertos",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/bazar/utensilios-y-cubiertos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Bazar",
+            "group_id": "catv00005757"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005761",
+          "display_name": "Exterior",
+          "count": 5,
+          "data": {
+           "url": "/categoria/hogar/bazar/exterior/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Bazar",
+            "group_id": "catv00005757"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00005762",
+          "display_name": "Hermeticos",
+          "count": 3,
+          "data": {
+           "url": "/categoria/hogar/bazar/hermeticos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Bazar",
+            "group_id": "catv00005757"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002118",
+        "display_name": "Decoración",
+        "count": 4,
+        "data": {
+         "url": "/categoria/hogar/decoración/"
+        },
+        "children": [
+         {
+          "group_id": "catv00005183",
+          "display_name": "Relojes",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/decoración/relojes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Decoración",
+            "group_id": "catv00002118"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002133",
+          "display_name": "Jarrones y Floreros",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/decoración/jarrones-y-floreros/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Decoración",
+            "group_id": "catv00002118"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004978",
+          "display_name": "Manteles Descartables",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/cotillon/decoración/manteles-descartables/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Decoración",
+            "group_id": "catv00002118"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004971",
+          "display_name": "Cotillon",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/decoración/cotillon/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Decoración",
+            "group_id": "catv00002118"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001362",
+        "display_name": "Accesorios de Iluminación y Electricidad",
+        "count": 4,
+        "data": {
+         "url": "/categoria/hogar/accesorios-de-iluminación-y-electricidad/"
+        },
+        "children": [
+         {
+          "group_id": "catv00006119",
+          "display_name": "Instalacion",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/accesorios-de-iluminación-y-electricidad/instalacion/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Accesorios de Iluminación y Electricidad",
+            "group_id": "catv00001362"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002525",
+          "display_name": "Pilas y Baterias",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/accesorios-de-iluminación-y-electricidad/pilas-y-baterias/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Accesorios de Iluminación y Electricidad",
+            "group_id": "catv00001362"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002526",
+          "display_name": "Prolongadores",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/accesorios-de-iluminación-y-electricidad/prolongadores/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Accesorios de Iluminación y Electricidad",
+            "group_id": "catv00001362"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00006878",
+        "display_name": "Mascotas",
+        "count": 1,
+        "data": {
+         "url": "/categoria/hogar/mascotas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00006880",
+          "display_name": "Alimento para Mascotas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/mascotas/alimento-para-mascotas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Mascotas",
+            "group_id": "catv00006878"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001366",
+        "display_name": "Jardineria",
+        "count": 7,
+        "data": {
+         "url": "/categoria/hogar/jardineria/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002464",
+          "display_name": "Herramientas de Jardin",
+          "count": 5,
+          "data": {
+           "url": "/categoria/hogar/jardineria/herramientas-de-jardin/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Jardineria",
+            "group_id": "catv00001366"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006153",
+          "display_name": "Accesorios para Riego",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/jardineria/accesorios-para-riego/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Jardineria",
+            "group_id": "catv00001366"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006155",
+          "display_name": "Insecticidas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/jardineria/insecticidas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Jardineria",
+            "group_id": "catv00001366"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00006489",
+        "display_name": "Ferreteria",
+        "count": 25,
+        "data": {
+         "url": "/categoria/hogar/ferreteria/"
+        },
+        "children": [
+         {
+          "group_id": "catv00006603",
+          "display_name": "Herramientas Electricas",
+          "count": 19,
+          "data": {
+           "url": "/categoria/hogar/ferreteria/herramientas-electricas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Ferreteria",
+            "group_id": "catv00006489"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006602",
+          "display_name": "Generador Electrico",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/ferreteria/generador-electrico/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Ferreteria",
+            "group_id": "catv00006489"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006606",
+          "display_name": "Pintureria",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/ferreteria/pintureria/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Ferreteria",
+            "group_id": "catv00006489"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006591",
+          "display_name": "Accesorios Herramientas Electricas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/ferreteria/accesorios-herramientas-electricas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Ferreteria",
+            "group_id": "catv00006489"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00006604",
+          "display_name": "Herramientas Manuales",
+          "count": 2,
+          "data": {
+           "url": "/categoria/hogar/ferreteria/herramientas-manuales/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Ferreteria",
+            "group_id": "catv00006489"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00002398",
+        "display_name": "Libreria",
+        "count": 3,
+        "data": {
+         "url": "/categoria/hogar/libreria/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002400",
+          "display_name": "Cuadernos, Carpetas y Repuestos",
+          "count": 1,
+          "data": {
+           "url": "/categoria/hogar/libreria/cuadernos,-carpetas-y-repuestos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Hogar",
+            "group_id": "catv00001260"
+           },
+           {
+            "display_name": "Libreria",
+            "group_id": "catv00002398"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Hogar",
+          "group_id": "catv00001260"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001261",
+      "display_name": "Aire Libre",
+      "count": 20,
+      "data": {
+       "url": "/categoria/aire-libre/"
+      },
+      "children": [
+       {
+        "group_id": "catv00004004",
+        "display_name": "Parrilla",
+        "count": 4,
+        "data": {
+         "url": "/categoria/aire-libre/parrilla/"
+        },
+        "children": [
+         {
+          "group_id": "catv00006655",
+          "display_name": "Hornos a Leña",
+          "count": 3,
+          "data": {
+           "url": "/categoria/aire-libre/parrilla/hornos-a-leña/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Aire Libre",
+            "group_id": "catv00001261"
+           },
+           {
+            "display_name": "Parrilla",
+            "group_id": "catv00004004"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00004005",
+          "display_name": "Parrillas",
+          "count": 1,
+          "data": {
+           "url": "/categoria/aire-libre/parrilla/parrillas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Aire Libre",
+            "group_id": "catv00001261"
+           },
+           {
+            "display_name": "Parrilla",
+            "group_id": "catv00004004"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Aire Libre",
+          "group_id": "catv00001261"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001368",
+        "display_name": "Camping",
+        "count": 14,
+        "data": {
+         "url": "/categoria/aire-libre/camping/"
+        },
+        "children": [
+         {
+          "group_id": "catv00005363",
+          "display_name": "Accesorios",
+          "count": 7,
+          "data": {
+           "url": "/categoria/aire-libre/camping/accesorios/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Aire Libre",
+            "group_id": "catv00001261"
+           },
+           {
+            "display_name": "Camping",
+            "group_id": "catv00001368"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Aire Libre",
+          "group_id": "catv00001261"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001369",
+        "display_name": "Deportes y Ejercicios",
+        "count": 2,
+        "data": {
+         "url": "/categoria/aire-libre/deportes-y-ejercicios/"
+        },
+        "children": [
+         {
+          "group_id": "catv00002453",
+          "display_name": "Gimnasio y Ejercicios",
+          "count": 2,
+          "data": {
+           "url": "/categoria/aire-libre/deportes-y-ejercicios/gimnasio-y-ejercicios/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Aire Libre",
+            "group_id": "catv00001261"
+           },
+           {
+            "display_name": "Deportes y Ejercicios",
+            "group_id": "catv00001369"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Aire Libre",
+          "group_id": "catv00001261"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001256",
+      "display_name": "Bebidas",
+      "count": 18,
+      "data": {
+       "url": "/categoria/bebidas/"
+      },
+      "children": [
+       {
+        "group_id": "catv00001301",
+        "display_name": "Bebidas sin Alcohol",
+        "count": 4,
+        "data": {
+         "url": "/categoria/bebidas/bebidas-sin-alcohol/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001542",
+          "display_name": "Jugos",
+          "count": 2,
+          "data": {
+           "url": "/categoria/bebidas/bebidas-sin-alcohol/jugos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Bebidas",
+            "group_id": "catv00001256"
+           },
+           {
+            "display_name": "Bebidas sin Alcohol",
+            "group_id": "catv00001301"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001537",
+          "display_name": "Amargos",
+          "count": 2,
+          "data": {
+           "url": "/categoria/bebidas/bebidas-sin-alcohol/amargos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Bebidas",
+            "group_id": "catv00001256"
+           },
+           {
+            "display_name": "Bebidas sin Alcohol",
+            "group_id": "catv00001301"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Bebidas",
+          "group_id": "catv00001256"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001300",
+        "display_name": "Bebidas con Alcohol",
+        "count": 14,
+        "data": {
+         "url": "/categoria/bebidas/bebidas-con-alcohol/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001532",
+          "display_name": "Vinos",
+          "count": 9,
+          "data": {
+           "url": "/categoria/bebidas/bebidas-con-alcohol/vinos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Bebidas",
+            "group_id": "catv00001256"
+           },
+           {
+            "display_name": "Bebidas con Alcohol",
+            "group_id": "catv00001300"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001529",
+          "display_name": "Licores",
+          "count": 4,
+          "data": {
+           "url": "/categoria/bebidas/bebidas-con-alcohol/licores/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Bebidas",
+            "group_id": "catv00001256"
+           },
+           {
+            "display_name": "Bebidas con Alcohol",
+            "group_id": "catv00001300"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001528",
+          "display_name": "Champagne y Espumantes",
+          "count": 1,
+          "data": {
+           "url": "/categoria/bebidas/bebidas-con-alcohol/champagne-y-espumantes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Bebidas",
+            "group_id": "catv00001256"
+           },
+           {
+            "display_name": "Bebidas con Alcohol",
+            "group_id": "catv00001300"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Bebidas",
+          "group_id": "catv00001256"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001258",
+      "display_name": "Limpieza",
+      "count": 68,
+      "data": {
+       "url": "/categoria/limpieza/"
+      },
+      "children": [
+       {
+        "group_id": "catv00002752",
+        "display_name": "Lavado",
+        "count": 44,
+        "data": {
+         "url": "/categoria/limpieza/lavado/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003026",
+          "display_name": "Jabón Liquido y en Polvo",
+          "count": 44,
+          "data": {
+           "url": "/categoria/limpieza/lavado/jabón-liquido-y-en-polvo/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Limpieza",
+            "group_id": "catv00001258"
+           },
+           {
+            "display_name": "Lavado",
+            "group_id": "catv00002752"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Limpieza",
+          "group_id": "catv00001258"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003035",
+        "display_name": "Accesorios de Limpieza",
+        "count": 3,
+        "data": {
+         "url": "/categoria/limpieza/accesorios-de-limpieza/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003072",
+          "display_name": "Trapo de Pisos",
+          "count": 3,
+          "data": {
+           "url": "/categoria/limpieza/accesorios-de-limpieza/trapo-de-pisos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Limpieza",
+            "group_id": "catv00001258"
+           },
+           {
+            "display_name": "Accesorios de Limpieza",
+            "group_id": "catv00003035"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Limpieza",
+          "group_id": "catv00001258"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003038",
+        "display_name": "Limpieza de Cocina",
+        "count": 12,
+        "data": {
+         "url": "/categoria/limpieza/limpieza-de-cocina/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003080",
+          "display_name": "Limpiadores de Cocina",
+          "count": 1,
+          "data": {
+           "url": "/categoria/limpieza/limpieza-de-cocina/limpiadores-de-cocina/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Limpieza",
+            "group_id": "catv00001258"
+           },
+           {
+            "display_name": "Limpieza de Cocina",
+            "group_id": "catv00003038"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003043",
+          "display_name": "Detergentes",
+          "count": 11,
+          "data": {
+           "url": "/categoria/limpieza/limpieza-de-cocina/detergentes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Limpieza",
+            "group_id": "catv00001258"
+           },
+           {
+            "display_name": "Limpieza de Cocina",
+            "group_id": "catv00003038"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Limpieza",
+          "group_id": "catv00001258"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003025",
+        "display_name": "Insecticidas",
+        "count": 2,
+        "data": {
+         "url": "/categoria/limpieza/insecticidas/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003030",
+          "display_name": "Moscas y Mosquitos",
+          "count": 2,
+          "data": {
+           "url": "/categoria/limpieza/insecticidas/moscas-y-mosquitos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Limpieza",
+            "group_id": "catv00001258"
+           },
+           {
+            "display_name": "Insecticidas",
+            "group_id": "catv00003025"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Limpieza",
+          "group_id": "catv00001258"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003039",
+        "display_name": "Limpieza de Pisos y Superficies",
+        "count": 1,
+        "data": {
+         "url": "/categoria/limpieza/limpieza-de-pisos-y-superficies/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003042",
+          "display_name": "Limpiadores de Pisos y Superficies",
+          "count": 1,
+          "data": {
+           "url": "/categoria/limpieza/limpieza-de-pisos-y-superficies/limpiadores-de-pisos-y-superficies/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Limpieza",
+            "group_id": "catv00001258"
+           },
+           {
+            "display_name": "Limpieza de Pisos y Superficies",
+            "group_id": "catv00003039"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Limpieza",
+          "group_id": "catv00001258"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003036",
+        "display_name": "Desodorantes de Ambiente",
+        "count": 6,
+        "data": {
+         "url": "/categoria/limpieza/desodorantes-de-ambiente/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003096",
+          "display_name": "Aromatizantes de Ambiente",
+          "count": 6,
+          "data": {
+           "url": "/categoria/limpieza/desodorantes-de-ambiente/aromatizantes-de-ambiente/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Limpieza",
+            "group_id": "catv00001258"
+           },
+           {
+            "display_name": "Desodorantes de Ambiente",
+            "group_id": "catv00003036"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Limpieza",
+          "group_id": "catv00001258"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     },
+     {
+      "group_id": "catv00001257",
+      "display_name": "Perfumería",
+      "count": 84,
+      "data": {
+       "url": "/categoria/perfumería/"
+      },
+      "children": [
+       {
+        "group_id": "catv00001314",
+        "display_name": "Cuidado del Cabello",
+        "count": 16,
+        "data": {
+         "url": "/categoria/perfumería/cuidado-del-cabello/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001587",
+          "display_name": "Shampoo",
+          "count": 7,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-del-cabello/shampoo/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado del Cabello",
+            "group_id": "catv00001314"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001590",
+          "display_name": "Acondicionador",
+          "count": 6,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-del-cabello/acondicionador/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado del Cabello",
+            "group_id": "catv00001314"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00002772",
+          "display_name": "Modeladores de Peinado",
+          "count": 2,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-del-cabello/modeladores-de-peinado/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado del Cabello",
+            "group_id": "catv00001314"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00003480",
+          "display_name": "Tratamientos",
+          "count": 1,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-del-cabello/tratamientos/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado del Cabello",
+            "group_id": "catv00001314"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001306",
+        "display_name": "Accesorios",
+        "count": 1,
+        "data": {
+         "url": "/categoria/perfumería/accesorios/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001555",
+          "display_name": "Elementos para el Cabello",
+          "count": 1,
+          "data": {
+           "url": "/categoria/perfumería/accesorios/elementos-para-el-cabello/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Accesorios",
+            "group_id": "catv00001306"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001307",
+        "display_name": "Protección Femenina",
+        "count": 11,
+        "data": {
+         "url": "/categoria/perfumería/protección-femenina/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003496",
+          "display_name": "Toallitas",
+          "count": 11,
+          "data": {
+           "url": "/categoria/perfumería/protección-femenina/toallitas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Protección Femenina",
+            "group_id": "catv00001307"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001302",
+        "display_name": "Cuidado Personal",
+        "count": 1,
+        "data": {
+         "url": "/categoria/perfumería/cuidado-personal/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001547",
+          "display_name": "Depilación",
+          "count": 1,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-personal/depilación/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado Personal",
+            "group_id": "catv00001302"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001313",
+        "display_name": "Cuidado del Bebé y la Mamá",
+        "count": 4,
+        "data": {
+         "url": "/categoria/perfumería/cuidado-del-bebé-y-la-mamá/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001781",
+          "display_name": "Momentos del Bebé",
+          "count": 4,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-del-bebé-y-la-mamá/momentos-del-bebé/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado del Bebé y la Mamá",
+            "group_id": "catv00001313"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001585",
+          "display_name": "Cuidado Infantil",
+          "count": 2,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-del-bebé-y-la-mamá/cuidado-infantil/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado del Bebé y la Mamá",
+            "group_id": "catv00001313"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001310",
+        "display_name": "Cremas de Belleza",
+        "count": 18,
+        "data": {
+         "url": "/categoria/perfumería/cremas-de-belleza/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001563",
+          "display_name": "Cremas de Manos y Pies",
+          "count": 4,
+          "data": {
+           "url": "/categoria/perfumería/cremas-de-belleza/cremas-de-manos-y-pies/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cremas de Belleza",
+            "group_id": "catv00001310"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001564",
+          "display_name": "Cremas Corporales",
+          "count": 12,
+          "data": {
+           "url": "/categoria/perfumería/cremas-de-belleza/cremas-corporales/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cremas de Belleza",
+            "group_id": "catv00001310"
+           }
+          ]
+         },
+         {
+          "group_id": "catv00001562",
+          "display_name": "Cuidado Facial",
+          "count": 2,
+          "data": {
+           "url": "/categoria/perfumería/cremas-de-belleza/cuidado-facial/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cremas de Belleza",
+            "group_id": "catv00001310"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003503",
+        "display_name": "Cuidado Bucal",
+        "count": 1,
+        "data": {
+         "url": "/categoria/perfumería/cuidado-bucal/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003507",
+          "display_name": "Cepillos Dentales",
+          "count": 1,
+          "data": {
+           "url": "/categoria/perfumería/cuidado-bucal/cepillos-dentales/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cuidado Bucal",
+            "group_id": "catv00003503"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00003485",
+        "display_name": "Pañales y Productos para Incontinencia",
+        "count": 1,
+        "data": {
+         "url": "/categoria/perfumería/pañales-y-productos-para-incontinencia/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003488",
+          "display_name": "Pañales para Bebé",
+          "count": 1,
+          "data": {
+           "url": "/categoria/perfumería/pañales-y-productos-para-incontinencia/pañales-para-bebé/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Pañales y Productos para Incontinencia",
+            "group_id": "catv00003485"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001309",
+        "display_name": "Farmacia",
+        "count": 2,
+        "data": {
+         "url": "/categoria/perfumería/farmacia/"
+        },
+        "children": [
+         {
+          "group_id": "catv00004314",
+          "display_name": "Máscaras de Protección",
+          "count": 2,
+          "data": {
+           "url": "/categoria/perfumería/farmacia/máscaras-de-protección/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Farmacia",
+            "group_id": "catv00001309"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001315",
+        "display_name": "Desodorantes y Antitranspirantes",
+        "count": 7,
+        "data": {
+         "url": "/categoria/perfumería/desodorantes-y-antitranspirantes/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003498",
+          "display_name": "Antitranspirantes",
+          "count": 7,
+          "data": {
+           "url": "/categoria/perfumería/desodorantes-y-antitranspirantes/antitranspirantes/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Desodorantes y Antitranspirantes",
+            "group_id": "catv00001315"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001311",
+        "display_name": "Colonias y Perfumes",
+        "count": 2,
+        "data": {
+         "url": "/categoria/perfumería/colonias-y-perfumes/"
+        },
+        "children": [
+         {
+          "group_id": "catv00001570",
+          "display_name": "Colonias Masculinas",
+          "count": 2,
+          "data": {
+           "url": "/categoria/perfumería/colonias-y-perfumes/colonias-masculinas/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Colonias y Perfumes",
+            "group_id": "catv00001311"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       },
+       {
+        "group_id": "catv00001308",
+        "display_name": "Cosméticos",
+        "count": 20,
+        "data": {
+         "url": "/categoria/perfumería/cosméticos/"
+        },
+        "children": [
+         {
+          "group_id": "catv00003470",
+          "display_name": "Desmaquilladores",
+          "count": 20,
+          "data": {
+           "url": "/categoria/perfumería/cosméticos/desmaquilladores/"
+          },
+          "children": [],
+          "parents": [
+           {
+            "display_name": "Categorias",
+            "group_id": "categoria"
+           },
+           {
+            "display_name": "Perfumería",
+            "group_id": "catv00001257"
+           },
+           {
+            "display_name": "Cosméticos",
+            "group_id": "catv00001308"
+           }
+          ]
+         }
+        ],
+        "parents": [
+         {
+          "display_name": "Categorias",
+          "group_id": "categoria"
+         },
+         {
+          "display_name": "Perfumería",
+          "group_id": "catv00001257"
+         }
+        ]
+       }
+      ],
+      "parents": [
+       {
+        "display_name": "Categorias",
+        "group_id": "categoria"
+       }
+      ]
+     }
+    ],
+    "parents": []
+   }
+  ]
+ }
+}

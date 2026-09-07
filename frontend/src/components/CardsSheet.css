@@ -1,0 +1,120 @@
+.cards-note,
+.cards-error {
+  padding: var(--s4) var(--s5);
+  font-size: var(--t-sm);
+  line-height: var(--lh-normal);
+  color: var(--text-2);
+}
+
+.cards-error {
+  color: var(--danger);
+}
+
+.cards-list {
+  list-style: none;
+  padding: 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--s2);
+  padding: var(--s4) var(--s5);
+  border-top: 1px solid var(--border);
+}
+
+.card-main {
+  min-width: 0;
+}
+
+.card-label {
+  font-weight: 500;
+}
+
+.card-meta {
+  margin-top: 2px;
+  font-size: var(--t-micro);
+  color: var(--text-3);
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+  margin-top: var(--s2);
+}
+
+.card-promos {
+  margin-top: var(--s2);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--win);
+}
+
+.card-actions {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s1);
+}
+
+.card-verify {
+  grid-column: 1 / -1;
+  margin-top: var(--s2);
+  padding: var(--s2) var(--s3);
+  border-radius: var(--r-control);
+  background: var(--surface-2);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-2);
+}
+
+.card-verify--ok {
+  background: var(--win-tint);
+  color: var(--win);
+}
+
+/* --- alta ---------------------------------------------------------------- */
+
+.cards-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s5);
+  padding: var(--s5);
+  border-top: 1px solid var(--border);
+}
+
+.cards-privacy {
+  padding: var(--s3);
+  border-radius: var(--r-control);
+  background: var(--surface-2);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-2);
+}
+
+.cards-rails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.cards-rail {
+  min-height: 34px;
+  padding: 0 var(--s3);
+  font-size: var(--t-sm);
+  cursor: pointer;
+}
+
+.cards-rail--on {
+  background: var(--accent);
+  color: white;
+}
+
+.cards-form-actions {
+  display: flex;
+  gap: var(--s2);
+}
+
+.cards-form-actions .btn {
+  flex: 1;
+}

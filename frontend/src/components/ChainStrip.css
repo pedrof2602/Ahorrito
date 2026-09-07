@@ -1,0 +1,151 @@
+/* Grilla y no fila con scroll: el ancho que haya se reparte entre todas las
+   cadenas, y si no alcanza para una fila bajan a la siguiente. Que entren
+   todas es el requisito —una comparación a medias no es una comparación—, así
+   que lo que cede es el ancho de cada tarjeta, nunca la cantidad visible. */
+.wallet {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: var(--s2);
+  align-content: start;
+}
+
+.wallet-card {
+  min-width: 0;
+  background: var(--surface);
+  border-radius: var(--r-chip-card);
+  border: 1px solid transparent;
+  padding: var(--s3);
+  box-shadow: var(--shadow-pop);
+}
+
+/* Sin etiqueta: el borde verde, el tinte y el número en verde ya dicen cuál
+   ganó, y un cartel encima de una tarjeta angosta se corta a la mitad. */
+.wallet-card--win {
+  border-color: color-mix(in srgb, var(--win) 35%, transparent);
+  background: linear-gradient(180deg, var(--win-tint), var(--surface) 60%);
+}
+
+.wallet-card--failed {
+  opacity: 0.7;
+  box-shadow: none;
+}
+
+.wallet-name {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--t-sm);
+  line-height: var(--lh-snug);
+  color: var(--text-2);
+  min-width: 0;
+}
+
+/* Identifica la cadena de un vistazo sin pintar ningún número — ver el
+   comentario de `chainColor` y el de los tokens. */
+.wallet-dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--dot, var(--text-3));
+}
+
+/* El cartel de la ganadora solo aparece cuando la tarjeta es ancha: en el
+   teléfono, sobre una tarjeta de 140px, se cortaba a la mitad. Ahí el trabajo
+   lo hacen el borde verde, el tinte y el número en verde, que no se cortan. */
+.wallet-badge {
+  display: none;
+}
+
+.wallet-total {
+  margin-top: var(--s1);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-title);
+}
+
+.wallet-total--win {
+  color: var(--win);
+}
+
+.wallet-total--empty {
+  color: var(--text-3);
+}
+
+.wallet-was {
+  margin-top: 2px;
+  font-size: var(--t-micro);
+  color: var(--text-3);
+  text-decoration: line-through;
+}
+
+.wallet-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s1);
+}
+
+.wallet-meta:not(:empty) {
+  margin-top: var(--s2);
+}
+
+.wallet-scope {
+  margin-top: var(--s2);
+  font-size: var(--t-micro);
+  line-height: var(--lh-snug);
+  color: var(--text-3);
+}
+
+/* Con más aire disponible la tarjeta respira y el número sube a la escala
+   grande: es el mismo componente, no una variante. */
+@media (min-width: 480px) {
+  .wallet {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--s3);
+  }
+
+  .wallet-card {
+    padding: var(--s4);
+  }
+
+  .wallet-total {
+    font-size: var(--t-total);
+  }
+}
+
+/* En escritorio son tantas columnas como cadenas, todas iguales: la
+   comparación se lee de izquierda a derecha en una sola línea de tarjetas, no
+   en una grilla que se reacomoda según cuántas hayan contestado. */
+@media (min-width: 1040px) {
+  .wallet {
+    grid-template-columns: repeat(var(--cols, 4), minmax(0, 1fr));
+  }
+
+  /* Dos líneas de alto siempre, aunque la cadena se llame «Coto»: es lo que
+     mantiene los cuatro precios en la misma línea de base. Con la altura libre,
+     «Supermercados DIA» envuelve, su tarjeta crece y su total —justo el de la
+     ganadora— queda un renglón más abajo que los otros tres. */
+  .wallet-name {
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: calc(2 * var(--lh-snug) * 1em);
+  }
+
+  .wallet-badge {
+    display: inline-block;
+    margin-left: auto;
+    flex: none;
+    padding: 2px var(--s2);
+    border-radius: var(--r-pill);
+    background: var(--win-tint);
+    color: var(--win);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .wallet-total {
+    font-size: 26px;
+  }
+}

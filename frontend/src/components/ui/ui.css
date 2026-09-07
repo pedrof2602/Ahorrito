@@ -1,0 +1,305 @@
+/* Primitivas compartidas: sheet, botones, chips, campos. */
+
+/* --- Sheet --------------------------------------------------------------- */
+
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgb(0 0 0 / 0.45);
+  animation: sheet-fade var(--dur-sheet) var(--ease);
+}
+
+.sheet {
+  position: fixed;
+  z-index: 41;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  /* Deja ver una franja del contenido de atrás: recuerda que el sheet está
+     encima de algo y que tocar afuera lo cierra. */
+  max-height: min(92dvh, 100dvh - var(--s8));
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-radius: var(--r-sheet) var(--r-sheet) 0 0;
+  box-shadow: var(--shadow-sheet);
+  animation: sheet-up var(--dur-sheet) var(--ease);
+}
+
+@media (min-width: 640px) {
+  .sheet {
+    inset: auto auto var(--s6) 50%;
+    translate: -50% 0;
+    width: min(520px, calc(100vw - var(--s8)));
+    border: 1px solid var(--border);
+    border-radius: var(--r-sheet);
+  }
+}
+
+.sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  padding: var(--s4) var(--s5) var(--s3);
+  border-bottom: 1px solid var(--border);
+}
+
+.sheet-title {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: var(--tr-title);
+}
+
+.sheet-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  /* `env()` mantiene el último elemento por encima de la barra de gestos del
+     teléfono, donde un botón es intocable. */
+  padding-bottom: max(var(--s5), env(safe-area-inset-bottom));
+}
+
+.sheet-foot {
+  padding: var(--s3) var(--s5) max(var(--s4), env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+@keyframes sheet-up {
+  from {
+    translate: 0 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  @keyframes sheet-up {
+    from {
+      translate: -50% 12px;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes sheet-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+/* --- Botones ------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s2);
+  /* 44px es el mínimo táctil real; esto se usa con la lista en una mano. */
+  min-height: 44px;
+  padding: 0 var(--s4);
+  border-radius: var(--r-control);
+  font-size: var(--t-body);
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid transparent;
+  transition: background var(--dur-fast) var(--ease),
+    opacity var(--dur-fast) var(--ease);
+}
+
+.btn:active:not(:disabled) {
+  background: var(--border);
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn--primary:active:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+.btn--ghost {
+  background: none;
+  border-color: var(--border-strong);
+}
+
+.btn--quiet {
+  background: none;
+  color: var(--text-2);
+  padding: 0 var(--s2);
+}
+
+.btn--danger {
+  background: none;
+  color: var(--danger);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* Círculo con superficie propia, no un ícono suelto flotando en la barra: es
+   lo que hace que un botón fantasma se lea como control y no como adorno. */
+.btn--icon {
+  min-width: 44px;
+  border-radius: var(--r-pill);
+  padding: 0;
+  background: var(--surface-2);
+  color: var(--text-2);
+  transition: background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.btn--icon:active:not(:disabled) {
+  background: var(--border);
+}
+
+@media (hover: hover) {
+  .btn--icon:hover:not(:disabled) {
+    background: var(--accent-tint);
+    color: var(--accent-strong);
+  }
+}
+
+/* --- Chip ---------------------------------------------------------------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s1);
+  padding: 2px var(--s2);
+  border-radius: var(--r-pill);
+  font-size: var(--t-micro);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.6;
+  white-space: nowrap;
+  color: var(--text-2);
+  background: var(--surface-2);
+}
+
+.chip--win {
+  color: var(--win);
+  background: var(--win-tint);
+}
+
+.chip--warn {
+  color: var(--warn);
+  background: var(--warn-tint);
+}
+
+.chip--danger {
+  color: var(--danger);
+  background: var(--danger-tint);
+}
+
+.chip--bare {
+  background: none;
+  padding-inline: 0;
+  color: var(--text-3);
+}
+
+/* --- Campos -------------------------------------------------------------- */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.field-label {
+  font-size: var(--t-label);
+  font-weight: 500;
+  letter-spacing: var(--tr-label);
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.input,
+.select {
+  width: 100%;
+  min-height: 44px;
+  padding: 0 var(--s3);
+  border-radius: var(--r-control);
+  background: var(--surface-2);
+  border: 1px solid transparent;
+  color: var(--text);
+  /* 16px justos: por debajo de eso iOS hace zoom al enfocar el campo y
+     descoloca toda la pantalla. */
+  font-size: 16px;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.input::placeholder {
+  color: var(--text-3);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.input:focus-visible,
+.select:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.field-hint {
+  font-size: var(--t-sm);
+  color: var(--text-3);
+  line-height: var(--lh-snug);
+}
+
+.field-error {
+  font-size: var(--t-sm);
+  color: var(--danger);
+  line-height: var(--lh-snug);
+}
+
+/* --- segmentado: elegir uno de dos o tres ---------------------------------- */
+
+.seg {
+  display: flex;
+  gap: var(--s1);
+  padding: 3px;
+  border-radius: var(--r-pill);
+  background: var(--surface-2);
+}
+
+.seg-btn {
+  flex: 1;
+  min-height: 38px;
+  border-radius: var(--r-pill);
+  font-size: var(--t-sm);
+  font-weight: 500;
+  color: var(--text-2);
+  transition: background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.seg-btn--on {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+/* En oscuro no hay sombra que dé el relieve del segmento activo, así que lo da
+   un borde: sin esto, sobre el gris de fondo, no se distingue cuál está puesto. */
+:root[data-theme='dark'] .seg-btn--on {
+  background: var(--border);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .seg-btn--on {
+    background: var(--border);
+  }
+}

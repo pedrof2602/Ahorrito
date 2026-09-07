@@ -1,0 +1,2140 @@
+{
+ "response": {
+  "results": [
+   {
+    "matched_terms": [],
+    "labels": {},
+    "data": {
+     "id": "prod00567486",
+     "url": "_/R-00567486-00567486-200",
+     "price": [
+      {
+       "id": "pl107_00567486",
+       "store": "107",
+       "listPrice": 3999,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl182_00567486",
+       "store": "182",
+       "listPrice": 3999,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl188_00567486",
+       "store": "188",
+       "listPrice": 3999,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl238_00567486",
+       "store": "238",
+       "listPrice": 3999,
+       "priceList": "priceList238",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl061_00567486",
+       "store": "061",
+       "listPrice": 3999,
+       "priceList": "priceList061",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl060_00567486",
+       "store": "060",
+       "listPrice": 3999,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl189_00567486",
+       "store": "189",
+       "listPrice": 3999,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl092_00567486",
+       "store": "092",
+       "listPrice": 3999,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl209_00567486",
+       "store": "209",
+       "listPrice": 3999,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl090_00567486",
+       "store": "090",
+       "listPrice": 3999,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl064_00567486",
+       "store": "064",
+       "listPrice": 3999,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl215_00567486",
+       "store": "215",
+       "listPrice": 3999,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl078_00567486",
+       "store": "078",
+       "listPrice": 3999,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl178_00567486",
+       "store": "178",
+       "listPrice": 3999,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl204_00567486",
+       "store": "204",
+       "listPrice": 3999,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl091_00567486",
+       "store": "091",
+       "listPrice": 3999,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl181_00567486",
+       "store": "181",
+       "listPrice": 3999,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl197_00567486",
+       "store": "197",
+       "listPrice": 3999,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl056_00567486",
+       "store": "056",
+       "listPrice": 3999,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl063_00567486",
+       "store": "063",
+       "listPrice": 3999,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl200_00567486",
+       "store": "200",
+       "listPrice": 3999,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl160_00567486",
+       "store": "160",
+       "listPrice": 3999,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl065_00567486",
+       "store": "065",
+       "listPrice": 3999,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl085_00567486",
+       "store": "085",
+       "listPrice": 3999,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl075_00567486",
+       "store": "075",
+       "listPrice": 3999,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl129_00567486",
+       "store": "129",
+       "listPrice": 3999,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl219_00567486",
+       "store": "219",
+       "listPrice": 3999,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl109_00567486",
+       "store": "109",
+       "listPrice": 3999,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl184_00567486",
+       "store": "184",
+       "listPrice": 3999,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl165_00567486",
+       "store": "165",
+       "listPrice": 3999,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl220_00567486",
+       "store": "220",
+       "listPrice": 3999,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl185_00567486",
+       "store": "185",
+       "listPrice": 3999,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      },
+      {
+       "id": "pl131_00567486",
+       "store": "131",
+       "listPrice": 3999,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 3304.96
+      }
+     ],
+     "sku_id": "sku00567486",
+     "sku_plu": 567486,
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00567400/00567486.jpg",
+     "sale_type": [],
+     "discounts": [],
+     "product_brand": "TOP DESIGN",
+     "product_is_noa": 1,
+     "sku_description": "Remera Niño/A Estampada Skate Crudo Talle 1",
+     "product_main_ean": 2800005674866,
+     "sku_display_name": "Remera Niño/A Estampada Skate Crudo Talle 1",
+     "product_weighable": 0,
+     "product_list_price": 3999,
+     "store_availability": [],
+     "product_quantity_step": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00567400/00567486.jpg",
+     "product_format_quantity": 0,
+     "product_unit_of_measure": "UNI",
+     "product_minimum_quantity": 0,
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00567400/00567486.jpg",
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00001259",
+       "display_name": "Textil",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004896",
+       "display_name": "Remeras",
+       "path": "/categoria/catv00001259/catv00004888",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        },
+        {
+         "id": "catv00004888",
+         "display_name": "Indumentaria Niños"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004888",
+       "display_name": "Indumentaria Niños",
+       "path": "/categoria/catv00001259",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Remera Niño/A Estampada Skate Crudo Talle 1",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [],
+    "labels": {},
+    "data": {
+     "id": "prod00536643",
+     "url": "_/R-00536643-00536643-200",
+     "price": [
+      {
+       "id": "pl109_00536643",
+       "store": "109",
+       "listPrice": 2999,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl182_00536643",
+       "store": "182",
+       "listPrice": 2999,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl178_00536643",
+       "store": "178",
+       "listPrice": 2999,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl184_00536643",
+       "store": "184",
+       "listPrice": 2999,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl090_00536643",
+       "store": "090",
+       "listPrice": 2999,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl189_00536643",
+       "store": "189",
+       "listPrice": 2999,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl129_00536643",
+       "store": "129",
+       "listPrice": 2999,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl063_00536643",
+       "store": "063",
+       "listPrice": 2999,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl092_00536643",
+       "store": "092",
+       "listPrice": 2999,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl165_00536643",
+       "store": "165",
+       "listPrice": 2999,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl107_00536643",
+       "store": "107",
+       "listPrice": 2999,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl160_00536643",
+       "store": "160",
+       "listPrice": 2999,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl065_00536643",
+       "store": "065",
+       "listPrice": 2999,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl091_00536643",
+       "store": "091",
+       "listPrice": 2999,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl185_00536643",
+       "store": "185",
+       "listPrice": 2999,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl188_00536643",
+       "store": "188",
+       "listPrice": 2999,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl197_00536643",
+       "store": "197",
+       "listPrice": 2999,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl200_00536643",
+       "store": "200",
+       "listPrice": 2999,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl209_00536643",
+       "store": "209",
+       "listPrice": 2999,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl219_00536643",
+       "store": "219",
+       "listPrice": 2999,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl215_00536643",
+       "store": "215",
+       "listPrice": 2999,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl075_00536643",
+       "store": "075",
+       "listPrice": 2999,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl060_00536643",
+       "store": "060",
+       "listPrice": 2999,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl220_00536643",
+       "store": "220",
+       "listPrice": 2999,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl131_00536643",
+       "store": "131",
+       "listPrice": 2999,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl064_00536643",
+       "store": "064",
+       "listPrice": 2999,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl078_00536643",
+       "store": "078",
+       "listPrice": 2999,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl181_00536643",
+       "store": "181",
+       "listPrice": 2999,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl085_00536643",
+       "store": "085",
+       "listPrice": 2999,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl056_00536643",
+       "store": "056",
+       "listPrice": 2999,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl204_00536643",
+       "store": "204",
+       "listPrice": 2999,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      }
+     ],
+     "sku_id": "sku00536643",
+     "sku_plu": 536643,
+     "discounts": [],
+     "sale_type": [],
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00536600/00536643.jpg",
+     "product_brand": "TOP DESIGN",
+     "product_is_noa": 1,
+     "sku_description": "Remera Mujer Color Cemento Tall E Xxl",
+     "product_main_ean": 2800005366433,
+     "sku_display_name": "Remera Mujer Color Cemento Tall E Xxl",
+     "product_weighable": 0,
+     "store_availability": [],
+     "product_list_price": 2999,
+     "product_quantity_step": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00536600/00536643.jpg",
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 0,
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00536600/00536643.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00004835",
+       "display_name": "Indumentaria de Mujer",
+       "path": "/categoria/catv00001259",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001259",
+       "display_name": "Textil",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004846",
+       "display_name": "Remeras",
+       "path": "/categoria/catv00001259/catv00004835",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        },
+        {
+         "id": "catv00004835",
+         "display_name": "Indumentaria de Mujer"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Remera Mujer Color Cemento Tall E Xxl",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [],
+    "labels": {},
+    "data": {
+     "id": "prod00536632",
+     "url": "_/R-00536632-00536632-200",
+     "price": [
+      {
+       "id": "pl109_00536632",
+       "store": "109",
+       "listPrice": 2999,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl182_00536632",
+       "store": "182",
+       "listPrice": 2999,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl107_00536632",
+       "store": "107",
+       "listPrice": 2999,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl129_00536632",
+       "store": "129",
+       "listPrice": 2999,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl178_00536632",
+       "store": "178",
+       "listPrice": 2999,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl184_00536632",
+       "store": "184",
+       "listPrice": 2999,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl090_00536632",
+       "store": "090",
+       "listPrice": 2999,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl189_00536632",
+       "store": "189",
+       "listPrice": 2999,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl063_00536632",
+       "store": "063",
+       "listPrice": 2999,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl092_00536632",
+       "store": "092",
+       "listPrice": 2999,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl165_00536632",
+       "store": "165",
+       "listPrice": 2999,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl160_00536632",
+       "store": "160",
+       "listPrice": 2999,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl065_00536632",
+       "store": "065",
+       "listPrice": 2999,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl091_00536632",
+       "store": "091",
+       "listPrice": 2999,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl185_00536632",
+       "store": "185",
+       "listPrice": 2999,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl188_00536632",
+       "store": "188",
+       "listPrice": 2999,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl197_00536632",
+       "store": "197",
+       "listPrice": 2999,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl200_00536632",
+       "store": "200",
+       "listPrice": 2999,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl209_00536632",
+       "store": "209",
+       "listPrice": 2999,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl219_00536632",
+       "store": "219",
+       "listPrice": 2999,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl215_00536632",
+       "store": "215",
+       "listPrice": 2999,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl220_00536632",
+       "store": "220",
+       "listPrice": 2999,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl075_00536632",
+       "store": "075",
+       "listPrice": 2999,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl131_00536632",
+       "store": "131",
+       "listPrice": 2999,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl060_00536632",
+       "store": "060",
+       "listPrice": 2999,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl064_00536632",
+       "store": "064",
+       "listPrice": 2999,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl078_00536632",
+       "store": "078",
+       "listPrice": 2999,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl181_00536632",
+       "store": "181",
+       "listPrice": 2999,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl085_00536632",
+       "store": "085",
+       "listPrice": 2999,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl056_00536632",
+       "store": "056",
+       "listPrice": 2999,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl204_00536632",
+       "store": "204",
+       "listPrice": 2999,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      }
+     ],
+     "sku_id": "sku00536632",
+     "sku_plu": 536632,
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00536600/00536632.jpg",
+     "sale_type": [],
+     "discounts": [],
+     "product_brand": "TOP DESIGN",
+     "product_is_noa": 1,
+     "sku_description": "Remera Mujer Color Cemento Talle M",
+     "product_main_ean": 2800005366327,
+     "sku_display_name": "Remera Mujer Color Cemento Talle M",
+     "product_weighable": 0,
+     "store_availability": [],
+     "product_list_price": 2999,
+     "product_quantity_step": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00536600/00536632.jpg",
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 0,
+     "product_minimum_quantity": 0,
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00536600/00536632.jpg",
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00004835",
+       "display_name": "Indumentaria de Mujer",
+       "path": "/categoria/catv00001259",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00001259",
+       "display_name": "Textil",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004846",
+       "display_name": "Remeras",
+       "path": "/categoria/catv00001259/catv00004835",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        },
+        {
+         "id": "catv00004835",
+         "display_name": "Indumentaria de Mujer"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Remera Mujer Color Cemento Talle M",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [],
+    "labels": {},
+    "data": {
+     "id": "prod00508699",
+     "url": "_/R-00508699-00508699-200",
+     "price": [
+      {
+       "id": "pl063_00508699",
+       "store": "063",
+       "listPrice": 1599,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl109_00508699",
+       "store": "109",
+       "listPrice": 1599,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl065_00508699",
+       "store": "065",
+       "listPrice": 1599,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl075_00508699",
+       "store": "075",
+       "listPrice": 1599,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl090_00508699",
+       "store": "090",
+       "listPrice": 1599,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl165_00508699",
+       "store": "165",
+       "listPrice": 1599,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl078_00508699",
+       "store": "078",
+       "listPrice": 1599,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl085_00508699",
+       "store": "085",
+       "listPrice": 1599,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl219_00508699",
+       "store": "219",
+       "listPrice": 1599,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl189_00508699",
+       "store": "189",
+       "listPrice": 1599,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl200_00508699",
+       "store": "200",
+       "listPrice": 1599,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl178_00508699",
+       "store": "178",
+       "listPrice": 1599,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl188_00508699",
+       "store": "188",
+       "listPrice": 1599,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl215_00508699",
+       "store": "215",
+       "listPrice": 1599,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl181_00508699",
+       "store": "181",
+       "listPrice": 1599,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl092_00508699",
+       "store": "092",
+       "listPrice": 1599,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl184_00508699",
+       "store": "184",
+       "listPrice": 1599,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl220_00508699",
+       "store": "220",
+       "listPrice": 1599,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl107_00508699",
+       "store": "107",
+       "listPrice": 1599,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl131_00508699",
+       "store": "131",
+       "listPrice": 1599,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl185_00508699",
+       "store": "185",
+       "listPrice": 1599,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl064_00508699",
+       "store": "064",
+       "listPrice": 1599,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl091_00508699",
+       "store": "091",
+       "listPrice": 1599,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl197_00508699",
+       "store": "197",
+       "listPrice": 1599,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl129_00508699",
+       "store": "129",
+       "listPrice": 1599,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl204_00508699",
+       "store": "204",
+       "listPrice": 1599,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl060_00508699",
+       "store": "060",
+       "listPrice": 1599,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl160_00508699",
+       "store": "160",
+       "listPrice": 1599,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl056_00508699",
+       "store": "056",
+       "listPrice": 1599,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      },
+      {
+       "id": "pl209_00508699",
+       "store": "209",
+       "listPrice": 1599,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": null
+      }
+     ],
+     "sku_id": "sku00508699",
+     "sku_plu": 508699,
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00508600/00508699.jpg",
+     "discounts": [],
+     "sale_type": [],
+     "product_brand": "TOP DESIGN",
+     "product_is_noa": 1,
+     "sku_description": "Buzo Dama C/ Puños Beige T.Xxl . . .",
+     "sku_display_name": "Buzo Dama C/ Puños Beige T.Xxl . . .",
+     "product_main_ean": 2800005086997,
+     "product_weighable": 0,
+     "product_list_price": 1599,
+     "store_availability": [],
+     "product_quantity_step": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00508600/00508699.jpg",
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 0,
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00508600/00508699.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00001259",
+       "display_name": "Textil",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004836",
+       "display_name": "Buzos",
+       "path": "/categoria/catv00001259/catv00004835",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        },
+        {
+         "id": "catv00004835",
+         "display_name": "Indumentaria de Mujer"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004835",
+       "display_name": "Indumentaria de Mujer",
+       "path": "/categoria/catv00001259",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Buzo Dama C/ Puños Beige T.Xxl . . .",
+    "is_slotted": false
+   },
+   {
+    "matched_terms": [],
+    "labels": {},
+    "data": {
+     "id": "prod00567493",
+     "url": "_/R-00567493-00567493-200",
+     "price": [
+      {
+       "id": "pl131_00567493",
+       "store": "131",
+       "listPrice": 6499,
+       "priceList": "priceList131",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl238_00567493",
+       "store": "238",
+       "listPrice": 6499,
+       "priceList": "priceList238",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl061_00567493",
+       "store": "061",
+       "listPrice": 6499,
+       "priceList": "priceList061",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl107_00567493",
+       "store": "107",
+       "listPrice": 6499,
+       "priceList": "priceList107",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl065_00567493",
+       "store": "065",
+       "listPrice": 6499,
+       "priceList": "priceList065",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl109_00567493",
+       "store": "109",
+       "listPrice": 6499,
+       "priceList": "priceList109",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl204_00567493",
+       "store": "204",
+       "listPrice": 6499,
+       "priceList": "priceList204",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl160_00567493",
+       "store": "160",
+       "listPrice": 6499,
+       "priceList": "priceList160",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl063_00567493",
+       "store": "063",
+       "listPrice": 6499,
+       "priceList": "priceList063",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl215_00567493",
+       "store": "215",
+       "listPrice": 6499,
+       "priceList": "priceList215",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl185_00567493",
+       "store": "185",
+       "listPrice": 6499,
+       "priceList": "priceList185",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl189_00567493",
+       "store": "189",
+       "listPrice": 6499,
+       "priceList": "priceList189",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl181_00567493",
+       "store": "181",
+       "listPrice": 6499,
+       "priceList": "priceList181",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl060_00567493",
+       "store": "060",
+       "listPrice": 6499,
+       "priceList": "priceList060",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl209_00567493",
+       "store": "209",
+       "listPrice": 6499,
+       "priceList": "priceList209",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl090_00567493",
+       "store": "090",
+       "listPrice": 6499,
+       "priceList": "priceList090",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl092_00567493",
+       "store": "092",
+       "listPrice": 6499,
+       "priceList": "priceList092",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl200_00567493",
+       "store": "200",
+       "listPrice": 6499,
+       "priceList": "priceList200",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl064_00567493",
+       "store": "064",
+       "listPrice": 6499,
+       "priceList": "priceList064",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl219_00567493",
+       "store": "219",
+       "listPrice": 6499,
+       "priceList": "priceList219",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl184_00567493",
+       "store": "184",
+       "listPrice": 6499,
+       "priceList": "priceList184",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl220_00567493",
+       "store": "220",
+       "listPrice": 6499,
+       "priceList": "priceList220",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl178_00567493",
+       "store": "178",
+       "listPrice": 6499,
+       "priceList": "priceList178",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl197_00567493",
+       "store": "197",
+       "listPrice": 6499,
+       "priceList": "priceList197",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl056_00567493",
+       "store": "056",
+       "listPrice": 6499,
+       "priceList": "priceList056",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl078_00567493",
+       "store": "078",
+       "listPrice": 6499,
+       "priceList": "priceList078",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl129_00567493",
+       "store": "129",
+       "listPrice": 6499,
+       "priceList": "priceList129",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl075_00567493",
+       "store": "075",
+       "listPrice": 6499,
+       "priceList": "priceList075",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl182_00567493",
+       "store": "182",
+       "listPrice": 6499,
+       "priceList": "priceList182",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl165_00567493",
+       "store": "165",
+       "listPrice": 6499,
+       "priceList": "priceList165",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl091_00567493",
+       "store": "091",
+       "listPrice": 6499,
+       "priceList": "priceList091",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl188_00567493",
+       "store": "188",
+       "listPrice": 6499,
+       "priceList": "priceList188",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      },
+      {
+       "id": "pl085_00567493",
+       "store": "085",
+       "listPrice": 6499,
+       "priceList": "priceList085",
+       "saleImage1": null,
+       "saleImage2": null,
+       "saleImage3": null,
+       "formatPrice": null,
+       "priceWithoutTax": 5371.07
+      }
+     ],
+     "sku_id": "sku00567493",
+     "sku_plu": 567493,
+     "image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00567400/00567493.jpg",
+     "discounts": [],
+     "sale_type": [],
+     "product_brand": "TOP DESIGN",
+     "product_is_noa": 1,
+     "sku_description": "Remera Niño/A Estampada Skate Crudo Talle 4",
+     "product_main_ean": 2800005674934,
+     "sku_display_name": "Remera Niño/A Estampada Skate Crudo Talle 4",
+     "product_weighable": 0,
+     "store_availability": [],
+     "product_list_price": 6499,
+     "product_quantity_step": 0,
+     "product_unit_of_measure": "UNI",
+     "product_format_quantity": 0,
+     "product_large_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/large/00567400/00567493.jpg",
+     "product_medium_image_url": "https://static.cotodigital3.com.ar/sitios/fotos/medium/00567400/00567493.jpg",
+     "product_minimum_quantity": 0,
+     "discounts_payment_methods": [],
+     "groups": [
+      {
+       "group_id": "catv00001259",
+       "display_name": "Textil",
+       "path": "/categoria",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004896",
+       "display_name": "Remeras",
+       "path": "/categoria/catv00001259/catv00004888",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        },
+        {
+         "id": "catv00004888",
+         "display_name": "Indumentaria Niños"
+        }
+       ]
+      },
+      {
+       "group_id": "catv00004888",
+       "display_name": "Indumentaria Niños",
+       "path": "/categoria/catv00001259",
+       "path_list": [
+        {
+         "id": "categoria",
+         "display_name": "Categorias"
+        },
+        {
+         "id": "catv00001259",
+         "display_name": "Textil"
+        }
+       ]
+      }
+     ]
+    },
+    "value": "Remera Niño/A Estampada Skate Crudo Talle 4",
+    "is_slotted": false
+   }
+  ],
+  "total_num_results": 20
+ }
+}
