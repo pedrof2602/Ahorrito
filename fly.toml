@@ -1,69 +1,53 @@
-# Configuración de Fly.io.
+# fly.toml app configuration file generated for ahorrito on 2026-09-07T19:47:04-03:00
 #
-# `app` y `primary_region` los completa `fly launch --no-deploy`, que es el
-# primer paso del deploy. El resto ya está resuelto acá.
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-app = "CAMBIAR-despues-de-fly-launch"
-primary_region = "eze"                  # Buenos Aires (Ezeiza)
+app = 'ahorrito'
+primary_region = 'gru'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [env]
-  # La base y el histórico viven en el volumen, no en la imagen.
-  DATABASE_URL = "sqlite+aiosqlite:////data/compras.db"
+  COOKIE_SAMESITE = 'lax'
+  COOKIE_SECURE = 'true'
+  CORS_ORIGINS = '[]'
+  DATABASE_URL = 'sqlite+aiosqlite:////data/compras.db'
+  REGISTRATION_OPEN = 'false'
+  STATIC_DIR = '/app/static'
 
-  # El SPA compilado que dejó el Dockerfile.
-  STATIC_DIR = "/app/static"
-
-  # Frontend y API comparten origen, así que la cookie de sesión puede quedarse
-  # en `lax` y conservar la protección CSRF.
-  COOKIE_SECURE = "true"
-  COOKIE_SAMESITE = "lax"
-
-  # Nadie se crea una cuenta solo: las das de alta vos con
-  # `fly ssh console -C "python scripts/set_password.py"`.
-  REGISTRATION_OPEN = "false"
-
-  # Mismo origen: no hace falta habilitar ninguno cruzado.
-  CORS_ORIGINS = "[]"
-
-# ACCESS_KEY no va acá: es un secreto y se carga con
-#   fly secrets set ACCESS_KEY="$(openssl rand -base64 24 | tr -d /+=)"
-# Lo que va en [env] queda en texto plano en el repo.
+[[mounts]]
+  source = 'compras_data'
+  destination = '/data'
 
 [http_service]
   internal_port = 8000
   force_https = true
-
-  # Sin escalado automático: el rate limiter de login y el espaciado de requests
-  # a los supermercados viven en memoria del proceso. Con dos máquinas, cada una
-  # cuenta por su lado y el techo real se duplica.
-  auto_stop_machines = "suspend"
+  auto_stop_machines = 'suspend'
   auto_start_machines = true
   min_machines_running = 0
   max_machines_running = 1
+  # `fly launch` regeneró este archivo desde la web y se llevó puesta esta
+  # línea. Sin ella, Fly puede escalar a una segunda máquina bajo carga, y eso
+  # rompe dos cosas a la vez: SQLite en el volumen no admite dos procesos
+  # escribiendo, y el rate limiter hacia los supermercados vive en memoria de
+  # cada proceso —con dos máquinas, cada una cuenta por su lado y el techo real
+  # se duplica—.
 
   [http_service.concurrency]
-    type = "requests"
-    soft_limit = 20
+    type = 'requests'
     hard_limit = 40
+    soft_limit = 20
 
   [[http_service.checks]]
-    # Exento de la puerta de acceso a propósito: Fly no tiene cómo presentar la
-    # clave, y un 401 acá haría que el deploy se considere caído y se reinicie
-    # en loop.
-    path = "/api/v1/health"
-    interval = "30s"
-    timeout = "5s"
-    grace_period = "10s"
-
-[[mounts]]
-  source = "compras_data"
-  destination = "/data"
+    interval = '30s'
+    timeout = '5s'
+    grace_period = '10s'
+    path = '/api/v1/health'
 
 [[vm]]
-  # 512 MB alcanzan: un uvicorn con un worker y SQLite. Argon2 pide 64 MiB por
-  # login, que entra sin problema con uno o dos usuarios.
-  size = "shared-cpu-1x"
-  memory = "512mb"
+  size = 'shared-cpu-1x'
+  memory = '512mb'
+  cpus = 1
+  memory_mb = 512
