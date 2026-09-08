@@ -43,6 +43,10 @@ _PAGE = (Path(__file__).with_name("privacy.html")).read_text(encoding="utf-8")
 
 Es un archivo que cambia cuando lo editás vos y no cuando corre la app; releerlo
 en cada request sería un `open()` por visita para servir siempre lo mismo.
+
+**En desarrollo eso significa reiniciar el server para ver un cambio del HTML.**
+No alcanza con `--reload`: uvicorn vigila los `.py` y este archivo no lo es. Si
+te está por volver loco, `--reload-include '*.html'`.
 """
 
 
