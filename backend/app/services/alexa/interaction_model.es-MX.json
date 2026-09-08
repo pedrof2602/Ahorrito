@@ -30,7 +30,10 @@
             "anotá {producto} en la lista",
             "sumá {producto} a la lista",
             "agregá {producto} a mi lista",
-            "poné {producto} en la lista de compras"
+            "poné {producto} en la lista de compras",
+            "agrega {producto} a la lista de compras",
+            "agregá {producto} a la lista de compras",
+            "agregar {producto} en la lista de compras"
           ]
         },
         {
