@@ -196,5 +196,54 @@ class Settings(BaseSettings):
     empujan a `Password1!` y el NIST las desaconseja desde 2017. El largo es lo
     que realmente cuesta romper."""
 
+    # --- Login with Amazon (vínculo con Alexa) ------------------------------
+
+    LWA_CLIENT_ID: str = ""
+    """`Client ID` del Security Profile de Login with Amazon.
+
+    Vacío = el vínculo con Alexa está apagado y el botón de la app avisa que
+    falta configurarlo, en vez de mandar al usuario a una pantalla de Amazon que
+    le va a dar error. Mismo criterio que `ACCESS_KEY`: la feature se enciende
+    poniendo el valor, no tocando código.
+    """
+
+    LWA_CLIENT_SECRET: str = ""
+    """`Client Secret` del mismo Security Profile.
+
+    Nunca en `fly.toml`, que está versionado:
+
+        fly secrets set LWA_CLIENT_SECRET="..."
+    """
+
+    LWA_REDIRECT_URI: str = ""
+    """A dónde vuelve Amazon con el `code`, por ejemplo
+    `https://ahorrito.fly.dev/auth/alexa/callback`.
+
+    **Tiene que coincidir carácter por carácter con el `Allowed Return URL` del
+    Security Profile**, incluido el esquema y la barra final. Amazon lo compara
+    literal y ante la mínima diferencia contesta un `invalid_client` que no
+    explica cuál de las dos cosas está mal.
+
+    Es un setting y no una constante porque el valor correcto depende del
+    dominio donde corra esto, y porque probar el flujo contra otro deploy no
+    tiene que ser un cambio de código.
+    """
+
+    TOKEN_ENCRYPTION_KEY: str = ""
+    """Clave Fernet con la que se cifran los tokens de Amazon en la base.
+
+    Se genera una vez y se guarda como secret:
+
+        fly secrets set TOKEN_ENCRYPTION_KEY="$(python -c 'from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())')"
+
+    **Perderla o rotarla vuelve ilegibles todos los vínculos** y obliga a cada
+    usuario a vincular de nuevo. No hay forma de recuperarlos: ese es el punto
+    de que los tokens no estén en claro. Si alguna vez hay que rotarla, el
+    camino es descifrar con la vieja y volver a cifrar con la nueva antes de
+    cambiar el secret, no cambiarlo y ver qué pasa.
+
+    Vacío = el vínculo con Alexa está apagado, igual que con `LWA_CLIENT_ID`.
+    """
+
 
 settings = Settings()

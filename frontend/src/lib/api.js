@@ -152,6 +152,28 @@ export const verifyInstrument = (id) =>
 
 export const fetchChains = () => request('/chains');
 
+// --- vínculo con Alexa -----------------------------------------------------
+
+/**
+ * Dónde arranca el flujo de "Vincular cuenta de Alexa".
+ *
+ * **No pasa por `request()` y no es un `fetch`.** Es una URL para navegar: el
+ * backend contesta un redirect a la pantalla de autorización de Amazon, y un
+ * `fetch` que sigue un redirect a otro origen muere en CORS sin decir nada útil.
+ * El componente hace `window.location.href = ALEXA_LOGIN_URL`.
+ *
+ * Va en la raíz y no bajo `/api/v1` porque el Redirect URI registrado en el
+ * Security Profile de Amazon dice `/auth/alexa/callback`, y Amazon lo compara
+ * carácter por carácter. Por eso tampoco usa `BASE`.
+ */
+export const ALEXA_LOGIN_URL = '/auth/alexa/login';
+
+/** Si hay vínculo, desde cuándo, y si la función está configurada en el deploy.
+    Nunca devuelve tokens: el backend no los expone por ningún endpoint. */
+export const fetchAlexaStatus = () => request('/alexa/status');
+
+export const unlinkAlexa = () => request('/alexa/link', { method: 'DELETE' });
+
 // --- ubicaciones -----------------------------------------------------------
 
 /**

@@ -22,6 +22,42 @@
   color: var(--text-2);
 }
 
+/* --- vínculo con Alexa ----------------------------------------------------
+   Agrupado con su texto de ayuda porque es la única acción del panel que se va
+   del sitio y que otorga un permiso: el botón solo no alcanza para saber qué
+   se está autorizando. */
+
+.settings-alexa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.settings-alexa-who {
+  margin: 0;
+  font-size: var(--t-sm);
+  color: var(--text-2);
+}
+
+/* El resultado de volver de Amazon. Se muestra una sola vez, cuando la app
+   arranca con `?alexa=` en la URL. */
+.settings-alexa-flash {
+  margin: 0;
+  font-size: var(--t-sm);
+}
+
+.settings-alexa-flash--ok {
+  color: var(--win);
+}
+
+.settings-alexa-flash--aviso {
+  color: var(--warn);
+}
+
+.settings-alexa-flash--error {
+  color: var(--danger);
+}
+
 /* --- cuenta ---------------------------------------------------------------
    Separada del resto por una línea y no solo por espacio: cerrar sesión no es
    otra preferencia de la lista, es salir de la app. */

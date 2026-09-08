@@ -15,6 +15,7 @@ from app.core.gate import access_gate
 from app.services.http import ProviderError, ProviderUnavailable
 from app.services.providers.cache import purge_expired
 from app.services.providers.registry import ProviderRegistry
+from app.web.alexa import router as alexa_web_router
 from app.web.privacy import router as privacy_router
 
 logging.basicConfig(level=logging.INFO)
@@ -197,6 +198,13 @@ app.include_router(api_v1_router, prefix=settings.API_V1_STR)
 # propósito: el `mount` de `/` se queda con todo lo que no reclamó una ruta
 # anterior, incluido esto.
 app.include_router(privacy_router)
+
+# El flujo de "Vincular cuenta de Alexa". También antes del `mount` y por el
+# mismo motivo, pero acá no hay margen para elegir la URL: el Redirect URI está
+# registrado en el Security Profile de Amazon como `/auth/alexa/callback`, Amazon
+# lo compara literal, y moverlo rompería el vínculo de todos los que ya
+# vincularon. La ruta manda sobre dónde vive el código.
+app.include_router(alexa_web_router)
 
 
 def _mount_spa() -> bool:

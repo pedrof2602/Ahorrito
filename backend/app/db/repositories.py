@@ -11,6 +11,7 @@ from datetime import date, datetime
 from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.crypto import decrypt_secret, encrypt_secret
 from app.models import catalog as domain
 from app.models import payment as pay
 from app.services.locations import Location, normalize_query
@@ -859,7 +860,6 @@ class AuthSessionRepository:
     async def delete(self, row: t.AuthSession) -> None:
         await self._s.delete(row)
         await self._s.flush()
-
     async def delete_for_user(
         self, user_id: int, *, except_id: int | None = None
     ) -> int:
@@ -886,3 +886,81 @@ class AuthSessionRepository:
         )
         await self._s.flush()
         return result.rowcount or 0
+
+
+class AlexaLinkRepository:
+    """El vínculo con Amazon de un usuario.
+
+    **El cifrado vive acá y no en el endpoint.** Es la única forma de que no
+    exista ningún camino por el que un token llegue a la base en claro: quien
+    llama pasa y recibe texto plano, y no tiene manera de guardar sin cifrar
+    aunque se olvide de que hay que hacerlo.
+
+    Como el resto de los repositorios de usuario, `user_id` va en el constructor
+    y no tiene default, así que no hay forma de leer el vínculo de otro por
+    descuido.
+    """
+
+    def __init__(self, session: AsyncSession, user_id: int) -> None:
+        self._s = session
+        self._uid = user_id
+
+    async def get(self) -> t.AlexaLink | None:
+        return await self._s.scalar(
+            select(t.AlexaLink).where(t.AlexaLink.user_id == self._uid)
+        )
+
+    async def upsert(
+        self,
+        *,
+        access_token: str,
+        refresh_token: str,
+        expires_at: datetime,
+        scope: str,
+    ) -> t.AlexaLink:
+        """Guarda el vínculo, cifrando los dos tokens.
+
+        Upsert y no insert porque volver a vincular es una operación normal —el
+        usuario que quiere corregir con qué cuenta de Amazon quedó atado— y el
+        índice único sobre `user_id` rechazaría la segunda fila.
+        """
+        row = await self.get()
+        if row is None:
+            row = t.AlexaLink(user_id=self._uid)
+            self._s.add(row)
+        else:
+            row.refreshed_at = t.utcnow()
+
+        row.access_token_enc = encrypt_secret(access_token)
+        row.refresh_token_enc = encrypt_secret(refresh_token)
+        row.expires_at = expires_at
+        row.scope = scope[:200]
+        await self._s.flush()
+        return row
+
+    def tokens(self, row: t.AlexaLink) -> tuple[str, str]:
+        """`(access_token, refresh_token)` en claro.
+
+        Sin `async` porque no toca la base: recibe la fila que quien llama ya
+        tiene —la miró para ver `expires_at`— y solo descifra. Marcarla `async`
+        sugeriría una consulta que no existe.
+        """
+        return decrypt_secret(row.access_token_enc), decrypt_secret(
+            row.refresh_token_enc
+        )
+
+    async def delete(self) -> bool:
+        """Corta el vínculo. Devuelve si había algo que cortar.
+
+        Se usa desde dos lados que parecen distintos y son lo mismo: el usuario
+        que aprieta "Desvincular", y el refresco que descubre que Amazon ya no
+        acepta el `refresh_token` porque lo revocaron desde allá. En los dos
+        casos lo correcto es que no quede una credencial muerta en la base.
+        """
+        row = await self.get()
+        if row is None:
+            return False
+        await self._s.delete(row)
+        await self._s.flush()
+        return True
+

@@ -1,9 +1,41 @@
 import { useEffect, useState } from 'react';
-import { LogOut, MapPin, Store } from 'lucide-react';
-import { fetchChains } from '../lib/api';
+import { LogOut, MapPin, Mic, Store } from 'lucide-react';
+import {
+  ALEXA_LOGIN_URL,
+  fetchAlexaStatus,
+  fetchChains,
+  unlinkAlexa,
+} from '../lib/api';
 import { useAuth } from '../lib/authContext';
 import { Sheet } from './ui/Sheet';
 import './SettingsSheet.css';
+
+/**
+ * Qué decirle al usuario según cómo terminó el paseo por Amazon.
+ *
+ * El backend no manda texto: manda un código en `?alexa=` y lo traduce la app.
+ * Es lo que permite que el callback —que es un redirect, no una respuesta que
+ * alguien lea— no tenga que saber nada de cómo se escribe en esta pantalla.
+ */
+const ALEXA_MENSAJES = {
+  ok: { tono: 'ok', texto: 'Listo: tu cuenta de Alexa quedó vinculada.' },
+  cancelado: {
+    tono: 'aviso',
+    texto: 'No autorizaste el acceso en Amazon, así que no se vinculó nada.',
+  },
+  sesion: {
+    tono: 'aviso',
+    texto: 'Se venció la sesión durante el proceso. Probá de nuevo.',
+  },
+  sin_config: {
+    tono: 'aviso',
+    texto: 'El vínculo con Alexa no está configurado en este servidor.',
+  },
+  error: {
+    tono: 'error',
+    texto: 'No se pudo vincular la cuenta. Probá de nuevo en un rato.',
+  },
+};
 
 /**
  * Código postal, canal, tema y tus datos.
@@ -21,9 +53,11 @@ export function SettingsSheet({
   onApply,
   onOpenAddresses,
   onOpenStores,
+  alexaOutcome = null,
 }) {
   const [chains, setChains] = useState([]);
   const [draft, setDraft] = useState(settings);
+  const [alexa, setAlexa] = useState(null);
   const { user, logout } = useAuth();
 
   useEffect(() => {
@@ -31,6 +65,26 @@ export function SettingsSheet({
       .then(setChains)
       .catch(() => setChains([])); // catálogo opcional: sin él se usa el default
   }, []);
+
+  // El mismo `.catch()` silencioso: si el estado del vínculo no carga, el panel
+  // sigue sirviendo para todo lo demás, que es a lo que vino la mayoría.
+  useEffect(() => {
+    fetchAlexaStatus()
+      .then(setAlexa)
+      .catch(() => setAlexa(null));
+  }, []);
+
+  const desvincularAlexa = async () => {
+    try {
+      await unlinkAlexa();
+      setAlexa({ ...alexa, linked: false, linked_at: null });
+    } catch {
+      // Sin cartel de error: el botón sigue diciendo "Desvincular" y el usuario
+      // puede volver a intentar. Un fallo acá no deja nada a medias.
+    }
+  };
+
+  const mensajeAlexa = alexaOutcome ? ALEXA_MENSAJES[alexaOutcome] : null;
 
   const salesChannels = [
     ...new Set(chains.flatMap((chain) => chain.sales_channels ?? [])),
@@ -254,6 +308,62 @@ export function SettingsSheet({
             <Store size={16} strokeWidth={1.75} aria-hidden />
             Mis sucursales
           </button>
+
+          {/* Vincular Alexa va con «Mis datos» por lo mismo que las otras dos:
+              no mueve un precio. Es la única acción del panel que se va del
+              sitio, así que además avisa qué permiso está dando. */}
+          <div className="settings-alexa">
+            {mensajeAlexa ? (
+              <p
+                className={`settings-alexa-flash settings-alexa-flash--${mensajeAlexa.tono}`}
+                role="status"
+              >
+                {mensajeAlexa.texto}
+              </p>
+            ) : null}
+
+            {alexa?.linked ? (
+              <>
+                <p className="settings-alexa-who">
+                  Alexa vinculada
+                  {alexa.linked_at
+                    ? ` desde el ${new Date(alexa.linked_at).toLocaleDateString('es-AR')}`
+                    : ''}
+                  .
+                </p>
+                <button
+                  className="btn btn--ghost btn--block"
+                  onClick={desvincularAlexa}
+                >
+                  <Mic size={16} strokeWidth={1.75} aria-hidden />
+                  Desvincular cuenta de Alexa
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  className="btn btn--ghost btn--block"
+                  // Navegación de verdad y no un `fetch`: del otro lado hay un
+                  // redirect a amazon.com, y un fetch a otro origen muere en
+                  // CORS. Se guarda el borrador antes de irse, igual que los
+                  // botones de arriba: acá el paseo es más largo todavía.
+                  onClick={() => {
+                    onUpdate(draft);
+                    window.location.href = ALEXA_LOGIN_URL;
+                  }}
+                  disabled={alexa ? !alexa.configured : false}
+                >
+                  <Mic size={16} strokeWidth={1.75} aria-hidden />
+                  Vincular cuenta de Alexa
+                </button>
+                <p className="field-hint">
+                  {alexa && !alexa.configured
+                    ? 'No está configurado en este servidor.'
+                    : 'Le da permiso a esta app para leer y escribir las listas de compras de tu Alexa. Podés cortarlo desde acá o desde tu cuenta de Amazon.'}
+                </p>
+              </>
+            )}
+          </div>
 
           {/* Último de todo y separado: cerrar sesión es la acción más
               destructiva del panel —te saca de la app— y no tiene por qué estar

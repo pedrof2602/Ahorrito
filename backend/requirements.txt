@@ -19,6 +19,11 @@ rapidfuzz>=3.9.0
 # el límite de 72 bytes que trunca contraseñas largas en silencio.
 argon2-cffi>=23.1.0
 
+# Cifrado simétrico de los tokens de Amazon guardados en la base (Fernet).
+# No alcanza con hashearlos como las sesiones: un token hay que poder *usarlo*,
+# así que tiene que volver en claro y la operación tiene que ser reversible.
+cryptography>=42.0.0
+
 # Persistencia e histórico de precios
 sqlalchemy>=2.0.0
 aiosqlite>=0.20.0

@@ -17,6 +17,7 @@ from sqlalchemy import (
     Index,
     Integer,
     String,
+    Text,
     UniqueConstraint,
 )
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
@@ -125,6 +126,69 @@ class AuthSession(Base):
     user_agent: Mapped[str | None] = mapped_column(String(300), default=None)
     """Para que "cerrar las otras sesiones" muestre cuáles son. Se trunca: es un
     header que manda el cliente y no hay motivo para guardar 8 KB de él."""
+
+
+class AlexaLink(Base):
+    """La cuenta de Amazon que un usuario vinculó, y las llaves para usarla.
+
+    Es la tabla que más se parece a `AuthSession` y la que más se diferencia de
+    ella: las dos guardan credenciales, pero acá los tokens van **cifrados y no
+    hasheados**. Un hash sirve para comparar contra lo que alguien presenta; un
+    token de Amazon hay que mandarlo tal cual en cada llamada a la API de listas,
+    así que tiene que poder volver en claro. Ver `core/crypto.py`.
+
+    Nada de esto entra en un log ni sale por un endpoint: la API contesta si hay
+    vínculo y desde cuándo, nunca con qué.
+    """
+
+    __tablename__ = "alexa_links"
+
+    id: Mapped[int] = mapped_column(primary_key=True)
+
+    user_id: Mapped[int] = mapped_column(
+        ForeignKey("users.id", ondelete="CASCADE"), unique=True, index=True
+    )
+    """Una cuenta de la app vincula una cuenta de Amazon, y el índice único lo
+    garantiza en la base y no en el código: volver a vincular pisa la fila que
+    ya está en lugar de dejar dos tokens vivos para el mismo usuario.
+
+    `CASCADE` al revés que en `Address` o `ShoppingList`, que a propósito no
+    tienen FK para no quedar huérfanas si la cuenta se suspende. La diferencia
+    es qué es cada cosa: un domicilio huérfano es un dato de más, un token vivo
+    sin dueño es un permiso de escritura sobre las listas de alguien que ya no
+    está."""
+
+    access_token_enc: Mapped[str] = mapped_column(Text)
+    refresh_token_enc: Mapped[str] = mapped_column(Text)
+    """Cifrados con Fernet. `Text` y no `String(n)` porque el ciphertext crece
+    con el largo del token y Amazon no documenta un techo: recortarlo a mano
+    sería guardar algo que no descifra."""
+
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    """Cuándo vence el `access_token`, no el vínculo.
+
+    El `refresh_token` no vence salvo que el usuario revoque el permiso, así que
+    esta fecha se cruza a cada rato y es normal: dispara un refresco, no un
+    "vinculá de nuevo"."""
+
+    scope: Mapped[str] = mapped_column(String(200))
+    """Los permisos que Amazon terminó otorgando, que no siempre son los que se
+    pidieron. Guardarlo es lo que permite detectar más adelante que un vínculo
+    viejo no tiene el scope de escritura, sin ir a preguntárselo a Amazon."""
+
+    linked_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
+    refreshed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), default=None
+    )
+
+    def __repr__(self) -> str:
+        """Sin los tokens, ni siquiera recortados.
+
+        El `__repr__` que genera SQLAlchemy no imprime columnas, pero un
+        `log.debug("%r", row)` en el archivo equivocado sí imprimiría este, y
+        una línea acá cierra esa puerta para siempre.
+        """
+        return f"<AlexaLink user_id={self.user_id} expires_at={self.expires_at}>"
 
 
 class Chain(Base):

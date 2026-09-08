@@ -36,11 +36,42 @@ function listChains(names) {
   return `${names.slice(0, -1).join(', ')} y ${names[names.length - 1]}`;
 }
 
+/**
+ * Cómo terminó el flujo de "Vincular cuenta de Alexa", si la app se abrió al
+ * volver de Amazon.
+ *
+ * El backend no puede contestarle nada a esta pantalla: el callback es un
+ * redirect, así que el resultado llega como `?alexa=<código>` en la URL. Se lee
+ * una sola vez —de ahí el inicializador de `useState` y no un `useEffect`— y se
+ * limpia en el acto con `replaceState`: si quedara pegado, recargar la página o
+ * compartir el link volvería a anunciar una vinculación que ya pasó.
+ *
+ * Fuera del componente para que no se vuelva a evaluar en cada render, y con
+ * guarda de `window` porque corre durante el primer render.
+ */
+function readAlexaOutcome() {
+  if (typeof window === 'undefined') return null;
+
+  const params = new URLSearchParams(window.location.search);
+  const outcome = params.get('alexa');
+  if (!outcome) return null;
+
+  params.delete('alexa');
+  const query = params.toString();
+  window.history.replaceState(
+    {},
+    '',
+    `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`,
+  );
+  return outcome;
+}
+
 export function App() {
   const list = useShoppingList();
   const { settings, update } = useSettings();
   const comparison = useComparison(list.lines, settings);
-  const [sheet, setSheet] = useState(null);
+  const [alexaOutcome] = useState(readAlexaOutcome);
+  const [sheet, setSheet] = useState(alexaOutcome ? 'settings' : null);
   const [detail, setDetail] = useState('table');
 
   const view = useMemo(() => buildView(comparison.data), [comparison.data]);
@@ -313,6 +344,7 @@ export function App() {
           onApply={comparison.refresh}
           onOpenAddresses={() => setSheet('addresses')}
           onOpenStores={() => setSheet('stores')}
+          alexaOutcome={alexaOutcome}
         />
       ) : null}
 

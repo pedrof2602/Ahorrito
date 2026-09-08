@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, status
 from typing import List
 from datetime import datetime
 
+from app.api.v1.alexa import router as alexa_router
 from app.api.v1.auth import router as auth_router
 from app.api.v1.locations import router as locations_router
 from app.api.v1.payments import router as payments_router
@@ -44,6 +45,12 @@ router.include_router(profile_router, dependencies=_authenticated)
 
 # Ubicaciones de sucursales: el "dónde" que la tabla de precios no contesta.
 router.include_router(locations_router, dependencies=_authenticated)
+
+# Estado del vínculo con Alexa. El flujo de autorización en sí no está acá: vive
+# en `web/alexa.py`, en la raíz, porque el Redirect URI registrado en Amazon dice
+# `/auth/alexa/callback` y porque un `fetch` no puede seguir un redirect a
+# amazon.com. Esto es solo lo que la pantalla de configuración consulta.
+router.include_router(alexa_router, dependencies=_authenticated)
 
 # Simulación de base de datos en memoria para inicio rápido.
 #
