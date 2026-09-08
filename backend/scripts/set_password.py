@@ -1,13 +1,20 @@
 """Asigna o cambia la contraseña de una cuenta desde la terminal.
 
-Existe por un caso concreto: la migración que introdujo el login creó tu cuenta
-—la que es dueña de todo lo que cargaste antes— sin contraseña usable, porque la
-alternativa era dejar una contraseña por default escrita en un archivo del repo.
-Este script es cómo le ponés la primera.
+Existe por dos casos, uno para cada tipo de base:
 
-    ./venv/bin/python scripts/set_password.py                   # lista las cuentas
-    ./venv/bin/python scripts/set_password.py dueno@localhost   # cambia esa
+* **Base con datos de antes del login.** La migración que lo introdujo sembró
+  tu cuenta con id 1 sin contraseña usable, porque la alternativa era dejar una
+  contraseña por default escrita en un archivo del repo. Este script es cómo le
+  ponés la primera.
+* **Base recién creada** (un deploy nuevo, con el volumen vacío). Ahí la
+  migración no siembra ninguna cuenta —no hay nada que rescatar—, y con
+  `REGISTRATION_OPEN=false` tampoco se puede pasar por `/auth/register`. Acá el
+  script crea la cuenta desde cero con `--create`.
+
+    ./venv/bin/python scripts/set_password.py                       # lista las cuentas
+    ./venv/bin/python scripts/set_password.py dueno@localhost       # cambia esa
     ./venv/bin/python scripts/set_password.py dueno@localhost --email nuevo@mail.com
+    ./venv/bin/python scripts/set_password.py tu@mail.com --create  # primera cuenta en una base vacía
 
 La contraseña se pide por `getpass`, nunca por argumento: lo que se escribe en
 la línea de comandos queda en el historial del shell y en la lista de procesos,
@@ -48,24 +55,67 @@ async def _list_accounts() -> int:
     return 0
 
 
+def _read_new_password(prompt_for: str) -> str | None:
+    """Pide la contraseña dos veces y la valida. `None` si hay que abortar."""
+    password = getpass.getpass(f"Contraseña nueva para {prompt_for}: ")
+    if len(password) < settings.PASSWORD_MIN_LENGTH:
+        print(
+            f"Necesita al menos {settings.PASSWORD_MIN_LENGTH} caracteres.",
+            file=sys.stderr,
+        )
+        return None
+    if password != getpass.getpass("Repetila: "):
+        print("No coinciden.", file=sys.stderr)
+        return None
+    return password
+
+
+async def _create_account(email: str) -> int:
+    """Crea una cuenta desde cero. Para una base sin ninguna todavía.
+
+    Sin esto, una base recién creada —un deploy nuevo, sin datos previos que la
+    migración pueda adoptar— no tiene forma de arrancar: no hay cuenta que
+    `_set_password` pueda modificar, y `REGISTRATION_OPEN=false` bloquea
+    `/auth/register`. Este es el único camino que no depende de ninguna de las
+    dos.
+    """
+    email = normalize_email(email)
+    async with get_session_factory()() as session:
+        users = UserRepository(session)
+        if await users.by_email(email) is not None:
+            print(
+                f"Ya existe una cuenta con el email {email!r}. Corré el script "
+                "con ese email, sin --create, para cambiarle la contraseña.",
+                file=sys.stderr,
+            )
+            return 1
+
+        password = _read_new_password(email)
+        if password is None:
+            return 1
+
+        user = await users.create(email, hash_password(password))
+        await session.commit()
+
+    print(f"Listo. Cuenta creada para {user.email}.")
+    return 0
+
+
 async def _set_password(email: str, new_email: str | None) -> int:
     async with get_session_factory()() as session:
         users = UserRepository(session)
         user = await users.by_email(normalize_email(email))
         if user is None:
             print(f"No existe ninguna cuenta con el email {email!r}.", file=sys.stderr)
-            print("Corré el script sin argumentos para ver las que hay.", file=sys.stderr)
-            return 1
-
-        password = getpass.getpass(f"Contraseña nueva para {user.email}: ")
-        if len(password) < settings.PASSWORD_MIN_LENGTH:
             print(
-                f"Necesita al menos {settings.PASSWORD_MIN_LENGTH} caracteres.",
+                "Corré el script sin argumentos para ver las que hay, o con "
+                "--create si la base todavía no tiene ninguna.",
                 file=sys.stderr,
             )
             return 1
-        if password != getpass.getpass("Repetila: "):
-            print("No coinciden.", file=sys.stderr)
+
+        password = _read_new_password(user.email)
+        if password is None:
             return 1
 
         user.password_hash = hash_password(password)
@@ -93,11 +143,23 @@ async def main() -> int:
     parser.add_argument(
         "--email", dest="new_email", help="Cambiar también el email de la cuenta."
     )
+    parser.add_argument(
+        "--create",
+        action="store_true",
+        help="Crear la cuenta si no existe, en vez de exigir que ya exista.",
+    )
     args = parser.parse_args()
+
+    if args.create and args.new_email:
+        print("--create y --email no van juntos: la cuenta nueva ya nace con el "
+              "email que le pasaste como argumento.", file=sys.stderr)
+        return 1
 
     try:
         if args.email is None:
             return await _list_accounts()
+        if args.create:
+            return await _create_account(args.email)
         return await _set_password(args.email, args.new_email)
     finally:
         await dispose_engine()
