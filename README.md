@@ -433,6 +433,9 @@ cd backend
 ./venv/bin/python scripts/refresh_store_locations.py --geocoder nominatim  # el geocodificador viejo
 ```
 
+Para llevar el resultado a otra base sin volver a geocodificar, ver
+[Llevar las ubicaciones a otra base](#llevar-las-ubicaciones-a-otra-base-el-deploy).
+
 Cuatro cosas medidas que conviene saber antes de tocar esto:
 
 - **VTEX devuelve `[longitud, latitud]`**, al revés de como se escriben. El par
@@ -548,6 +551,51 @@ Tres decisiones, con su motivo:
 
 No cambia ningún precio: el total del marker sigue siendo el de la cadena,
 calculado igual que en la tabla.
+
+### Llevar las ubicaciones a otra base (el deploy)
+
+Una base recién creada —el volumen nuevo de Fly, por ejemplo— tiene el esquema
+pero ninguna sucursal: las migraciones crean tablas, no las llenan, y una
+comparación inserta filas en `stores` **sin coordenadas**, que es justo lo que
+`located()` filtra. El mapa entonces contesta lo que corresponde, que no hay nada
+que dibujar:
+
+> Todavía no hay sucursales ubicadas. Corré `scripts/refresh_store_locations.py`
+> para cargarlas, o cargá a mano las que tenés cerca.
+
+Eso **no es un error del mapa ni de la API**. Si fallara el geocodificador se
+vería un 502 nombrando a `apis.datos.gob.ar`; si fallaran los tiles se verían los
+markers sobre un rectángulo vacío.
+
+Se puede correr el script de refresco allá, pero son minutos geocodificando desde
+una VM chica y el resultado depende de que los servicios de afuera contesten hoy
+lo mismo que ayer. El camino corto es llevar la corrida que ya se verificó:
+
+```bash
+cd backend
+./venv/bin/python scripts/export_store_locations.py --include-custom
+git add data/store_locations.json && git commit -m "sucursales: exportar ubicaciones"
+fly deploy                                        # el archivo viaja en la imagen
+fly ssh console -a ahorrito -C "python scripts/import_store_locations.py --custom-for vos@mail.com"
+```
+
+Por qué así y no por `sftp`: `data/` ya se copia dentro de la imagen, así que el
+archivo llega con el deploy y no hay que subir nada por separado ni pegar base64
+en una consola. De paso queda versionado, y la próxima exportación se puede
+revisar en un diff en vez de ser un cambio invisible en un binario.
+
+Detalles que importan:
+
+- **Es repetible.** Importa con el mismo `upsert` que usa el descubrimiento
+  (`app/services/locations/persist.py`, compartido por los dos scripts), así que
+  correrlo dos veces deja la base igual que correrlo una.
+- **`--include-custom` va sin dueño.** Los ids de cuenta no significan lo mismo en
+  dos bases, así que el archivo no los lleva y el importador pide el email con
+  `--custom-for`. Sin ese flag se importan solo las de las cadenas.
+- **Disco solo existe en el mapa si la cargaste a mano**, porque no publica
+  ninguna ubicación. Por eso el importador crea la fila de la cadena si falta, en
+  lugar de descartar la sucursal; la primera comparación le pone su nombre real.
+- **No exporta precios ni cuentas.** Solo dónde queda cada local.
 
 ### Base de datos
 

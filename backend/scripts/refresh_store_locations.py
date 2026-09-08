@@ -26,11 +26,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.core.config import settings
 from app.core.db import dispose_engine, get_session_factory
-from app.db.repositories import ChainRepository, StoreRepository
-from app.models.catalog import Chain
 from app.services.locations import Location, coto_scrape, vtex_pickup
 from app.services.locations.georef import GeorefGeocoder
 from app.services.locations.nominatim import Geocoder
+from app.services.locations.persist import persist_locations
 from app.services.providers.vtex.stores import VTEX_STORES
 
 
@@ -215,25 +214,6 @@ async def collect_coto(session, skip_geocoding: bool, geocoder_name: str) -> lis
     return located
 
 
-async def persist(session, by_chain: dict[str, list[Location]]) -> None:
-    chains = ChainRepository(session)
-    stores = StoreRepository(session)
-
-    for slug, locations in by_chain.items():
-        if not locations:
-            continue
-        row = await chains.by_slug(slug)
-        if row is None:
-            # La cadena puede no estar todavía si nunca se comparó nada. Se crea
-            # con el nombre del slug; la primera comparación le pone el suyo.
-            row = await chains.upsert(
-                Chain(slug=slug, display_name=slug, supports_store_prices=False)
-            )
-        for location in locations:
-            await stores.upsert_location(row.id, location)
-        await session.commit()
-
-
 async def main(skip_geocoding: bool, geocoder_name: str) -> None:
     factory = get_session_factory()
     async with factory() as session:
@@ -244,7 +224,7 @@ async def main(skip_geocoding: bool, geocoder_name: str) -> None:
         )
 
         print("\nGuardando…")
-        await persist(session, by_chain)
+        await persist_locations(session, by_chain)
 
         print("\nResumen:")
         total = 0
