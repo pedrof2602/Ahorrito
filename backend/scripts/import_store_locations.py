@@ -11,8 +11,13 @@ o sea que **es repetible**: correrlo dos veces deja la base igual que correrlo
 una, y correrlo sobre una base que ya tiene ubicaciones las actualiza en lugar de
 duplicarlas.
 
+Las sucursales cargadas a mano son de una cuenta, así que hay que decidir de
+cuál. Con una sola cuenta en la base no hace falta decirlo: se detecta sola. Con
+más de una, el script se niega a adivinar y pide `--custom-for` explícito —
+asignárselas a la cuenta equivocada sería peor que no importarlas.
+
 Uso:  python scripts/import_store_locations.py
-      python scripts/import_store_locations.py --custom-for vos@ejemplo.com
+      python scripts/import_store_locations.py --custom-for vos@ejemplo.com   # con más de una cuenta
       python scripts/import_store_locations.py /ruta/al/archivo.json
 
 En el deploy, con el archivo ya dentro de la imagen:
@@ -89,8 +94,48 @@ def to_locations(payload: dict) -> dict[str, list[Location]]:
     return by_chain
 
 
-async def import_custom(session, payload: dict, email: str) -> tuple[int, int]:
-    """Las sucursales cargadas a mano, para la cuenta que se pidió.
+async def resolve_owner(session, email: str | None):
+    """A qué cuenta asignarle las sucursales a mano, sin adivinar de más.
+
+    Con un solo dueño posible —el caso normal de esta app, con el registro
+    cerrado en el deploy— pedir el email es puro trámite: solo hay una cuenta a
+    la que puede ser. Con más de una ya no hay una lectura obviamente correcta,
+    y equivocarse acá no es un error visible: la sucursal quedaría cargada, solo
+    que en el mapa de otra persona. Por eso ahí sí hace falta decirlo.
+    """
+    users = UserRepository(session)
+    if email is not None:
+        normalized = email.strip().lower()
+        user = await users.by_email(normalized)
+        if user is None:
+            raise SystemExit(
+                f"No hay ninguna cuenta con el email {normalized}. Las "
+                "sucursales a mano son de alguien: creá la cuenta primero, o "
+                "usá --skip-custom para importar solo las de las cadenas."
+            )
+        return user
+
+    accounts = await users.all()
+    if not accounts:
+        raise SystemExit(
+            "Todavía no hay ninguna cuenta en esta base. Las sucursales a mano "
+            "son de alguien: creá la cuenta primero con scripts/set_password.py "
+            "--create, o usá --skip-custom para importar solo las de las "
+            "cadenas."
+        )
+    if len(accounts) > 1:
+        listado = "\n".join(f"    {u.email}" for u in accounts)
+        raise SystemExit(
+            "Hay más de una cuenta en esta base, así que no se puede elegir "
+            f"sola:\n{listado}\n"
+            "Decime cuál con --custom-for <email>, o usá --skip-custom para "
+            "importar solo las de las cadenas."
+        )
+    return accounts[0]
+
+
+async def import_custom(session, payload: dict, email: str | None) -> tuple[int, int]:
+    """Las sucursales cargadas a mano, para la cuenta que corresponda.
 
     Devuelve cuántas se crearon y cuántas ya estaban. Se saltean las repetidas en
     vez de pisarlas: del otro lado puede haberlas corregido a mano después de
@@ -102,14 +147,8 @@ async def import_custom(session, payload: dict, email: str) -> tuple[int, int]:
     if not records:
         return (0, 0)
 
-    normalized = email.strip().lower()
-    user = await UserRepository(session).by_email(normalized)
-    if user is None:
-        raise SystemExit(
-            f"No hay ninguna cuenta con el email {normalized}. Las sucursales a "
-            "mano son de alguien: creá la cuenta primero, o corré sin "
-            "--custom-for para importar solo las de las cadenas."
-        )
+    user = await resolve_owner(session, email)
+    print(f"  cuenta: {user.email}")
 
     repo = CustomStoreRepository(session, user.id)
     chains = ChainRepository(session)
@@ -159,7 +198,7 @@ async def import_custom(session, payload: dict, email: str) -> tuple[int, int]:
     return (created, skipped)
 
 
-async def main(path: Path, custom_for: str | None) -> None:
+async def main(path: Path, custom_for: str | None, skip_custom: bool) -> None:
     payload = read_payload(path)
     by_chain = to_locations(payload)
     display_names = payload.get("chains") or {}
@@ -176,15 +215,14 @@ async def main(path: Path, custom_for: str | None) -> None:
             print(f"  {slug:<16} {len(locations):>4}")
         print(f"  {'TOTAL':<16} {saved:>4}")
 
-        if custom_for:
+        if payload.get("custom_stores") and not skip_custom:
             print("\nSucursales cargadas a mano:")
             created, skipped = await import_custom(session, payload, custom_for)
             print(f"  {created} creadas, {skipped} ya estaban o se saltearon")
         elif payload.get("custom_stores"):
             print(
-                f"\n  El archivo trae {len(payload['custom_stores'])} sucursales "
-                "cargadas a mano y no se importaron:\n"
-                "  hay que decir de qué cuenta son con --custom-for <email>."
+                f"\n  Se salteó {len(payload['custom_stores'])} sucursales "
+                "cargadas a mano (--skip-custom)."
             )
     await dispose_engine()
 
@@ -205,8 +243,14 @@ if __name__ == "__main__":
         metavar="EMAIL",
         help=(
             "Cuenta a la que asignarle las sucursales cargadas a mano que traiga "
-            "el archivo. Sin esto, se importan solo las de las cadenas."
+            "el archivo. Con una sola cuenta en la base no hace falta: se "
+            "detecta sola. Con más de una, es obligatorio."
         ),
     )
+    parser.add_argument(
+        "--skip-custom",
+        action="store_true",
+        help="No importar las sucursales cargadas a mano, aunque el archivo las traiga.",
+    )
     args = parser.parse_args()
-    asyncio.run(main(args.file, args.custom_for))
+    asyncio.run(main(args.file, args.custom_for, args.skip_custom))

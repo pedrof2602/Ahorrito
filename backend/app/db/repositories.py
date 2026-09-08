@@ -802,6 +802,9 @@ class UserRepository:
     async def count(self) -> int:
         return await self._s.scalar(select(func.count()).select_from(t.User)) or 0
 
+    async def all(self) -> list[t.User]:
+        return list(await self._s.scalars(select(t.User).order_by(t.User.email)))
+
     async def create(
         self, email: str, password_hash: str, *, role: str = "user"
     ) -> t.User:
