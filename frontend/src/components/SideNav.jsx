@@ -28,7 +28,7 @@ export function SideNav({ onOpenSheet, postalCode }) {
     <aside className="sidenav">
       <div className="sidenav-brand">
         <Logo size={24} />
-        Comparador
+        Ahorrito
       </div>
 
       <nav className="sidenav-items" aria-label="Secciones">

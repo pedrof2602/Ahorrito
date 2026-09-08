@@ -325,47 +325,20 @@ async def test_access_token_sin_vinculo(session, user):
         await lwa.access_token(session, user.id)
 
 
-# ------------------------------------------------------- estado y desvinculado
+# ------------------------------------------------------------------ el estado
 
-
-async def test_status_sin_vinculo(client):
-    response = await client.get("/api/v1/alexa/status")
-
-    assert response.status_code == 200
-    assert response.json() == {
-        "configured": True,
-        "linked": False,
-        "linked_at": None,
-        "scope": None,
-    }
-
-
-async def test_status_con_vinculo_no_devuelve_tokens(client, session, user):
-    await guardar_vinculo(session, user.id, expires_in=3600)
-
-    response = await client.get("/api/v1/alexa/status")
-
-    body = response.json()
-    assert body["linked"] is True
-    # Con zona horaria explícita: un ISO sin ella lo lee el navegador como hora
-    # local y corre la fecha para quien vinculó cerca de la medianoche.
-    assert body["linked_at"].endswith(("Z", "+00:00"))
-    assert ACCESS not in response.text and REFRESH not in response.text
+# Los tests de `GET /api/v1/alexa/status` y `DELETE /api/v1/alexa/link` NO están
+# acá: esos endpoints dejaron de mirar `alexa_links` y ahora informan el vínculo
+# del skill, que vive en `alexa_skill_tokens`. Están en `test_alexa_skill.py`.
+#
+# Lo que sigue en este archivo prueba el flujo de Login with Amazon, que quedó
+# sin uso cuando Amazon apagó la List Management REST API el 1 de julio de 2024.
+# Se borra junto con `services/alexa/lwa.py`.
 
 
 async def test_status_pide_sesion(client):
     client.cookies.delete(settings.COOKIE_NAME)
     assert (await client.get("/api/v1/alexa/status")).status_code == 401
-
-
-async def test_desvincular_borra_la_fila(client, session, user):
-    await guardar_vinculo(session, user.id, expires_in=3600)
-
-    assert (await client.delete("/api/v1/alexa/link")).status_code == 204
-    assert await AlexaLinkRepository(session, user.id).get() is None
-
-    # Idempotente: apretar dos veces no es un error, el resultado pedido ya está.
-    assert (await client.delete("/api/v1/alexa/link")).status_code == 204
 
 
 # ------------------------------------------------------------------- el cifrado

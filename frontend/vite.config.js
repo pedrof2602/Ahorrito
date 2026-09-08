@@ -29,6 +29,25 @@ export default defineConfig(({ mode }) => {
           changeOrigin: true,
           secure: false,
         },
+        // El account linking del skill: `/oauth/alexa/authorize` es el
+        // formulario de login que abre la app de Alexa, y `/oauth/alexa/token`
+        // lo llaman los servidores de Amazon. Las dos URLs quedan escritas en la
+        // consola de desarrollador, así que tampoco hay margen para moverlas
+        // bajo `/api`.
+        '/oauth': {
+          target: env.VITE_BACKEND_ORIGIN || 'http://127.0.0.1:8000',
+          changeOrigin: true,
+          secure: false,
+        },
+        // `/alexa/skill`, el endpoint que Amazon invoca cuando el usuario habla.
+        // En desarrollo no lo llama nadie desde este server —Amazon necesita una
+        // URL pública— pero está para poder pegarle con `curl` sin cambiar de
+        // puerto mientras se prueba.
+        '/alexa': {
+          target: env.VITE_BACKEND_ORIGIN || 'http://127.0.0.1:8000',
+          changeOrigin: true,
+          secure: false,
+        },
       },
     },
   }

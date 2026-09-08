@@ -21,11 +21,18 @@ from fastapi import Request, Response, status
 from fastapi.responses import JSONResponse, RedirectResponse
 
 from app.core.config import settings
+from app.web.oauth_alexa import OAUTH_ALEXA_PATHS
 from app.web.privacy import PRIVACY_PATHS
+from app.web.skill import SKILL_PATHS
 
 logger = logging.getLogger(__name__)
 
-EXEMPT_PATHS = frozenset({"/robots.txt", "/api/v1/health"}) | PRIVACY_PATHS
+EXEMPT_PATHS = (
+    frozenset({"/robots.txt", "/api/v1/health"})
+    | PRIVACY_PATHS
+    | OAUTH_ALEXA_PATHS
+    | SKILL_PATHS
+)
 """Lo único que se contesta sin clave.
 
 `robots.txt` porque un crawler que no puede leerlo no se entera de que no debe
@@ -40,9 +47,17 @@ clave, y la abre cualquiera que quiera saber qué guardamos de él antes de
 registrarse. Los paths se importan de donde están definidas las rutas y no se
 copian acá: si mañana cambia la URL, la exención la sigue sola.
 
-Ninguna de las tres revela nada: son la misma respuesta para cualquiera, no
-tocan la base y no sirven de proxy contra los supermercados, que es lo que la
-puerta está cuidando.
+Los dos de Alexa por el mismo motivo y con el mismo cuidado. `/alexa/skill` lo
+llaman los servidores de Amazon, y `/oauth/alexa/*` el navegador embebido de la
+app de Alexa: ninguno de los dos es un cliente nuestro al que se le pueda haber
+dado la clave alguna vez. **Estar exentos de la puerta no los deja abiertos**:
+al skill lo protege la firma de Amazon —una defensa bastante más fuerte que una
+clave compartida—, al `authorize` el email y la contraseña, y al `token` el
+`client_secret`. La puerta es la capa que decide si una URL existe para vos, y
+para estas tres la respuesta tiene que ser sí.
+
+Ninguna de las exenciones revela nada: no listan datos de nadie sin autenticar y
+no sirven de proxy contra los supermercados, que es lo que la puerta cuida.
 """
 
 

@@ -1,11 +1,6 @@
 import { useEffect, useState } from 'react';
 import { LogOut, MapPin, Mic, Store } from 'lucide-react';
-import {
-  ALEXA_LOGIN_URL,
-  fetchAlexaStatus,
-  fetchChains,
-  unlinkAlexa,
-} from '../lib/api';
+import { fetchAlexaStatus, fetchChains, unlinkAlexa } from '../lib/api';
 import { useAuth } from '../lib/authContext';
 import { Sheet } from './ui/Sheet';
 import './SettingsSheet.css';
@@ -309,9 +304,15 @@ export function SettingsSheet({
             Mis sucursales
           </button>
 
-          {/* Vincular Alexa va con «Mis datos» por lo mismo que las otras dos:
-              no mueve un precio. Es la única acción del panel que se va del
-              sitio, así que además avisa qué permiso está dando. */}
+          {/* Alexa va con «Mis datos» por lo mismo que las otras dos: no mueve
+              un precio.
+
+              Acá no hay botón de "Vincular", y no es un olvido: el vínculo
+              empieza en la app de Alexa, no en esta. El usuario activa el skill
+              allá y aprieta "Vincular cuenta"; recién ahí Alexa abre nuestro
+              formulario de login. No hay nada que podamos iniciar desde este
+              lado, así que la pantalla explica el camino en vez de ofrecer un
+              botón que no existe. */}
           <div className="settings-alexa">
             {mensajeAlexa ? (
               <p
@@ -329,7 +330,10 @@ export function SettingsSheet({
                   {alexa.linked_at
                     ? ` desde el ${new Date(alexa.linked_at).toLocaleDateString('es-AR')}`
                     : ''}
-                  .
+                  {alexa.devices > 1 ? ` (${alexa.devices} cuentas)` : ''}.
+                </p>
+                <p className="field-hint">
+                  Probá diciendo: «Alexa, decile a Ahorrito que agregue leche».
                 </p>
                 <button
                   className="btn btn--ghost btn--block"
@@ -341,25 +345,13 @@ export function SettingsSheet({
               </>
             ) : (
               <>
-                <button
-                  className="btn btn--ghost btn--block"
-                  // Navegación de verdad y no un `fetch`: del otro lado hay un
-                  // redirect a amazon.com, y un fetch a otro origen muere en
-                  // CORS. Se guarda el borrador antes de irse, igual que los
-                  // botones de arriba: acá el paseo es más largo todavía.
-                  onClick={() => {
-                    onUpdate(draft);
-                    window.location.href = ALEXA_LOGIN_URL;
-                  }}
-                  disabled={alexa ? !alexa.configured : false}
-                >
-                  <Mic size={16} strokeWidth={1.75} aria-hidden />
-                  Vincular cuenta de Alexa
-                </button>
+                <p className="settings-alexa-who">
+                  <Mic size={16} strokeWidth={1.75} aria-hidden /> Alexa
+                </p>
                 <p className="field-hint">
                   {alexa && !alexa.configured
                     ? 'No está configurado en este servidor.'
-                    : 'Le da permiso a esta app para leer y escribir las listas de compras de tu Alexa. Podés cortarlo desde acá o desde tu cuenta de Amazon.'}
+                    : 'Buscá «Ahorrito» en la app de Alexa, activá la skill y tocá «Vincular cuenta». Vas a entrar con este mismo email y contraseña. Después podés decir: «Alexa, decile a Ahorrito que agregue leche».'}
                 </p>
               </>
             )}

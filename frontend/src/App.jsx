@@ -100,9 +100,9 @@ export function App() {
 
   const chainNames = view
     ? listChains([
-        ...view.chains.map((chain) => chain.name),
-        ...view.failedChains.map((chain) => chain.name),
-      ])
+      ...view.chains.map((chain) => chain.name),
+      ...view.failedChains.map((chain) => chain.name),
+    ])
     : '';
 
   return (
@@ -119,7 +119,7 @@ export function App() {
               <span className="topbar-mark" aria-hidden>C</span>
               {/* En pantallas muy angostas el nombre cede el lugar a los
                   controles: la marca sola ya identifica la app. */}
-              <span className="topbar-wordmark">Compras</span>
+              <span className="topbar-wordmark">Ahorrito</span>
             </h1>
             <div className="topbar-actions">
               <button
@@ -283,9 +283,8 @@ export function App() {
                         key={value}
                         role="radio"
                         aria-checked={detail === value}
-                        className={`seg-btn${
-                          detail === value ? ' seg-btn--on' : ''
-                        }`}
+                        className={`seg-btn${detail === value ? ' seg-btn--on' : ''
+                          }`}
                         onClick={() => setDetail(value)}
                       >
                         {label}

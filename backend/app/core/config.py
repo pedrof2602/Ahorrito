@@ -245,5 +245,76 @@ class Settings(BaseSettings):
     Vacío = el vínculo con Alexa está apagado, igual que con `LWA_CLIENT_ID`.
     """
 
+    # --- Skill de Alexa (Ahorrito como proveedor OAuth) ---------------------
+    #
+    # Acá el OAuth va **al revés** que en el bloque de arriba. En `LWA_*` esta
+    # app es el cliente y Amazon el proveedor; en `ALEXA_*` esta app es el
+    # proveedor y Alexa el cliente que viene a pedirle tokens.
+    #
+    # El motivo del cambio: la List Management REST API —la que dejaba leer y
+    # escribir la lista de compras de Alexa desde afuera— la apagó Amazon el
+    # 1 de julio de 2024. La única forma que queda de que "Alexa, agregá leche"
+    # termine en esta base es un skill propio que Amazon invoca acá.
+
+    ALEXA_SKILL_ID: str = ""
+    """`amzn1.ask.skill.…`, el ID del skill en la consola de desarrollador.
+
+    Se compara contra el `applicationId` que viene en cada request: sin eso,
+    cualquier otro skill con una firma válida de Amazon —y la firma de Amazon es
+    la misma para todos— podría postear acá y hablar como nuestros usuarios.
+
+    Vacío = el skill está apagado. En ese estado `/alexa/skill` contesta 404 en
+    vez de aceptar requests sin verificar, que es lo que pasaría si el chequeo
+    de firma se salteara "porque no está configurado".
+    """
+
+    ALEXA_LINK_CLIENT_ID: str = ""
+    """`client_id` que Alexa usa para identificarse contra nuestro `/token`.
+
+    Lo inventamos nosotros —no lo da Amazon— y lo pegamos en la consola, en
+    Account Linking. Puede ser cualquier string estable; no es secreto.
+    """
+
+    ALEXA_LINK_CLIENT_SECRET: str = ""
+    """El secreto del par anterior. Este sí es secreto:
+
+        fly secrets set ALEXA_LINK_CLIENT_SECRET="$(python -c 'import secrets; print(secrets.token_urlsafe(32))')"
+
+    Es lo único que separa a Alexa de cualquiera que descubra un `code`: sin él,
+    un código robado del `redirect_uri` se canjea por un token de la cuenta.
+    """
+
+    ALEXA_LINK_REDIRECT_URIS: list[str] = []
+    """Las URLs de Amazon a las que se puede devolver el `code`, tal cual las
+    muestra la consola en *Account Linking → Alexa Redirect URLs*. Son tres, una
+    por región, y todas terminan en `/api/skill/link/<vendorId>`:
+
+        ["https://layla.amazon.com/api/skill/link/XXXXXXXX",
+         "https://pitangui.amazon.com/api/skill/link/XXXXXXXX",
+         "https://alexa.amazon.co.jp/api/skill/link/XXXXXXXX"]
+
+    **Es una whitelist y se compara literal.** Sin ella, `/oauth/alexa/authorize`
+    aceptaría cualquier `redirect_uri` y alcanzaría con mandarle a un usuario un
+    link con el `redirect_uri` del atacante para que el `code` —y con él la
+    cuenta— termine en otro lado. Es el agujero clásico de un proveedor OAuth y
+    la única defensa es no aceptar destinos que no estén en esta lista.
+    """
+
+    ALEXA_TOKEN_TTL_S: int = 30 * 24 * 3600
+    """Cuánto vale el `access_token` que le damos a Alexa. 30 días.
+
+    Largo a propósito y compensado con un `refresh_token`: cada vencimiento es
+    una ida y vuelta más contra este server, y del otro lado no hay una persona
+    esperando sino un dispositivo que quiere contestar rápido.
+    """
+
+    ALEXA_CODE_TTL_S: int = 300
+    """Cuánto vive el `code` de autorización. Cinco minutos.
+
+    El código viaja en una URL —queda en logs, en el historial, en el Referer— y
+    solo tiene que sobrevivir el salto del navegador a los servidores de Amazon,
+    que son segundos. Es de un solo uso además de corto.
+    """
+
 
 settings = Settings()

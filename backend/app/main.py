@@ -16,7 +16,9 @@ from app.services.http import ProviderError, ProviderUnavailable
 from app.services.providers.cache import purge_expired
 from app.services.providers.registry import ProviderRegistry
 from app.web.alexa import router as alexa_web_router
+from app.web.oauth_alexa import router as oauth_alexa_router
 from app.web.privacy import router as privacy_router
+from app.web.skill import router as alexa_skill_router
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -205,6 +207,17 @@ app.include_router(privacy_router)
 # lo compara literal, y moverlo rompería el vínculo de todos los que ya
 # vincularon. La ruta manda sobre dónde vive el código.
 app.include_router(alexa_web_router)
+
+# El skill de Alexa: el account linking —donde esta app es el proveedor OAuth— y
+# el endpoint que Amazon invoca cuando el usuario le habla al Echo. También antes
+# del `mount`, y las URLs también están clavadas del otro lado: quedan escritas
+# en la consola de desarrollador de Amazon y cambiarlas desvincula a todos.
+#
+# Reemplazan en la práctica a `alexa_web_router` de arriba, que quedó sin uso
+# cuando Amazon apagó la List Management REST API el 1 de julio de 2024. Los dos
+# conviven a propósito hasta que este flujo esté probado en producción.
+app.include_router(oauth_alexa_router)
+app.include_router(alexa_skill_router)
 
 
 def _mount_spa() -> bool:

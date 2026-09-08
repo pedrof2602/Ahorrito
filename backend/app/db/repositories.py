@@ -6,12 +6,14 @@ from __future__ import annotations
 
 import hashlib
 from dataclasses import dataclass
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.config import settings
 from app.core.crypto import decrypt_secret, encrypt_secret
+from app.core.security import hash_session_token, new_session_token
 from app.models import catalog as domain
 from app.models import payment as pay
 from app.services.locations import Location, normalize_query
@@ -773,6 +775,55 @@ class ShoppingListRepository:
         await self._s.flush()
         return row
 
+    async def add_line(
+        self, row: t.ShoppingList, query: str, quantity: int = 1
+    ) -> bool:
+        """Agrega **una** línea al final. Devuelve `False` si la lista está llena.
+
+        Existe al lado de `replace_lines` y no en su lugar porque los dos que
+        escriben la lista lo hacen de formas incompatibles: el frontend siempre
+        manda el estado completo —tiene la lista entera en pantalla— y la voz
+        manda una cosa por vez, sin saber qué más hay. Hacer que el skill lea,
+        agregue y reemplace todo convertiría dos frases seguidas en una carrera
+        donde la segunda pisa la primera.
+
+        Devolver `False` en vez de levantar: quedarse sin lugar no es un error
+        del programa sino algo que el usuario tiene que escuchar, y quien llama
+        ya está armando una frase para contestarle.
+        """
+        if len(row.lines) >= self.MAX_LINES:
+            return False
+
+        row.lines.append(
+            t.ShoppingListLine(
+                position=len(row.lines), query=query[:120], quantity=quantity
+            )
+        )
+        row.updated_at = t.utcnow()
+        await self._s.flush()
+        return True
+
+    async def remove_line(self, row: t.ShoppingList, query: str) -> str | None:
+        """Saca la primera línea cuyo texto coincida. Devuelve cuál sacó.
+
+        La comparación es laxa a propósito —sin distinguir mayúsculas ni espacios
+        de más— porque del otro lado hay un transcriptor de voz: el usuario
+        escribió "Leche" y dijo "leche", y no tiene forma de saber por qué no
+        coincidieron. Renumera `position` para no dejar huecos que después
+        confundan al frontend, que ordena por ese campo.
+        """
+        target = query.strip().casefold()
+        for line in row.lines:
+            if line.query.strip().casefold() == target:
+                removed = line.query
+                row.lines.remove(line)
+                for position, remaining in enumerate(row.lines):
+                    remaining.position = position
+                row.updated_at = t.utcnow()
+                await self._s.flush()
+                return removed
+        return None
+
     async def delete(self, row: t.ShoppingList) -> None:
         await self._s.delete(row)
         await self._s.flush()
@@ -963,4 +1014,176 @@ class AlexaLinkRepository:
         await self._s.delete(row)
         await self._s.flush()
         return True
+
+
+# --------------------------------------------------- skill de Alexa (OAuth)
+#
+# Los dos repositorios de acá abajo son la otra mitad del vínculo con Alexa, y
+# van al revés que `AlexaLinkRepository`: allá esta app le pide tokens a Amazon,
+# acá se los emite. Por eso guardan hashes y no ciphertext —ver `AlexaSkillToken`
+# en `tables.py`— y por eso ninguno de los dos recibe `user_id` en el
+# constructor: cuando llegan, todavía no se sabe de quién es el token que traen;
+# averiguarlo es justamente su trabajo.
+
+
+class AlexaSkillCodeRepository:
+    """Los códigos de autorización de un solo uso del account linking."""
+
+    def __init__(self, session: AsyncSession) -> None:
+        self._s = session
+
+    async def issue(
+        self, user_id: int, *, redirect_uri: str, code_challenge: str | None
+    ) -> str:
+        """Emite un código nuevo y devuelve el valor en claro, único momento en
+        que existe: de acá en adelante solo queda el hash."""
+        code = new_session_token()
+        self._s.add(
+            t.AlexaSkillCode(
+                code_hash=hash_session_token(code),
+                user_id=user_id,
+                code_challenge=code_challenge,
+                redirect_uri=redirect_uri[:400],
+                expires_at=t.utcnow() + timedelta(seconds=settings.ALEXA_CODE_TTL_S),
+            )
+        )
+        await self._s.flush()
+        return code
+
+    async def consume(self, code: str) -> t.AlexaSkillCode | None:
+        """Busca el código y lo **borra**, haya servido o no.
+
+        El borrado es incondicional a propósito: un código que se presentó una
+        vez ya no vale, aunque el canje termine fallando porque el `code_verifier`
+        no cerraba. Devolverlo al pozo para que se pueda reintentar es lo que
+        convierte un código interceptado en algo que el atacante puede probar
+        contra distintos `code_verifier` hasta acertar.
+
+        Devuelve la fila —ya desprendida de la sesión— para que quien llama
+        pueda validar PKCE y `redirect_uri` contra lo que se guardó. Los vencidos
+        se borran igual pero devuelven `None`: no hay nada que canjear.
+        """
+        row = await self._s.scalar(
+            select(t.AlexaSkillCode).where(
+                t.AlexaSkillCode.code_hash == hash_session_token(code)
+            )
+        )
+        if row is None:
+            return None
+
+        expired = t.as_aware(row.expires_at) <= t.utcnow()
+        # Se leen antes del delete: después del flush la fila queda expirada y
+        # cualquier acceso a sus columnas intenta ir a la base, que con
+        # `AsyncSession` fuera de un await es `MissingGreenlet`.
+        snapshot = t.AlexaSkillCode(
+            user_id=row.user_id,
+            code_challenge=row.code_challenge,
+            redirect_uri=row.redirect_uri,
+            expires_at=row.expires_at,
+        )
+        await self._s.delete(row)
+        await self._s.flush()
+        return None if expired else snapshot
+
+    async def purge_expired(self) -> int:
+        """Los que se emitieron y nadie canjeó. Sin esto la tabla solo crece."""
+        result = await self._s.execute(
+            delete(t.AlexaSkillCode).where(t.AlexaSkillCode.expires_at < t.utcnow())
+        )
+        await self._s.flush()
+        return result.rowcount or 0
+
+
+class AlexaSkillTokenRepository:
+    """Los tokens que tiene Alexa para hablar en nombre de un usuario."""
+
+    def __init__(self, session: AsyncSession) -> None:
+        self._s = session
+
+    async def issue(self, user_id: int) -> tuple[str, str]:
+        """Un par `(access_token, refresh_token)` nuevo, en claro.
+
+        Es la única vez que los valores existen fuera de Alexa: se devuelven,
+        se mandan en la respuesta del `/token`, y de la base solo se puede sacar
+        el hash. Si se pierden, no hay forma de recuperarlos y el usuario tiene
+        que vincular de nuevo, que es lo correcto.
+        """
+        access, refresh = new_session_token(), new_session_token()
+        self._s.add(
+            t.AlexaSkillToken(
+                user_id=user_id,
+                access_token_hash=hash_session_token(access),
+                refresh_token_hash=hash_session_token(refresh),
+                expires_at=t.utcnow() + timedelta(seconds=settings.ALEXA_TOKEN_TTL_S),
+            )
+        )
+        await self._s.flush()
+        return access, refresh
+
+    async def by_access_token(self, token: str) -> t.AlexaSkillToken | None:
+        """La fila viva de un `access_token`, o `None` si no existe o venció.
+
+        Un token vencido devuelve `None` y **no** se borra: la fila es lo que le
+        permite a Alexa refrescar, y borrarla acá desvincularía al usuario por el
+        solo hecho de que pasaron treinta días sin que hablara.
+        """
+        row = await self._s.scalar(
+            select(t.AlexaSkillToken).where(
+                t.AlexaSkillToken.access_token_hash == hash_session_token(token)
+            )
+        )
+        if row is None or t.as_aware(row.expires_at) <= t.utcnow():
+            return None
+        return row
+
+    async def touch(self, row: t.AlexaSkillToken) -> None:
+        """Marca que este token se usó. Es para la pantalla, no para la lógica."""
+        row.last_used_at = t.utcnow()
+        await self._s.flush()
+
+    async def rotate(self, refresh_token: str) -> tuple[str, str] | None:
+        """Canjea un `refresh_token` por un par nuevo, sobre la misma fila.
+
+        **Rota los dos**, no solo el access token: así un `refresh_token` robado
+        deja de servir en cuanto el legítimo se usa una vez, y de paso el usuario
+        se entera —el skill deja de andar— en vez de convivir para siempre con
+        alguien más usando su cuenta.
+        """
+        row = await self._s.scalar(
+            select(t.AlexaSkillToken).where(
+                t.AlexaSkillToken.refresh_token_hash == hash_session_token(refresh_token)
+            )
+        )
+        if row is None:
+            return None
+
+        access, refresh = new_session_token(), new_session_token()
+        row.access_token_hash = hash_session_token(access)
+        row.refresh_token_hash = hash_session_token(refresh)
+        row.expires_at = t.utcnow() + timedelta(seconds=settings.ALEXA_TOKEN_TTL_S)
+        await self._s.flush()
+        return access, refresh
+
+    async def for_user(self, user_id: int) -> list[t.AlexaSkillToken]:
+        """Todos los vínculos de un usuario, para mostrarlos en configuración."""
+        return list(
+            await self._s.scalars(
+                select(t.AlexaSkillToken)
+                .where(t.AlexaSkillToken.user_id == user_id)
+                .order_by(t.AlexaSkillToken.created_at.desc())
+            )
+        )
+
+    async def delete_for_user(self, user_id: int) -> int:
+        """Desvincula todo. Devuelve cuántos vínculos había.
+
+        Todos y no uno: desde la app el usuario ve "Alexa" como una sola cosa, y
+        ofrecerle desvincular la tercera de tres sería pedirle que distinga entre
+        filas que nunca vio.
+        """
+        result = await self._s.execute(
+            delete(t.AlexaSkillToken).where(t.AlexaSkillToken.user_id == user_id)
+        )
+        await self._s.flush()
+        return result.rowcount or 0
 
