@@ -53,6 +53,47 @@ def _check_auth_config() -> None:
         )
 
 
+def _check_alexa_config() -> None:
+    """Avisa de la config de Alexa cargada a medias.
+
+    Mismo espíritu que `_check_auth_config`: son estados que arrancan bien y
+    fallan después, lejos y sin explicación. Un vínculo que no se puede completar
+    se ve, del lado del usuario, como una app de Alexa que no hace nada al tocar
+    "Vincular cuenta"; del lado del servidor no queda ni una línea.
+
+    Todo esto es `log.error` y no una excepción **a propósito**. Alexa es una
+    feature accesoria de una app de precios: que esté mal configurada no puede
+    impedir que el sitio levante. Esa lección salió cara —un
+    `ALEXA_LINK_REDIRECT_URIS` con formato inválido dejó todo en 502 hasta que se
+    hizo tolerante el parseo en `core/config.py`— y esta función existe para que
+    el problema se vea en los logs en vez de en el uptime.
+    """
+    linking = [settings.ALEXA_LINK_CLIENT_ID, settings.ALEXA_LINK_CLIENT_SECRET]
+    if any(linking) and not all(linking):
+        log.error(
+            "Account linking de Alexa incompleto: hay que cargar "
+            "ALEXA_LINK_CLIENT_ID y ALEXA_LINK_CLIENT_SECRET, no uno solo."
+        )
+
+    if settings.ALEXA_SKILL_ID and not settings.ALEXA_LINK_REDIRECT_URIS:
+        log.error(
+            "ALEXA_SKILL_ID está cargado pero ALEXA_LINK_REDIRECT_URIS está "
+            "vacío: el skill va a contestar y nadie va a poder vincular su "
+            "cuenta. Las tres URLs salen de la consola de Amazon, en Account "
+            "Linking → Alexa Redirect URLs."
+        )
+
+    for uri in settings.ALEXA_LINK_REDIRECT_URIS:
+        if not uri.startswith("https://"):
+            # Casi siempre significa que la variable se cargó con un formato que
+            # el parseo interpretó como pudo. Amazon sólo redirige a https.
+            log.error(
+                "ALEXA_LINK_REDIRECT_URIS tiene una entrada que no es https: %r. "
+                "Se esperan las tres URLs de Amazon, en JSON o separadas por comas.",
+                uri,
+            )
+
+
 async def _purge_expired_sessions() -> None:
     """Higiene, no seguridad: una sesión vencida ya no autentica —`expires_at` se
     compara en cada request—, pero sin barrerlas la tabla acumula una fila por
@@ -80,6 +121,7 @@ async def lifespan(app: FastAPI):
     """
     await upgrade_schema()
     _check_auth_config()
+    _check_alexa_config()
     # Al arranque y no por tarea periódica: la caché no crece durante la
     # ejecución más de lo que crece el uso, y una app de escritorio se reinicia
     # bastante más seguido que la ventana de retención.

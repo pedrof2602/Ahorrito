@@ -414,6 +414,23 @@ async def test_sin_configurar_no_hay_vinculacion(client, monkeypatch):
     assert (await canjear(client, "lo-que-sea")).status_code == 401
 
 
+async def test_sin_redirect_uris_la_feature_queda_apagada(client, monkeypatch):
+    """El estado al que lleva un `ALEXA_LINK_REDIRECT_URIS` incomprensible.
+
+    `parse_lista` devuelve `[]` en vez de tirar la app —ver `test_config.py`— y
+    lo que tiene que pasar entonces es esto: el linking se comporta como
+    apagado, con un 400 y una página que lo explica. Nunca un 500, y nunca
+    aceptando un `redirect_uri` cualquiera por tener la whitelist vacía.
+    """
+    monkeypatch.setattr(settings, "ALEXA_LINK_REDIRECT_URIS", [])
+
+    response = await client.get("/oauth/alexa/authorize", params=authorize_params())
+
+    assert response.status_code == 400
+    assert "location" not in response.headers
+    assert (await canjear(client, "lo-que-sea")).status_code == 401
+
+
 async def test_vincular_dos_veces_no_pisa_el_vinculo_anterior(client, session, user):
     """Un usuario puede tener el skill vinculado desde más de una casa."""
     primero = (await canjear(client, await obtener_codigo(client))).json()

@@ -1,10 +1,70 @@
+import json
+import logging
 from pathlib import Path
+from typing import Annotated, Any
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import field_validator
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
+
+log = logging.getLogger(__name__)
 
 # Anclamos el .env al directorio de backend/ para que la config no dependa
 # de desde dónde se lanzó uvicorn.
 BACKEND_DIR = Path(__file__).resolve().parents[2]
+
+Lista = Annotated[list[str], NoDecode]
+"""Una lista de strings que se puede escribir de varias formas en el entorno.
+
+`NoDecode` apaga el `json.loads()` que pydantic-settings le hace a los tipos
+complejos **adentro del source**, antes de que corra ningún validador. Sin eso no
+hay forma de atajar el error: un valor que no sea JSON levanta `SettingsError`
+mientras se construyen los settings, y como `settings = Settings()` corre al
+importar este módulo, la excepción mata al proceso antes de que exista la app.
+
+Eso ya pasó: un `ALEXA_LINK_REDIRECT_URIS` cargado separado por comas dejó el
+sitio entero devolviendo 502 —incluidos `/robots.txt` y el health check de Fly—
+durante horas. La variable era de una feature opcional. **Ninguna variable de
+entorno mal escrita tiene que poder hacer eso**, y menos una que sólo enciende
+algo accesorio, así que el parseo de acá abajo no falla nunca: interpreta lo que
+puede y avisa por log de lo que no.
+"""
+
+
+def parse_lista(value: Any) -> list[str]:
+    """Un array JSON, o algo separado por comas o saltos de línea. Nunca levanta.
+
+    El orden importa: primero JSON, porque es el formato que documenta
+    `.env.example` y el que ya usa `fly.toml`; después la forma que la gente
+    escribe cuando tipea una variable a mano.
+    """
+    if value is None:
+        return []
+    if isinstance(value, (list, tuple)):
+        # El default declarado en código, que llega ya parseado.
+        return [str(item).strip() for item in value if str(item).strip()]
+
+    texto = str(value).strip()
+    if not texto:
+        return []
+
+    if texto[0] in "[{":
+        # Arranca con un delimitador de JSON: la intención era JSON. Si está roto
+        # se devuelve vacío y **no** se intenta partir por comas, porque de un
+        # array mal cerrado salen pedazos con corchetes y comillas pegados. Una
+        # de estas listas es la whitelist de `redirect_uri` del proveedor OAuth:
+        # vale más que quede vacía —y la feature apagada, que se nota— antes que
+        # llena de entradas inservibles que aparentan estar configuradas.
+        try:
+            cargado = json.loads(texto)
+        except ValueError:
+            log.error("Config: el valor parece JSON pero no lo es: %r", texto)
+            return []
+        if not isinstance(cargado, list):
+            log.error("Config: el valor es JSON pero no es una lista: %r", texto)
+            return []
+        return [str(item).strip() for item in cargado if str(item).strip()]
+
+    return [pedazo.strip() for pedazo in texto.replace("\n", ",").split(",") if pedazo.strip()]
 
 
 class Settings(BaseSettings):
@@ -13,6 +73,11 @@ class Settings(BaseSettings):
         case_sensitive=True,
         extra="ignore",
     )
+
+    @field_validator("CORS_ORIGINS", "ENABLED_CHAINS", "ALEXA_LINK_REDIRECT_URIS", mode="before")
+    @classmethod
+    def _listas_tolerantes(cls, value: Any) -> list[str]:
+        return parse_lista(value)
 
     PROJECT_NAME: str = "Compras API"
     VERSION: str = "1.0.0"
@@ -23,7 +88,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = ""
 
     # CORS Origins permitidos
-    CORS_ORIGINS: list[str] = [
+    CORS_ORIGINS: Lista = [
         "http://localhost:5173",
         "http://127.0.0.1:5173",
         "http://localhost:3000",
@@ -31,7 +96,7 @@ class Settings(BaseSettings):
 
     # --- Proveedores de precios (VTEX y futuros) ---
     # Cadenas habilitadas por slug. Vacío = todas las registradas.
-    ENABLED_CHAINS: list[str] = []
+    ENABLED_CHAINS: Lista = []
     # Código postal por defecto para resolver sucursales cercanas.
     DEFAULT_POSTAL_CODE: str = "1425"
     HTTP_TIMEOUT_S: float = 20.0
@@ -284,7 +349,7 @@ class Settings(BaseSettings):
     un código robado del `redirect_uri` se canjea por un token de la cuenta.
     """
 
-    ALEXA_LINK_REDIRECT_URIS: list[str] = []
+    ALEXA_LINK_REDIRECT_URIS: Lista = []
     """Las URLs de Amazon a las que se puede devolver el `code`, tal cual las
     muestra la consola en *Account Linking → Alexa Redirect URLs*. Son tres, una
     por región, y todas terminan en `/api/skill/link/<vendorId>`:
@@ -298,6 +363,17 @@ class Settings(BaseSettings):
     link con el `redirect_uri` del atacante para que el `code` —y con él la
     cuenta— termine en otro lado. Es el agujero clásico de un proveedor OAuth y
     la única defensa es no aceptar destinos que no estén en esta lista.
+
+    **Va en `fly.toml`, no en `fly secrets`.** No son credenciales —son URLs de
+    Amazon que sólo llevan el vendor ID— y tenerlas versionadas es lo que permite
+    compararlas contra lo que manda Alexa cuando el vínculo falla. Como secret son
+    un digest opaco que no se puede leer ni para depurar. Ojo con el orden de
+    precedencia: **un secret con este nombre pisa al valor de `fly.toml`**, así
+    que si alguna vez se cargó como secret hay que hacer `fly secrets unset`.
+
+    Vacía = el account linking está apagado, y el sitio arranca igual. Ver
+    `parse_lista()` arriba: el día que esto se cargó con un formato que no era
+    JSON, el sitio entero se cayó.
     """
 
     ALEXA_TOKEN_TTL_S: int = 30 * 24 * 3600
