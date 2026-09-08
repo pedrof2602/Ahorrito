@@ -32,19 +32,6 @@
     letter-spacing: var(--tr-title);
   }
 
-  .sidenav-mark {
-    display: grid;
-    place-items: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
-    background: linear-gradient(155deg, var(--accent), var(--accent-strong));
-    color: white;
-    font-size: 13px;
-    font-weight: 700;
-    box-shadow: 0 3px 8px -2px color-mix(in srgb, var(--accent) 55%, transparent);
-  }
-
   .sidenav-items {
     display: flex;
     flex-direction: column;

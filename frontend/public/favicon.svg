@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Compras">
+  <!-- El logotipo: carrito blanco sobre cuadrado verde.
+
+       SVG y no PNG por dos motivos. Uno, la pestaña del navegador lo dibuja a
+       16px y un PNG escalado a ese tamaño convierte los trazos del carrito en
+       un borrón gris; el vectorial se mantiene nítido a cualquier tamaño. Dos,
+       pesa menos de 1 KB, así que no hay nada que optimizar después.
+
+       El verde va escrito acá y no como `currentColor` ni variable CSS: un
+       favicon lo carga el navegador fuera del documento, sin acceso a las
+       hojas de estilo de la página. Si cambia el token `brand` de tokens.css,
+       este número hay que cambiarlo a mano: es el único lugar donde el color
+       de la marca está duplicado, y no hay forma de evitarlo. -->
+  <rect width="64" height="64" rx="8" fill="#1a7a4e" />
+
+  <!-- El carrito es el ícono `shopping-cart` de lucide, la misma familia que
+       usa toda la app. Viene en una grilla de 24 y acá vive en una de 64, así
+       que se traslada y se escala en lugar de reescribir las coordenadas: el
+       día que lucide corrija el trazo, se copia el nuevo `d` y listo.
+
+       El `stroke-width` se divide por la escala (2 / 1.55 ≈ 1.29) para que el
+       grosor final sea el mismo que tendría el ícono dibujado a este tamaño;
+       sin eso, escalar el grupo engordaría la línea. -->
+  <g transform="translate(13.4 12.2) scale(1.55)"
+     fill="none" stroke="#ffffff" stroke-width="1.29"
+     stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="21" r="1" />
+    <circle cx="19" cy="21" r="1" />
+    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+  </g>
+</svg>

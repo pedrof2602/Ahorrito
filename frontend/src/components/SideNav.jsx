@@ -1,4 +1,5 @@
 import { CreditCard, Diamond, ListChecks, MapPin, Settings } from 'lucide-react';
+import { Logo } from './ui/Logo';
 import './SideNav.css';
 
 /**
@@ -26,9 +27,7 @@ export function SideNav({ onOpenSheet, postalCode }) {
   return (
     <aside className="sidenav">
       <div className="sidenav-brand">
-        <span className="sidenav-mark" aria-hidden>
-          C
-        </span>
+        <Logo size={24} />
         Comparador
       </div>
 

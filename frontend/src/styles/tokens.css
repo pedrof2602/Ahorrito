@@ -53,6 +53,18 @@
   --accent-tint: #e2f4f1;
   --accent-strong: #0a6d61;
 
+  /* El verde del logotipo. Separado de `--accent` porque son dos cosas: el
+     acento pinta acciones y foco por toda la interfaz, esto pinta el cuadrado
+     de la marca y nada más.
+
+     No cambia en oscuro. Un logotipo que se aclara con el tema deja de ser
+     reconocible, y sobre el fondo oscuro este verde tiene contraste de sobra.
+
+     Está duplicado en `public/favicon.svg`, que el navegador carga como
+     archivo suelto y sin acceso a estas variables. Si cambia acá, cambiarlo
+     allá. */
+  --brand: #1a7a4e;
+
   /* --- identidad de cadena -----------------------------------------------
      Un punto de color al lado del nombre, y nada más: identifica la columna
      de un vistazo sin pintar un número. Ninguno es verde, ámbar ni coral —

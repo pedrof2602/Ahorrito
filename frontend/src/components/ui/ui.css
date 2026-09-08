@@ -303,3 +303,22 @@
     background: var(--border);
   }
 }
+
+/* --- logotipo -------------------------------------------------------------
+   Carrito blanco sobre cuadrado verde. El tamaño entra por `--logo-size` desde
+   el componente en vez de haber una clase por medida: es la misma marca a
+   escalas distintas, no dos variantes. */
+
+.logo {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: var(--logo-size, 24px);
+  height: var(--logo-size, 24px);
+  /* Proporcional al tamaño y no fijo en px: un radio de 8px sobre un cuadrado
+     de 24 y sobre uno de 48 son dos siluetas distintas. 12.5% es el del
+     original. */
+  border-radius: 12.5%;
+  background: var(--brand);
+  color: #fff;
+}

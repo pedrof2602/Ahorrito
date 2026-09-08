@@ -32,6 +32,12 @@
   margin-bottom: var(--s1);
 }
 
+/* Un poco más de aire debajo del logotipo que el `gap` del encabezado: la marca
+   es un objeto y el título es texto, y pegarlos los hace leer como un bloque. */
+.login-logo {
+  margin-bottom: var(--s2);
+}
+
 .login-title {
   margin: 0;
   font-family: var(--font-display);

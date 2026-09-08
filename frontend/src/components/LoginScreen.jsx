@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../lib/authContext';
+import { Logo } from './ui/Logo';
 import './LoginScreen.css';
 
 const MIN_PASSWORD = 10;
@@ -48,6 +49,10 @@ export function LoginScreen() {
     <main className="login">
       <form className="login-card" onSubmit={submit}>
         <header className="login-head">
+          {/* La única pantalla donde el logotipo se ve solo, sin el resto de la
+              app alrededor: es lo primero que aparece y lo que dice a qué sitio
+              entraste antes de que escribas nada. Por eso acá va grande. */}
+          <Logo size={44} className="login-logo" />
           <h1 className="login-title">Compras</h1>
           <p className="login-sub">
             {isRegister
