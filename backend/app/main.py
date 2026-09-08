@@ -15,6 +15,7 @@ from app.core.gate import access_gate
 from app.services.http import ProviderError, ProviderUnavailable
 from app.services.providers.cache import purge_expired
 from app.services.providers.registry import ProviderRegistry
+from app.web.privacy import router as privacy_router
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -189,6 +190,13 @@ async def _provider_error(request: Request, exc: ProviderError) -> JSONResponse:
 
 # Registrar rutas
 app.include_router(api_v1_router, prefix=settings.API_V1_STR)
+
+# La política de privacidad va acá y no en la SPA: la abre Amazon durante el
+# "Login with Amazon" y no hay garantía de que ejecute JavaScript, así que tiene
+# que llegar escrita en la primera respuesta. Antes de `_mount_spa()` a
+# propósito: el `mount` de `/` se queda con todo lo que no reclamó una ruta
+# anterior, incluido esto.
+app.include_router(privacy_router)
 
 
 def _mount_spa() -> bool:

@@ -98,6 +98,37 @@ async def test_robots_no_pide_clave(gated):
     assert "Disallow: /" in response.text
 
 
+@pytest.mark.asyncio
+@pytest.mark.parametrize("path", ["/privacidad", "/privacy", "/privacidad/", "/privacy/"])
+async def test_la_politica_de_privacidad_no_pide_clave(gated, path):
+    """Es el único contenido del sitio que tiene que ser público.
+
+    La abre Amazon durante el "Login with Amazon", que no tiene cómo presentar la
+    clave, y la abre cualquiera que quiera saber qué guardamos de él *antes* de
+    decidir registrarse. Las cuatro variantes porque la puerta compara el path
+    crudo: si `/privacidad/` diera 401, el redirect que lo normaliza nunca
+    llegaría a correr.
+    """
+    response = await gated.get(path, follow_redirects=True)
+
+    assert response.status_code == 200
+    assert "política de privacidad" in response.text.lower()
+
+
+@pytest.mark.asyncio
+async def test_la_privacidad_abierta_no_abre_el_resto(gated):
+    """La excepción es esa página y nada más.
+
+    Es la mitad que importa del requisito: dejar pasar la privacidad no puede
+    ser una rendija por la que entren `/docs` o la búsqueda.
+    """
+    await gated.get("/privacidad")
+
+    assert (await gated.get("/")).status_code == 401
+    assert (await gated.get("/docs")).status_code == 401
+    assert (await gated.get("/api/v1/search?q=leche")).status_code == 401
+
+
 # --- el link que se comparte ------------------------------------------------
 
 

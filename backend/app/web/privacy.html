@@ -1,0 +1,318 @@
+<!doctype html>
+<!--
+  Página pública: la ve cualquiera que tenga el link, sin clave de acceso y sin
+  cuenta. Es HTML entero y autocontenido —los estilos van acá adentro, no hay
+  scripts— para que se lea igual desde un navegador, desde un lector de pantalla
+  y desde el validador automático de Amazon, que puede no ejecutar JavaScript.
+
+  Los colores son los mismos tokens de `frontend/src/styles/tokens.css`, copiados
+  a mano y reducidos a los que esta página usa: importar la hoja del build ataría
+  una página que tiene que andar siempre a un artefacto que puede no estar
+  compilado.
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Política de privacidad · Compras</title>
+    <meta
+      name="description"
+      content="Qué datos guarda Compras, para qué los usa y cómo pedir que se borren."
+    />
+    <link rel="canonical" href="/privacidad" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f1f2f7" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c0d0f" />
+
+    <style>
+      :root {
+        --bg: #f1f2f7;
+        --surface: #ffffff;
+        --border: #e3e4ee;
+        --text: #14151f;
+        --text-2: #5a5c72;
+        --text-3: #8b8da3;
+        --accent: #0e8f7e;
+        --accent-strong: #0a6d61;
+        --accent-tint: #e2f4f1;
+        --shadow: 0 1px 2px rgb(20 21 32 / 0.04), 0 12px 32px -12px rgb(20 21 32 / 0.18);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0c0d0f;
+          --surface: #16181c;
+          --border: #262a31;
+          --text: #eceef2;
+          --text-2: #a7abb6;
+          --text-3: #767c8a;
+          --accent: #2fb9a4;
+          --accent-strong: #4fd0bb;
+          --accent-tint: #12312d;
+          /* En oscuro el negro no sostiene sombra: la elevación la da el salto
+             de superficie contra el fondo, no esto. */
+          --shadow: none;
+        }
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        /* 17px y no 16: es un texto largo que se lee de corrido, no una interfaz
+           que se escanea. */
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      main {
+        /* 68ch: el ancho en el que un párrafo se sigue sin perder el renglón. */
+        max-width: 68ch;
+        margin: 0 auto;
+        padding: clamp(24px, 6vw, 64px) 20px 96px;
+      }
+
+      article {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: clamp(20px, 5vw, 48px);
+      }
+
+      h1 {
+        font-size: clamp(28px, 6vw, 38px);
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        margin: 0 0 8px;
+      }
+
+      h2 {
+        font-size: 21px;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        margin: 40px 0 12px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border);
+      }
+
+      /* El primer h2 sigue a la bajada, no a otra sección: la línea de arriba
+         sobraría. */
+      h2:first-of-type {
+        border-top: none;
+        padding-top: 0;
+        margin-top: 32px;
+      }
+
+      p,
+      li {
+        color: var(--text-2);
+      }
+
+      p {
+        margin: 0 0 16px;
+      }
+
+      .bajada {
+        font-size: 19px;
+        color: var(--text-2);
+        margin-bottom: 4px;
+      }
+
+      .fecha {
+        display: inline-block;
+        font-size: 14px;
+        color: var(--text-3);
+        margin: 0;
+      }
+
+      ul {
+        margin: 0 0 16px;
+        padding-left: 22px;
+      }
+
+      li {
+        margin-bottom: 12px;
+      }
+
+      li strong,
+      p strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      a {
+        color: var(--accent-strong);
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+      }
+
+      a:hover {
+        color: var(--accent);
+      }
+
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 3px;
+      }
+
+      .destacado {
+        background: var(--accent-tint);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin: 0 0 16px;
+      }
+
+      .destacado p:last-child {
+        margin-bottom: 0;
+      }
+
+      footer {
+        margin-top: 32px;
+        font-size: 14px;
+        color: var(--text-3);
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <h1>Política de privacidad</h1>
+        <p class="bajada">
+          Compras es una aplicación que compara el precio de tu lista entre
+          supermercados. Esto es todo lo que guarda de vos, para qué lo usa y
+          cómo pedir que se borre, escrito para que se entienda sin abogado.
+        </p>
+        <p class="fecha">Última actualización: 8 de septiembre de 2026</p>
+
+        <h2>Qué datos guardamos</h2>
+        <ul>
+          <li>
+            <strong>Tu email.</strong> Es con lo que entrás a la aplicación. Se
+            guarda junto con tu contraseña, que no queda en texto plano: se
+            guarda un hash, del que no se puede volver a la contraseña original.
+          </li>
+          <li>
+            <strong>Tu código postal.</strong> Es lo que decide qué sucursales te
+            corresponden y, por lo tanto, qué precios ves.
+          </li>
+          <li>
+            <strong>Qué tarjetas tenés: el banco y el tipo.</strong> Por ejemplo
+            «Galicia, crédito, Visa».
+            <strong>Nunca el número de tu tarjeta</strong>, ni el vencimiento, ni
+            el código de seguridad, ni el nombre del titular. Se guardan los
+            primeros seis a ocho dígitos, que identifican al banco que la emitió
+            y no a vos, porque es lo único que hace falta para saber qué
+            descuento te toca. En la base de datos directamente no existe un
+            lugar donde poner el número completo.
+          </li>
+          <li>
+            <strong>Tu lista de compras</strong> y las listas que hayas guardado,
+            con los productos y las cantidades.
+          </li>
+          <li>
+            <strong>Lo que cargues en tu perfil, si lo cargás.</strong> Nombre,
+            DNI, teléfono y domicilios son opcionales: existen para autocompletar
+            un pedido y ubicar las sucursales más cercanas a tu casa. Si no los
+            cargás, la aplicación funciona igual.
+          </li>
+          <li>
+            <strong>Tus listas de Alexa, si vinculás tu cuenta de Amazon.</strong>
+            Vincularla es opcional y lo hacés vos. Si lo hacés, la aplicación
+            puede leer las listas de compras de tu cuenta de Alexa, para poder
+            compararlas sin que tengas que copiarlas a mano. Podés desvincularla
+            cuando quieras desde tu cuenta de Amazon, y a partir de ahí dejamos
+            de tener acceso.
+          </li>
+        </ul>
+
+        <h2>Para qué los usamos</h2>
+        <p>Para estas tres cosas, y para ninguna otra:</p>
+        <ul>
+          <li>
+            <strong>Comparar precios entre supermercados</strong>, para mostrarte
+            en cuál te sale más barata tu lista.
+          </li>
+          <li>
+            <strong>Aplicar los descuentos de tus tarjetas</strong>, para que el
+            total que ves sea el que vas a pagar y no el de la góndola.
+          </li>
+          <li>
+            <strong>Sugerirte productos para volver a comprar</strong>, a partir
+            de lo que ya compraste.
+          </li>
+        </ul>
+        <p>
+          No usamos tus datos para publicidad, no armamos un perfil tuyo para
+          venderlo, y no los usamos para nada que no sea hacer funcionar la
+          aplicación.
+        </p>
+
+        <h2>No compartimos ni vendemos tus datos</h2>
+        <div class="destacado">
+          <p>
+            No vendemos tus datos, no los cedemos y no se los damos a terceros
+            para que hagan publicidad ni ninguna otra cosa.
+          </p>
+        </div>
+        <p>
+          Para poder funcionar, la aplicación sí necesita hacer dos consultas
+          hacia afuera, y conviene que lo sepas:
+        </p>
+        <ul>
+          <li>
+            Cuando buscás un producto, <strong>el nombre de ese producto</strong>
+            se le consulta a los sitios de los supermercados, junto con el código
+            postal para que devuelvan los precios de tu zona. No les mandamos tu
+            email, tu nombre ni tus tarjetas.
+          </li>
+          <li>
+            Cuando pedís ubicar un domicilio en el mapa,
+            <strong>esa dirección</strong> se le consulta a un servicio de
+            geolocalización (el servicio de datos geográficos del Estado
+            argentino, o OpenStreetMap) para obtener sus coordenadas. Va la
+            dirección sola, sin nada que diga de quién es.
+          </li>
+        </ul>
+
+        <h2>Cómo pedir que borremos tus datos</h2>
+        <p>
+          Escribinos a
+          <a href="mailto:pedrofreimeyer@gmail.com">pedrofreimeyer@gmail.com</a>
+          desde el mismo email con el que te registraste, pidiendo que borremos
+          tu cuenta. Borramos todo lo asociado a ella —perfil, tarjetas,
+          domicilios y listas— y te confirmamos por el mismo medio cuando esté
+          hecho.
+        </p>
+        <p>
+          A esa misma dirección podés escribir para pedir una copia de tus datos,
+          para corregir algo que esté mal o para cualquier duda sobre esta
+          política.
+        </p>
+
+        <h2>Cambios en esta política</h2>
+        <p>
+          Si cambia algo de lo que dice acá, se actualiza esta página y con ella
+          la fecha de arriba, que es la que te dice si estás leyendo la versión
+          vigente.
+        </p>
+      </article>
+
+      <footer>Compras · comparador de precios de supermercados</footer>
+    </main>
+  </body>
+</html>

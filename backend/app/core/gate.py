@@ -21,10 +21,11 @@ from fastapi import Request, Response, status
 from fastapi.responses import JSONResponse, RedirectResponse
 
 from app.core.config import settings
+from app.web.privacy import PRIVACY_PATHS
 
 logger = logging.getLogger(__name__)
 
-EXEMPT_PATHS = frozenset({"/robots.txt", "/api/v1/health"})
+EXEMPT_PATHS = frozenset({"/robots.txt", "/api/v1/health"}) | PRIVACY_PATHS
 """Lo único que se contesta sin clave.
 
 `robots.txt` porque un crawler que no puede leerlo no se entera de que no debe
@@ -32,6 +33,16 @@ indexar —y no revela nada que no diga ya su propio contenido—. El health che
 porque lo consulta la infraestructura de Fly, que no tiene cómo presentar una
 clave, y contestar 401 ahí haría que el deploy se considere caído y se reinicie
 en loop.
+
+La política de privacidad porque tiene que ser pública para servir de algo: la
+abre Amazon durante el "Login with Amazon", que no tiene cómo presentar la
+clave, y la abre cualquiera que quiera saber qué guardamos de él antes de
+registrarse. Los paths se importan de donde están definidas las rutas y no se
+copian acá: si mañana cambia la URL, la exención la sigue sola.
+
+Ninguna de las tres revela nada: son la misma respuesta para cualquiera, no
+tocan la base y no sirven de proxy contra los supermercados, que es lo que la
+puerta está cuidando.
 """
 
 
