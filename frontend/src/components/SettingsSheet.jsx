@@ -1,36 +1,14 @@
 import { useEffect, useState } from 'react';
-import { LogOut, MapPin, Mic, Store } from 'lucide-react';
-import { fetchAlexaStatus, fetchChains, unlinkAlexa } from '../lib/api';
+import { Copy, LogOut, MapPin, Mic, Store, Trash2 } from 'lucide-react';
+import {
+  createVoiceToken,
+  deleteVoiceToken,
+  fetchChains,
+  fetchVoiceTokens,
+} from '../lib/api';
 import { useAuth } from '../lib/authContext';
 import { Sheet } from './ui/Sheet';
 import './SettingsSheet.css';
-
-/**
- * Qué decirle al usuario según cómo terminó el paseo por Amazon.
- *
- * El backend no manda texto: manda un código en `?alexa=` y lo traduce la app.
- * Es lo que permite que el callback —que es un redirect, no una respuesta que
- * alguien lea— no tenga que saber nada de cómo se escribe en esta pantalla.
- */
-const ALEXA_MENSAJES = {
-  ok: { tono: 'ok', texto: 'Listo: tu cuenta de Alexa quedó vinculada.' },
-  cancelado: {
-    tono: 'aviso',
-    texto: 'No autorizaste el acceso en Amazon, así que no se vinculó nada.',
-  },
-  sesion: {
-    tono: 'aviso',
-    texto: 'Se venció la sesión durante el proceso. Probá de nuevo.',
-  },
-  sin_config: {
-    tono: 'aviso',
-    texto: 'El vínculo con Alexa no está configurado en este servidor.',
-  },
-  error: {
-    tono: 'error',
-    texto: 'No se pudo vincular la cuenta. Probá de nuevo en un rato.',
-  },
-};
 
 /**
  * Código postal, canal, tema y tus datos.
@@ -48,11 +26,11 @@ export function SettingsSheet({
   onApply,
   onOpenAddresses,
   onOpenStores,
-  alexaOutcome = null,
 }) {
   const [chains, setChains] = useState([]);
   const [draft, setDraft] = useState(settings);
-  const [alexa, setAlexa] = useState(null);
+  const [tokens, setTokens] = useState([]);
+  const [nuevo, setNuevo] = useState(null);
   const { user, logout } = useAuth();
 
   useEffect(() => {
@@ -61,25 +39,36 @@ export function SettingsSheet({
       .catch(() => setChains([])); // catálogo opcional: sin él se usa el default
   }, []);
 
-  // El mismo `.catch()` silencioso: si el estado del vínculo no carga, el panel
-  // sigue sirviendo para todo lo demás, que es a lo que vino la mayoría.
+  // El mismo `.catch()` silencioso: si los tokens no cargan, el panel sigue
+  // sirviendo para todo lo demás, que es a lo que vino la mayoría.
   useEffect(() => {
-    fetchAlexaStatus()
-      .then(setAlexa)
-      .catch(() => setAlexa(null));
+    fetchVoiceTokens()
+      .then(setTokens)
+      .catch(() => setTokens([]));
   }, []);
 
-  const desvincularAlexa = async () => {
+  const crearToken = async () => {
     try {
-      await unlinkAlexa();
-      setAlexa({ ...alexa, linked: false, linked_at: null });
+      const creado = await createVoiceToken('iPhone');
+      // Se guarda aparte del listado: es el único momento en que el valor en
+      // claro existe de este lado, y la pantalla tiene que mostrarlo ahora o
+      // nunca. El listado que vuelve del server ya no lo trae.
+      setNuevo(creado);
+      setTokens([creado, ...tokens]);
     } catch {
-      // Sin cartel de error: el botón sigue diciendo "Desvincular" y el usuario
-      // puede volver a intentar. Un fallo acá no deja nada a medias.
+      // Sin cartel: el botón sigue ahí y se puede reintentar.
     }
   };
 
-  const mensajeAlexa = alexaOutcome ? ALEXA_MENSAJES[alexaOutcome] : null;
+  const revocarToken = async (id) => {
+    try {
+      await deleteVoiceToken(id);
+      setTokens(tokens.filter((t) => t.id !== id));
+      if (nuevo?.id === id) setNuevo(null);
+    } catch {
+      // Ídem.
+    }
+  };
 
   const salesChannels = [
     ...new Set(chains.flatMap((chain) => chain.sales_channels ?? [])),
@@ -304,57 +293,71 @@ export function SettingsSheet({
             Mis sucursales
           </button>
 
-          {/* Alexa va con «Mis datos» por lo mismo que las otras dos: no mueve
-              un precio.
+          {/* El atajo de voz va con «Mis datos» por lo mismo que las otras
+              dos: no mueve un precio.
 
-              Acá no hay botón de "Vincular", y no es un olvido: el vínculo
-              empieza en la app de Alexa, no en esta. El usuario activa el skill
-              allá y aprieta "Vincular cuenta"; recién ahí Alexa abre nuestro
-              formulario de login. No hay nada que podamos iniciar desde este
-              lado, así que la pantalla explica el camino en vez de ofrecer un
-              botón que no existe. */}
-          <div className="settings-alexa">
-            {mensajeAlexa ? (
-              <p
-                className={`settings-alexa-flash settings-alexa-flash--${mensajeAlexa.tono}`}
-                role="status"
-              >
-                {mensajeAlexa.texto}
-              </p>
-            ) : null}
+              Todo el bloque existe para una sola cosa: que el token se pueda
+              copiar. Se muestra **una única vez**, al crearlo, porque de la base
+              sólo se puede recuperar el hash. De ahí que el valor aparezca
+              grande, seleccionable y con un botón de copiar en vez de escondido
+              detrás de un "ver". */}
+          <div className="settings-voz">
+            <p className="settings-voz-title">
+              <Mic size={16} strokeWidth={1.75} aria-hidden /> Agregar por voz
+            </p>
 
-            {alexa?.linked ? (
-              <>
-                <p className="settings-alexa-who">
-                  Alexa vinculada
-                  {alexa.linked_at
-                    ? ` desde el ${new Date(alexa.linked_at).toLocaleDateString('es-AR')}`
-                    : ''}
-                  {alexa.devices > 1 ? ` (${alexa.devices} cuentas)` : ''}.
+            {nuevo ? (
+              <div className="settings-voz-nuevo" role="status">
+                <p className="settings-voz-aviso">
+                  Copialo ahora: no se vuelve a mostrar.
                 </p>
-                <p className="field-hint">
-                  Probá diciendo: «Alexa, decile a Ahorrito que agregue leche».
-                </p>
+                <code className="settings-voz-token">{nuevo.token}</code>
                 <button
                   className="btn btn--ghost btn--block"
-                  onClick={desvincularAlexa}
+                  onClick={() => navigator.clipboard?.writeText(nuevo.token)}
                 >
-                  <Mic size={16} strokeWidth={1.75} aria-hidden />
-                  Desvincular cuenta de Alexa
+                  <Copy size={16} strokeWidth={1.75} aria-hidden />
+                  Copiar token
                 </button>
-              </>
-            ) : (
-              <>
-                <p className="settings-alexa-who">
-                  <Mic size={16} strokeWidth={1.75} aria-hidden /> Alexa
-                </p>
-                <p className="field-hint">
-                  {alexa && !alexa.configured
-                    ? 'No está configurado en este servidor.'
-                    : 'Buscá «Ahorrito» en la app de Alexa, activá la skill y tocá «Vincular cuenta». Vas a entrar con este mismo email y contraseña. Después podés decir: «Alexa, decile a Ahorrito que agregue leche».'}
-                </p>
-              </>
-            )}
+              </div>
+            ) : null}
+
+            {tokens.length ? (
+              <ul className="settings-voz-lista">
+                {tokens.map((token) => (
+                  <li key={token.id} className="settings-voz-item">
+                    <span className="settings-voz-nombre">
+                      {token.name || 'Sin nombre'}
+                      {token.last_used_at ? (
+                        <span className="settings-voz-uso">
+                          {' · usado el '}
+                          {new Date(token.last_used_at).toLocaleDateString('es-AR')}
+                        </span>
+                      ) : (
+                        <span className="settings-voz-uso"> · sin usar</span>
+                      )}
+                    </span>
+                    <button
+                      className="settings-voz-borrar"
+                      onClick={() => revocarToken(token.id)}
+                      aria-label={`Revocar ${token.name || 'el token'}`}
+                    >
+                      <Trash2 size={15} strokeWidth={1.75} aria-hidden />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+
+            <button className="btn btn--ghost btn--block" onClick={crearToken}>
+              Crear token para el atajo
+            </button>
+            <p className="field-hint">
+              Con este token, un Atajo de Siri puede anotar en tu lista sin abrir
+              la app: «Oye Siri, agregar a Ahorrito». No sirve para nada más —ni
+              tus domicilios, ni tus medios de pago— así que si se te escapa,
+              alcanza con revocarlo acá.
+            </p>
           </div>
 
           {/* Último de todo y separado: cerrar sesión es la acción más

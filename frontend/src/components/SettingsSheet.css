@@ -23,39 +23,99 @@
 }
 
 /* --- vínculo con Alexa ----------------------------------------------------
-   Agrupado con su texto de ayuda porque es la única acción del panel que se va
-   del sitio y que otorga un permiso: el botón solo no alcanza para saber qué
-   se está autorizando. */
+   Agrupado con su texto de ayuda porque otorga una credencial: el botón solo no
+   alcanza para saber qué se está entregando ni con qué alcance. */
 
-.settings-alexa {
+.settings-voz {
   display: flex;
   flex-direction: column;
   gap: var(--s2);
 }
 
-.settings-alexa-who {
+.settings-voz-title {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
   margin: 0;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* El token recién creado. Tiene su propio recuadro y no es una línea más de la
+   lista porque es la única oportunidad de copiarlo: del server no vuelve nunca
+   más, y perderlo obliga a emitir otro. */
+.settings-voz-nuevo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+  padding: var(--s3);
+  border: 1px solid var(--accent);
+  border-radius: var(--r2);
+  background: var(--accent-tint);
+}
+
+.settings-voz-aviso {
+  margin: 0;
+  font-size: var(--t-sm);
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.settings-voz-token {
+  /* `anywhere` y no `break-all`: son 43 caracteres sin espacios que tienen que
+     entrar en un teléfono sin desbordar el panel ni forzar scroll horizontal. */
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: var(--t-sm);
+  user-select: all;
+}
+
+.settings-voz-lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+}
+
+.settings-voz-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s2);
   font-size: var(--t-sm);
   color: var(--text-2);
 }
 
-/* El resultado de volver de Amazon. Se muestra una sola vez, cuando la app
-   arranca con `?alexa=` en la URL. */
-.settings-alexa-flash {
-  margin: 0;
-  font-size: var(--t-sm);
+.settings-voz-nombre {
+  overflow-wrap: anywhere;
 }
 
-.settings-alexa-flash--ok {
-  color: var(--win);
+.settings-voz-uso {
+  color: var(--text-3);
 }
 
-.settings-alexa-flash--aviso {
-  color: var(--warn);
+.settings-voz-borrar {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  padding: var(--s1);
+  border: 0;
+  border-radius: var(--r1);
+  background: none;
+  color: var(--text-3);
+  cursor: pointer;
 }
 
-.settings-alexa-flash--error {
+.settings-voz-borrar:hover {
   color: var(--danger);
+}
+
+.settings-voz-borrar:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
 /* --- cuenta ---------------------------------------------------------------

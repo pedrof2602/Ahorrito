@@ -128,162 +128,57 @@ class AuthSession(Base):
     header que manda el cliente y no hay motivo para guardar 8 KB de él."""
 
 
-class AlexaLink(Base):
-    """La cuenta de Amazon que un usuario vinculó, y las llaves para usarla.
+class ApiToken(Base):
+    """Un token personal, para que algo de afuera escriba en la lista del usuario.
 
-    Es la tabla que más se parece a `AuthSession` y la que más se diferencia de
-    ella: las dos guardan credenciales, pero acá los tokens van **cifrados y no
-    hasheados**. Un hash sirve para comparar contra lo que alguien presenta; un
-    token de Amazon hay que mandarlo tal cual en cada llamada a la API de listas,
-    así que tiene que poder volver en claro. Ver `core/crypto.py`.
+    Nació para el Atajo de Siri —"Oye Siri, agregar a Ahorrito"— que hace una
+    request desde el iPhone y no tiene dónde guardar una cookie de sesión ni cómo
+    pasar por un login. El token se pega una vez en el atajo y queda ahí.
 
-    Nada de esto entra en un log ni sale por un endpoint: la API contesta si hay
-    vínculo y desde cuándo, nunca con qué.
+    **Se guarda el hash, no el token**, igual que `AuthSession` y por el mismo
+    motivo: lo único que hace falta es comparar contra lo que alguien presenta,
+    así que una copia de la base no le sirve a nadie para escribir en la lista de
+    otro. El valor en claro existe una sola vez, cuando se emite, y de ahí en más
+    vive únicamente en el teléfono de su dueño.
+
+    **No autoriza la cuenta entera.** Con este token se puede agregar, leer y
+    borrar líneas de la lista, y nada más: ni domicilios, ni medios de pago, ni
+    cambiar la contraseña. Es deliberado —un token pegado en un atajo es un
+    secreto que se copia, se sincroniza y se comparte sin querer— y es lo que
+    hace que perderlo sea un incordio y no una emergencia.
     """
 
-    __tablename__ = "alexa_links"
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-
-    user_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="CASCADE"), unique=True, index=True
-    )
-    """Una cuenta de la app vincula una cuenta de Amazon, y el índice único lo
-    garantiza en la base y no en el código: volver a vincular pisa la fila que
-    ya está en lugar de dejar dos tokens vivos para el mismo usuario.
-
-    `CASCADE` al revés que en `Address` o `ShoppingList`, que a propósito no
-    tienen FK para no quedar huérfanas si la cuenta se suspende. La diferencia
-    es qué es cada cosa: un domicilio huérfano es un dato de más, un token vivo
-    sin dueño es un permiso de escritura sobre las listas de alguien que ya no
-    está."""
-
-    access_token_enc: Mapped[str] = mapped_column(Text)
-    refresh_token_enc: Mapped[str] = mapped_column(Text)
-    """Cifrados con Fernet. `Text` y no `String(n)` porque el ciphertext crece
-    con el largo del token y Amazon no documenta un techo: recortarlo a mano
-    sería guardar algo que no descifra."""
-
-    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
-    """Cuándo vence el `access_token`, no el vínculo.
-
-    El `refresh_token` no vence salvo que el usuario revoque el permiso, así que
-    esta fecha se cruza a cada rato y es normal: dispara un refresco, no un
-    "vinculá de nuevo"."""
-
-    scope: Mapped[str] = mapped_column(String(200))
-    """Los permisos que Amazon terminó otorgando, que no siempre son los que se
-    pidieron. Guardarlo es lo que permite detectar más adelante que un vínculo
-    viejo no tiene el scope de escritura, sin ir a preguntárselo a Amazon."""
-
-    linked_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
-    refreshed_at: Mapped[datetime | None] = mapped_column(
-        DateTime(timezone=True), default=None
-    )
-
-    def __repr__(self) -> str:
-        """Sin los tokens, ni siquiera recortados.
-
-        El `__repr__` que genera SQLAlchemy no imprime columnas, pero un
-        `log.debug("%r", row)` en el archivo equivocado sí imprimiría este, y
-        una línea acá cierra esa puerta para siempre.
-        """
-        return f"<AlexaLink user_id={self.user_id} expires_at={self.expires_at}>"
-
-
-class AlexaSkillCode(Base):
-    """Un `code` de OAuth a medio canjear, de los que emite `/oauth/alexa/authorize`.
-
-    Vive entre que el usuario aprueba el vínculo en la app de Alexa y que los
-    servidores de Amazon lo canjean por un token, que son segundos. Está en la
-    base y no en memoria porque el canje llega en **otra request**, y con más de
-    un worker no hay garantía de que caiga en el mismo proceso.
-
-    Es la tabla más efímera del esquema: se borra al canjearse, y las que quedan
-    —el usuario aprobó y Amazon nunca vino— las junta `purge_expired()`.
-    """
-
-    __tablename__ = "alexa_skill_codes"
-
-    id: Mapped[int] = mapped_column(primary_key=True)
-
-    code_hash: Mapped[str] = mapped_column(String(64), unique=True, index=True)
-    """SHA-256 del código, por el mismo motivo que `AuthSession.token_hash`.
-
-    Acá pesa incluso menos que allá: el código dura cinco minutos y un solo uso,
-    así que hashearlo casi no cambia nada. Se hace igual porque la alternativa
-    —una columna con credenciales en claro— es la clase de excepción que después
-    se copia a la tabla de al lado, donde sí importa."""
-
-    user_id: Mapped[int] = mapped_column(
-        ForeignKey("users.id", ondelete="CASCADE"), index=True
-    )
-
-    code_challenge: Mapped[str | None] = mapped_column(String(128), default=None)
-    """El `code_challenge` de PKCE (S256), si Alexa mandó uno.
-
-    Nullable porque el estándar lo hace opcional, pero en la práctica Alexa
-    siempre lo manda. Ata el canje a quien inició el flujo: sin PKCE, un código
-    interceptado le sirve a cualquiera que tenga el `client_secret`."""
-
-    redirect_uri: Mapped[str] = mapped_column(String(400))
-    """Se guarda para volver a compararlo en el canje.
-
-    OAuth 2.0 lo exige y no es ceremonia: es lo que impide que un código emitido
-    para un `redirect_uri` se canjee declarando otro."""
-
-    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
-
-    def __repr__(self) -> str:
-        return f"<AlexaSkillCode user_id={self.user_id} expires_at={self.expires_at}>"
-
-
-class AlexaSkillToken(Base):
-    """El token que Alexa guarda de nosotros y presenta en cada frase del usuario.
-
-    **Acá se hashea, no se cifra**, y es exactamente al revés que en `AlexaLink`
-    de más arriba. La diferencia no es de criterio sino de dirección: en
-    `AlexaLink` el token es de Amazon y hay que poder mandarlo, así que tiene que
-    volver en claro; acá el token es nuestro, lo emitimos nosotros, y lo único
-    que se hace con él es comparar el que Alexa presenta contra lo guardado. Para
-    eso alcanza un hash, y con un hash una copia de la base no le sirve a nadie
-    para hablar como un usuario. Mismo razonamiento que `AuthSession`.
-    """
-
-    __tablename__ = "alexa_skill_tokens"
+    __tablename__ = "api_tokens"
 
     id: Mapped[int] = mapped_column(primary_key=True)
 
     user_id: Mapped[int] = mapped_column(
         ForeignKey("users.id", ondelete="CASCADE"), index=True
     )
-    """Sin `unique`, y esa es la diferencia con `AlexaLink`.
+    """Sin `unique`: alguien puede querer uno por dispositivo —el teléfono y la
+    tablet— y revocar el de un aparato perdido sin romper el otro."""
 
-    Un usuario puede tener el skill vinculado desde más de una cuenta de Amazon
-    —la casa y lo de los padres— y desvincular una no tiene que apagar la otra.
-    Es también lo que hace que volver a vincular no rompa el vínculo que ya
-    andaba: se agrega una fila en vez de pisar la que está."""
+    token_hash: Mapped[str] = mapped_column(String(64), unique=True, index=True)
 
-    access_token_hash: Mapped[str] = mapped_column(String(64), unique=True, index=True)
-    refresh_token_hash: Mapped[str] = mapped_column(String(64), unique=True, index=True)
+    name: Mapped[str] = mapped_column(String(60), default="")
+    """Cómo lo llamó su dueño: "iPhone", "la tablet de la cocina".
 
-    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), index=True)
-    """Cuándo vence el `access_token`. El `refresh_token` no vence: mientras la
-    fila exista, Alexa puede pedir uno nuevo."""
+    Es lo único que hace revocable un token en la práctica: una lista de hashes
+    sin nombre no le permite a nadie decidir cuál borrar."""
 
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=utcnow)
     last_used_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), default=None
     )
-    """La última vez que este token llegó en un request de Alexa.
+    """La última vez que se usó. Sirve para dos cosas: mostrar en pantalla que el
+    atajo está andando, y distinguir un token vivo de uno que quedó de una prueba.
 
-    Es lo que la pantalla de configuración muestra como "última vez que usaste
-    Alexa", y de paso lo que permite distinguir un vínculo vivo de uno que quedó
-    de una prueba de hace meses."""
+    **No hay `expires_at`.** Un token que vence obliga a volver a editar el atajo
+    en el teléfono cada tanto, y eso termina en que la persona deja de usarlo. Se
+    revoca a mano cuando hace falta, que es cuando de verdad importa."""
 
     def __repr__(self) -> str:
-        return f"<AlexaSkillToken user_id={self.user_id} expires_at={self.expires_at}>"
+        return f"<ApiToken user_id={self.user_id} name={self.name!r}>"
 
 
 class Chain(Base):

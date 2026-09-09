@@ -21,12 +21,13 @@ hay forma de atajar el error: un valor que no sea JSON levanta `SettingsError`
 mientras se construyen los settings, y como `settings = Settings()` corre al
 importar este módulo, la excepción mata al proceso antes de que exista la app.
 
-Eso ya pasó: un `ALEXA_LINK_REDIRECT_URIS` cargado separado por comas dejó el
-sitio entero devolviendo 502 —incluidos `/robots.txt` y el health check de Fly—
-durante horas. La variable era de una feature opcional. **Ninguna variable de
-entorno mal escrita tiene que poder hacer eso**, y menos una que sólo enciende
-algo accesorio, así que el parseo de acá abajo no falla nunca: interpreta lo que
-puede y avisa por log de lo que no.
+Eso ya pasó: una variable de lista cargada separada por comas en vez de como
+array JSON dejó el sitio entero devolviendo 502 —incluidos `/robots.txt` y el
+health check de Fly— durante horas. Era la variable de una feature opcional, que
+después se terminó descartando. **Ninguna variable de entorno mal escrita tiene
+que poder hacer eso**, y menos una que sólo enciende algo accesorio, así que el
+parseo de acá abajo no falla nunca: interpreta lo que puede y avisa por log de lo
+que no.
 """
 
 
@@ -50,10 +51,10 @@ def parse_lista(value: Any) -> list[str]:
     if texto[0] in "[{":
         # Arranca con un delimitador de JSON: la intención era JSON. Si está roto
         # se devuelve vacío y **no** se intenta partir por comas, porque de un
-        # array mal cerrado salen pedazos con corchetes y comillas pegados. Una
-        # de estas listas es la whitelist de `redirect_uri` del proveedor OAuth:
-        # vale más que quede vacía —y la feature apagada, que se nota— antes que
-        # llena de entradas inservibles que aparentan estar configuradas.
+        # array mal cerrado salen pedazos con corchetes y comillas pegados.
+        # `CORS_ORIGINS` es una whitelist: vale más que quede vacía —y se note al
+        # primer request— antes que llena de entradas inservibles que aparentan
+        # estar configuradas.
         try:
             cargado = json.loads(texto)
         except ValueError:
@@ -74,7 +75,7 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    @field_validator("CORS_ORIGINS", "ENABLED_CHAINS", "ALEXA_LINK_REDIRECT_URIS", mode="before")
+    @field_validator("CORS_ORIGINS", "ENABLED_CHAINS", mode="before")
     @classmethod
     def _listas_tolerantes(cls, value: Any) -> list[str]:
         return parse_lista(value)
@@ -260,137 +261,6 @@ class Settings(BaseSettings):
     """Largo mínimo. Sin reglas de "una mayúscula y un símbolo" a propósito:
     empujan a `Password1!` y el NIST las desaconseja desde 2017. El largo es lo
     que realmente cuesta romper."""
-
-    # --- Login with Amazon (vínculo con Alexa) ------------------------------
-
-    LWA_CLIENT_ID: str = ""
-    """`Client ID` del Security Profile de Login with Amazon.
-
-    Vacío = el vínculo con Alexa está apagado y el botón de la app avisa que
-    falta configurarlo, en vez de mandar al usuario a una pantalla de Amazon que
-    le va a dar error. Mismo criterio que `ACCESS_KEY`: la feature se enciende
-    poniendo el valor, no tocando código.
-    """
-
-    LWA_CLIENT_SECRET: str = ""
-    """`Client Secret` del mismo Security Profile.
-
-    Nunca en `fly.toml`, que está versionado:
-
-        fly secrets set LWA_CLIENT_SECRET="..."
-    """
-
-    LWA_REDIRECT_URI: str = ""
-    """A dónde vuelve Amazon con el `code`, por ejemplo
-    `https://ahorrito.fly.dev/auth/alexa/callback`.
-
-    **Tiene que coincidir carácter por carácter con el `Allowed Return URL` del
-    Security Profile**, incluido el esquema y la barra final. Amazon lo compara
-    literal y ante la mínima diferencia contesta un `invalid_client` que no
-    explica cuál de las dos cosas está mal.
-
-    Es un setting y no una constante porque el valor correcto depende del
-    dominio donde corra esto, y porque probar el flujo contra otro deploy no
-    tiene que ser un cambio de código.
-    """
-
-    TOKEN_ENCRYPTION_KEY: str = ""
-    """Clave Fernet con la que se cifran los tokens de Amazon en la base.
-
-    Se genera una vez y se guarda como secret:
-
-        fly secrets set TOKEN_ENCRYPTION_KEY="$(python -c 'from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())')"
-
-    **Perderla o rotarla vuelve ilegibles todos los vínculos** y obliga a cada
-    usuario a vincular de nuevo. No hay forma de recuperarlos: ese es el punto
-    de que los tokens no estén en claro. Si alguna vez hay que rotarla, el
-    camino es descifrar con la vieja y volver a cifrar con la nueva antes de
-    cambiar el secret, no cambiarlo y ver qué pasa.
-
-    Vacío = el vínculo con Alexa está apagado, igual que con `LWA_CLIENT_ID`.
-    """
-
-    # --- Skill de Alexa (Ahorrito como proveedor OAuth) ---------------------
-    #
-    # Acá el OAuth va **al revés** que en el bloque de arriba. En `LWA_*` esta
-    # app es el cliente y Amazon el proveedor; en `ALEXA_*` esta app es el
-    # proveedor y Alexa el cliente que viene a pedirle tokens.
-    #
-    # El motivo del cambio: la List Management REST API —la que dejaba leer y
-    # escribir la lista de compras de Alexa desde afuera— la apagó Amazon el
-    # 1 de julio de 2024. La única forma que queda de que "Alexa, agregá leche"
-    # termine en esta base es un skill propio que Amazon invoca acá.
-
-    ALEXA_SKILL_ID: str = ""
-    """`amzn1.ask.skill.…`, el ID del skill en la consola de desarrollador.
-
-    Se compara contra el `applicationId` que viene en cada request: sin eso,
-    cualquier otro skill con una firma válida de Amazon —y la firma de Amazon es
-    la misma para todos— podría postear acá y hablar como nuestros usuarios.
-
-    Vacío = el skill está apagado. En ese estado `/alexa/skill` contesta 404 en
-    vez de aceptar requests sin verificar, que es lo que pasaría si el chequeo
-    de firma se salteara "porque no está configurado".
-    """
-
-    ALEXA_LINK_CLIENT_ID: str = ""
-    """`client_id` que Alexa usa para identificarse contra nuestro `/token`.
-
-    Lo inventamos nosotros —no lo da Amazon— y lo pegamos en la consola, en
-    Account Linking. Puede ser cualquier string estable; no es secreto.
-    """
-
-    ALEXA_LINK_CLIENT_SECRET: str = ""
-    """El secreto del par anterior. Este sí es secreto:
-
-        fly secrets set ALEXA_LINK_CLIENT_SECRET="$(python -c 'import secrets; print(secrets.token_urlsafe(32))')"
-
-    Es lo único que separa a Alexa de cualquiera que descubra un `code`: sin él,
-    un código robado del `redirect_uri` se canjea por un token de la cuenta.
-    """
-
-    ALEXA_LINK_REDIRECT_URIS: Lista = []
-    """Las URLs de Amazon a las que se puede devolver el `code`, tal cual las
-    muestra la consola en *Account Linking → Alexa Redirect URLs*. Son tres, una
-    por región, y todas terminan en `/api/skill/link/<vendorId>`:
-
-        ["https://layla.amazon.com/api/skill/link/XXXXXXXX",
-         "https://pitangui.amazon.com/api/skill/link/XXXXXXXX",
-         "https://alexa.amazon.co.jp/api/skill/link/XXXXXXXX"]
-
-    **Es una whitelist y se compara literal.** Sin ella, `/oauth/alexa/authorize`
-    aceptaría cualquier `redirect_uri` y alcanzaría con mandarle a un usuario un
-    link con el `redirect_uri` del atacante para que el `code` —y con él la
-    cuenta— termine en otro lado. Es el agujero clásico de un proveedor OAuth y
-    la única defensa es no aceptar destinos que no estén en esta lista.
-
-    **Va en `fly.toml`, no en `fly secrets`.** No son credenciales —son URLs de
-    Amazon que sólo llevan el vendor ID— y tenerlas versionadas es lo que permite
-    compararlas contra lo que manda Alexa cuando el vínculo falla. Como secret son
-    un digest opaco que no se puede leer ni para depurar. Ojo con el orden de
-    precedencia: **un secret con este nombre pisa al valor de `fly.toml`**, así
-    que si alguna vez se cargó como secret hay que hacer `fly secrets unset`.
-
-    Vacía = el account linking está apagado, y el sitio arranca igual. Ver
-    `parse_lista()` arriba: el día que esto se cargó con un formato que no era
-    JSON, el sitio entero se cayó.
-    """
-
-    ALEXA_TOKEN_TTL_S: int = 30 * 24 * 3600
-    """Cuánto vale el `access_token` que le damos a Alexa. 30 días.
-
-    Largo a propósito y compensado con un `refresh_token`: cada vencimiento es
-    una ida y vuelta más contra este server, y del otro lado no hay una persona
-    esperando sino un dispositivo que quiere contestar rápido.
-    """
-
-    ALEXA_CODE_TTL_S: int = 300
-    """Cuánto vive el `code` de autorización. Cinco minutos.
-
-    El código viaja en una URL —queda en logs, en el historial, en el Referer— y
-    solo tiene que sobrevivir el salto del navegador a los servidores de Amazon,
-    que son segundos. Es de un solo uso además de corto.
-    """
 
 
 settings = Settings()

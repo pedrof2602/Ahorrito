@@ -2,12 +2,12 @@ from fastapi import APIRouter, Depends, status
 from typing import List
 from datetime import datetime
 
-from app.api.v1.alexa import router as alexa_router
 from app.api.v1.auth import router as auth_router
 from app.api.v1.locations import router as locations_router
 from app.api.v1.payments import router as payments_router
 from app.api.v1.prices import router as prices_router
 from app.api.v1.profile import router as profile_router
+from app.api.v1.voz import router as voz_router
 from app.core.auth import current_user
 from app.models.item import ItemCreate, ItemResponse
 
@@ -46,11 +46,19 @@ router.include_router(profile_router, dependencies=_authenticated)
 # Ubicaciones de sucursales: el "dónde" que la tabla de precios no contesta.
 router.include_router(locations_router, dependencies=_authenticated)
 
-# Estado del vínculo con Alexa. El flujo de autorización en sí no está acá: vive
-# en `web/alexa.py`, en la raíz, porque el Redirect URI registrado en Amazon dice
-# `/auth/alexa/callback` y porque un `fetch` no puede seguir un redirect a
-# amazon.com. Esto es solo lo que la pantalla de configuración consulta.
-router.include_router(alexa_router, dependencies=_authenticated)
+# La lista manejada desde afuera: el Atajo de Siri del iPhone.
+#
+# **Sin `_authenticated`, y es la única excepción a la regla de arriba.** Un
+# atajo del sistema operativo no tiene navegador, ni sesión, ni cookie: se
+# autentica con un token personal que lleva en el header, y `voz.py` lo resuelve
+# por su cuenta. Meterle `current_user` acá haría que todo el módulo pida una
+# cookie que el atajo no puede tener, y el síntoma sería un 401 mudo.
+#
+# La excepción está acotada: los tres endpoints que abre exigen el token, con el
+# que no se puede hacer nada más que tocar la lista de compras, y los endpoints
+# que administran los tokens sí piden `CurrentUser` en su firma —un token no
+# puede emitir otro token—.
+router.include_router(voz_router)
 
 # Simulación de base de datos en memoria para inicio rápido.
 #

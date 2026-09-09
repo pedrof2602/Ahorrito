@@ -20,19 +20,13 @@ import secrets
 from fastapi import Request, Response, status
 from fastapi.responses import JSONResponse, RedirectResponse
 
+from app.api.v1.voz import VOZ_PATHS
 from app.core.config import settings
-from app.web.oauth_alexa import OAUTH_ALEXA_PATHS
 from app.web.privacy import PRIVACY_PATHS
-from app.web.skill import SKILL_PATHS
 
 logger = logging.getLogger(__name__)
 
-EXEMPT_PATHS = (
-    frozenset({"/robots.txt", "/api/v1/health"})
-    | PRIVACY_PATHS
-    | OAUTH_ALEXA_PATHS
-    | SKILL_PATHS
-)
+EXEMPT_PATHS = frozenset({"/robots.txt", "/api/v1/health"}) | PRIVACY_PATHS | VOZ_PATHS
 """Lo único que se contesta sin clave.
 
 `robots.txt` porque un crawler que no puede leerlo no se entera de que no debe
@@ -42,19 +36,18 @@ clave, y contestar 401 ahí haría que el deploy se considere caído y se reinic
 en loop.
 
 La política de privacidad porque tiene que ser pública para servir de algo: la
-abre Amazon durante el "Login with Amazon", que no tiene cómo presentar la
-clave, y la abre cualquiera que quiera saber qué guardamos de él antes de
-registrarse. Los paths se importan de donde están definidas las rutas y no se
-copian acá: si mañana cambia la URL, la exención la sigue sola.
+abre cualquiera que quiera saber qué guardamos de él antes de registrarse, y no
+puede depender de tener la clave del sitio. Los paths se importan de donde están
+definidas las rutas y no se copian acá: si mañana cambia la URL, la exención la
+sigue sola.
 
-Los dos de Alexa por el mismo motivo y con el mismo cuidado. `/alexa/skill` lo
-llaman los servidores de Amazon, y `/oauth/alexa/*` el navegador embebido de la
-app de Alexa: ninguno de los dos es un cliente nuestro al que se le pueda haber
-dado la clave alguna vez. **Estar exentos de la puerta no los deja abiertos**:
-al skill lo protege la firma de Amazon —una defensa bastante más fuerte que una
-clave compartida—, al `authorize` el email y la contraseña, y al `token` el
-`client_secret`. La puerta es la capa que decide si una URL existe para vos, y
-para estas tres la respuesta tiene que ser sí.
+Los de `/api/v1/voz/` por el mismo motivo: los llama un Atajo de Siri desde el
+sistema operativo del teléfono, que no es un navegador con cookie ni un script
+nuestro donde se pueda agregar un header más. **Estar exentos de la puerta no
+los deja abiertos**: cada uno exige un token personal de 256 bits, y con ese
+token no se puede hacer nada fuera de la lista de compras —ni ver domicilios, ni
+medios de pago, ni cambiar la contraseña—. La puerta decide si una URL existe
+para vos; para estas la respuesta tiene que ser sí.
 
 Ninguna de las exenciones revela nada: no listan datos de nadie sin autenticar y
 no sirven de proxy contra los supermercados, que es lo que la puerta cuida.

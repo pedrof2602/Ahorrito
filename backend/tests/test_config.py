@@ -1,12 +1,16 @@
 """Los settings de lista, y la regla que los rige: **nunca tirar la app**.
 
-Este archivo existe por un incidente concreto. `ALEXA_LINK_REDIRECT_URIS` estaba
-declarado `list[str]`, se cargó en Fly separado por comas en vez de como array
-JSON, y pydantic-settings levantó `SettingsError` **adentro del source** —antes de
-cualquier validador— mientras construía los settings. Como `settings = Settings()`
+Este archivo existe por un incidente concreto. Un setting declarado `list[str]`
+se cargó en Fly separado por comas en vez de como array JSON, y pydantic-settings
+levantó `SettingsError` **adentro del source** —antes de cualquier validador—
+mientras construía los settings. Como `settings = Settings()`
 corre al importar `core/config.py`, la excepción mató a uvicorn antes de que
 existiera la app: Fly reinició diez veces, se rindió, y el sitio entero devolvió
 502 durante horas. Incluidos `/robots.txt` y el health check.
+
+El setting que lo provocó era de la integración con Alexa, que después se
+descartó entera. Los tests se quedan igual, sobre los que sobrevivieron: la mina
+no era de ese campo, era del tipo.
 
 Lo que se prueba acá no es que el parseo sea inteligente, sino que **ningún valor
 de entorno pueda impedir que el servidor arranque**. Una feature opcional mal
@@ -20,9 +24,9 @@ import pytest
 from app.core.config import Settings, parse_lista
 
 URIS = (
-    "https://layla.amazon.com/api/skill/link/ABC123",
-    "https://pitangui.amazon.com/api/skill/link/ABC123",
-    "https://alexa.amazon.co.jp/api/skill/link/ABC123",
+    "https://ahorrito.fly.dev",
+    "https://otro.ejemplo.com",
+    "http://localhost:5173",
 )
 
 
@@ -61,11 +65,10 @@ def test_una_sola_url_sin_comas():
 def test_json_roto_no_deja_basura():
     """Un array mal cerrado da vacío, no pedazos con corchetes pegados.
 
-    Es deliberado: una de estas listas es la whitelist de `redirect_uri` del
-    proveedor OAuth. Vale más que quede vacía —y el linking apagado— que llena de
-    entradas inservibles que aparentan que está configurado.
+    Es deliberado: `CORS_ORIGINS` es una whitelist, y vale más que quede vacía
+    —y se note— que llena de entradas inservibles que aparentan estar cargadas.
     """
-    assert parse_lista('["https://layla.amazon.com/a",]') == []
+    assert parse_lista('["https://ahorrito.fly.dev",]') == []
     assert parse_lista("[roto") == []
 
 
@@ -82,10 +85,7 @@ def test_el_parser_nunca_levanta():
 # ------------------------------------------------- construir los settings
 
 
-@pytest.mark.parametrize(
-    "campo",
-    ["ALEXA_LINK_REDIRECT_URIS", "CORS_ORIGINS", "ENABLED_CHAINS"],
-)
+@pytest.mark.parametrize("campo", ["CORS_ORIGINS", "ENABLED_CHAINS"])
 @pytest.mark.parametrize(
     "valor",
     ['["a","b"]', "a,b", "a", "", "   ", "{{{", '["a",]', "[]", "a\nb"],
@@ -93,9 +93,9 @@ def test_el_parser_nunca_levanta():
 def test_ningun_valor_impide_arrancar(monkeypatch, campo, valor):
     """El test que habría evitado el incidente.
 
-    Se prueban los tres campos y no sólo el que rompió: los tres son listas y los
-    tres tenían la misma mina. `ENABLED_CHAINS=coto,carrefour` habría tirado el
-    sitio exactamente igual.
+    Se prueban todos los campos de lista y no sólo el que rompió —ése ya no
+    existe—: la mina era del tipo, no del campo. `ENABLED_CHAINS=coto,carrefour`
+    habría tirado el sitio exactamente igual.
     """
     monkeypatch.setenv(campo, valor)
 
@@ -108,12 +108,12 @@ def test_ningun_valor_impide_arrancar(monkeypatch, campo, valor):
 
 
 def test_el_caso_exacto_que_tiro_produccion(monkeypatch):
-    """Comas en vez de JSON: lo que estaba cargado en Fly el día del 502."""
-    monkeypatch.setenv("ALEXA_LINK_REDIRECT_URIS", "{0},{1},{2}".format(*URIS))
+    """Comas en vez de JSON: la forma exacta del valor que causó el 502."""
+    monkeypatch.setenv("CORS_ORIGINS", "{0},{1},{2}".format(*URIS))
 
     settings = Settings(_env_file=None)
 
-    assert settings.ALEXA_LINK_REDIRECT_URIS == list(URIS)
+    assert settings.CORS_ORIGINS == list(URIS)
 
 
 def test_el_formato_de_fly_toml_sigue_andando(monkeypatch):
@@ -135,4 +135,3 @@ def test_los_defaults_en_codigo_no_se_rompen():
 
     assert "http://localhost:5173" in settings.CORS_ORIGINS
     assert settings.ENABLED_CHAINS == []
-    assert settings.ALEXA_LINK_REDIRECT_URIS == []

@@ -6,13 +6,11 @@ from __future__ import annotations
 
 import hashlib
 from dataclasses import dataclass
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 
 from sqlalchemy import delete, func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.config import settings
-from app.core.crypto import decrypt_secret, encrypt_secret
 from app.core.security import hash_session_token, new_session_token
 from app.models import catalog as domain
 from app.models import payment as pay
@@ -939,251 +937,70 @@ class AuthSessionRepository:
         return result.rowcount or 0
 
 
-class AlexaLinkRepository:
-    """El vínculo con Amazon de un usuario.
+class ApiTokenRepository:
+    """Los tokens personales con los que el Atajo de Siri escribe en la lista.
 
-    **El cifrado vive acá y no en el endpoint.** Es la única forma de que no
-    exista ningún camino por el que un token llegue a la base en claro: quien
-    llama pasa y recibe texto plano, y no tiene manera de guardar sin cifrar
-    aunque se olvide de que hay que hacerlo.
-
-    Como el resto de los repositorios de usuario, `user_id` va en el constructor
-    y no tiene default, así que no hay forma de leer el vínculo de otro por
-    descuido.
+    No lleva `user_id` en el constructor, al revés que el resto de los
+    repositorios de usuario: cuando llega un token todavía no se sabe de quién
+    es, y averiguarlo es justamente su trabajo. Los métodos que sí operan sobre
+    un usuario ya conocido lo reciben como argumento.
     """
 
-    def __init__(self, session: AsyncSession, user_id: int) -> None:
+    def __init__(self, session: AsyncSession) -> None:
         self._s = session
-        self._uid = user_id
 
-    async def get(self) -> t.AlexaLink | None:
+    async def issue(self, user_id: int, *, name: str = "") -> str:
+        """Emite un token y devuelve el valor en claro.
+
+        **Es la única vez que ese valor existe de este lado.** De acá en más en
+        la base sólo queda el SHA-256, así que si se pierde no hay forma de
+        recuperarlo y hay que emitir otro. Es lo que hace que un backup filtrado
+        no sirva para escribir en la lista de nadie.
+        """
+        token = new_session_token()
+        self._s.add(
+            t.ApiToken(
+                user_id=user_id,
+                token_hash=hash_session_token(token),
+                name=name.strip()[:60],
+            )
+        )
+        await self._s.flush()
+        return token
+
+    async def resolve(self, token: str) -> t.ApiToken | None:
+        """De un token en claro a su fila, o `None` si no existe.
+
+        Sin comparación de vencimiento porque estos tokens no vencen: ver el
+        comentario de `ApiToken.last_used_at`. Se revocan a mano.
+        """
+        if not token:
+            return None
         return await self._s.scalar(
-            select(t.AlexaLink).where(t.AlexaLink.user_id == self._uid)
+            select(t.ApiToken).where(t.ApiToken.token_hash == hash_session_token(token))
         )
 
-    async def upsert(
-        self,
-        *,
-        access_token: str,
-        refresh_token: str,
-        expires_at: datetime,
-        scope: str,
-    ) -> t.AlexaLink:
-        """Guarda el vínculo, cifrando los dos tokens.
-
-        Upsert y no insert porque volver a vincular es una operación normal —el
-        usuario que quiere corregir con qué cuenta de Amazon quedó atado— y el
-        índice único sobre `user_id` rechazaría la segunda fila.
-        """
-        row = await self.get()
-        if row is None:
-            row = t.AlexaLink(user_id=self._uid)
-            self._s.add(row)
-        else:
-            row.refreshed_at = t.utcnow()
-
-        row.access_token_enc = encrypt_secret(access_token)
-        row.refresh_token_enc = encrypt_secret(refresh_token)
-        row.expires_at = expires_at
-        row.scope = scope[:200]
-        await self._s.flush()
-        return row
-
-    def tokens(self, row: t.AlexaLink) -> tuple[str, str]:
-        """`(access_token, refresh_token)` en claro.
-
-        Sin `async` porque no toca la base: recibe la fila que quien llama ya
-        tiene —la miró para ver `expires_at`— y solo descifra. Marcarla `async`
-        sugeriría una consulta que no existe.
-        """
-        return decrypt_secret(row.access_token_enc), decrypt_secret(
-            row.refresh_token_enc
-        )
-
-    async def delete(self) -> bool:
-        """Corta el vínculo. Devuelve si había algo que cortar.
-
-        Se usa desde dos lados que parecen distintos y son lo mismo: el usuario
-        que aprieta "Desvincular", y el refresco que descubre que Amazon ya no
-        acepta el `refresh_token` porque lo revocaron desde allá. En los dos
-        casos lo correcto es que no quede una credencial muerta en la base.
-        """
-        row = await self.get()
-        if row is None:
-            return False
-        await self._s.delete(row)
-        await self._s.flush()
-        return True
-
-
-# --------------------------------------------------- skill de Alexa (OAuth)
-#
-# Los dos repositorios de acá abajo son la otra mitad del vínculo con Alexa, y
-# van al revés que `AlexaLinkRepository`: allá esta app le pide tokens a Amazon,
-# acá se los emite. Por eso guardan hashes y no ciphertext —ver `AlexaSkillToken`
-# en `tables.py`— y por eso ninguno de los dos recibe `user_id` en el
-# constructor: cuando llegan, todavía no se sabe de quién es el token que traen;
-# averiguarlo es justamente su trabajo.
-
-
-class AlexaSkillCodeRepository:
-    """Los códigos de autorización de un solo uso del account linking."""
-
-    def __init__(self, session: AsyncSession) -> None:
-        self._s = session
-
-    async def issue(
-        self, user_id: int, *, redirect_uri: str, code_challenge: str | None
-    ) -> str:
-        """Emite un código nuevo y devuelve el valor en claro, único momento en
-        que existe: de acá en adelante solo queda el hash."""
-        code = new_session_token()
-        self._s.add(
-            t.AlexaSkillCode(
-                code_hash=hash_session_token(code),
-                user_id=user_id,
-                code_challenge=code_challenge,
-                redirect_uri=redirect_uri[:400],
-                expires_at=t.utcnow() + timedelta(seconds=settings.ALEXA_CODE_TTL_S),
-            )
-        )
-        await self._s.flush()
-        return code
-
-    async def consume(self, code: str) -> t.AlexaSkillCode | None:
-        """Busca el código y lo **borra**, haya servido o no.
-
-        El borrado es incondicional a propósito: un código que se presentó una
-        vez ya no vale, aunque el canje termine fallando porque el `code_verifier`
-        no cerraba. Devolverlo al pozo para que se pueda reintentar es lo que
-        convierte un código interceptado en algo que el atacante puede probar
-        contra distintos `code_verifier` hasta acertar.
-
-        Devuelve la fila —ya desprendida de la sesión— para que quien llama
-        pueda validar PKCE y `redirect_uri` contra lo que se guardó. Los vencidos
-        se borran igual pero devuelven `None`: no hay nada que canjear.
-        """
-        row = await self._s.scalar(
-            select(t.AlexaSkillCode).where(
-                t.AlexaSkillCode.code_hash == hash_session_token(code)
-            )
-        )
-        if row is None:
-            return None
-
-        expired = t.as_aware(row.expires_at) <= t.utcnow()
-        # Se leen antes del delete: después del flush la fila queda expirada y
-        # cualquier acceso a sus columnas intenta ir a la base, que con
-        # `AsyncSession` fuera de un await es `MissingGreenlet`.
-        snapshot = t.AlexaSkillCode(
-            user_id=row.user_id,
-            code_challenge=row.code_challenge,
-            redirect_uri=row.redirect_uri,
-            expires_at=row.expires_at,
-        )
-        await self._s.delete(row)
-        await self._s.flush()
-        return None if expired else snapshot
-
-    async def purge_expired(self) -> int:
-        """Los que se emitieron y nadie canjeó. Sin esto la tabla solo crece."""
-        result = await self._s.execute(
-            delete(t.AlexaSkillCode).where(t.AlexaSkillCode.expires_at < t.utcnow())
-        )
-        await self._s.flush()
-        return result.rowcount or 0
-
-
-class AlexaSkillTokenRepository:
-    """Los tokens que tiene Alexa para hablar en nombre de un usuario."""
-
-    def __init__(self, session: AsyncSession) -> None:
-        self._s = session
-
-    async def issue(self, user_id: int) -> tuple[str, str]:
-        """Un par `(access_token, refresh_token)` nuevo, en claro.
-
-        Es la única vez que los valores existen fuera de Alexa: se devuelven,
-        se mandan en la respuesta del `/token`, y de la base solo se puede sacar
-        el hash. Si se pierden, no hay forma de recuperarlos y el usuario tiene
-        que vincular de nuevo, que es lo correcto.
-        """
-        access, refresh = new_session_token(), new_session_token()
-        self._s.add(
-            t.AlexaSkillToken(
-                user_id=user_id,
-                access_token_hash=hash_session_token(access),
-                refresh_token_hash=hash_session_token(refresh),
-                expires_at=t.utcnow() + timedelta(seconds=settings.ALEXA_TOKEN_TTL_S),
-            )
-        )
-        await self._s.flush()
-        return access, refresh
-
-    async def by_access_token(self, token: str) -> t.AlexaSkillToken | None:
-        """La fila viva de un `access_token`, o `None` si no existe o venció.
-
-        Un token vencido devuelve `None` y **no** se borra: la fila es lo que le
-        permite a Alexa refrescar, y borrarla acá desvincularía al usuario por el
-        solo hecho de que pasaron treinta días sin que hablara.
-        """
-        row = await self._s.scalar(
-            select(t.AlexaSkillToken).where(
-                t.AlexaSkillToken.access_token_hash == hash_session_token(token)
-            )
-        )
-        if row is None or t.as_aware(row.expires_at) <= t.utcnow():
-            return None
-        return row
-
-    async def touch(self, row: t.AlexaSkillToken) -> None:
-        """Marca que este token se usó. Es para la pantalla, no para la lógica."""
+    async def touch(self, row: t.ApiToken) -> None:
+        """Marca que se usó. Es para la pantalla, no para la autorización."""
         row.last_used_at = t.utcnow()
         await self._s.flush()
 
-    async def rotate(self, refresh_token: str) -> tuple[str, str] | None:
-        """Canjea un `refresh_token` por un par nuevo, sobre la misma fila.
-
-        **Rota los dos**, no solo el access token: así un `refresh_token` robado
-        deja de servir en cuanto el legítimo se usa una vez, y de paso el usuario
-        se entera —el skill deja de andar— en vez de convivir para siempre con
-        alguien más usando su cuenta.
-        """
-        row = await self._s.scalar(
-            select(t.AlexaSkillToken).where(
-                t.AlexaSkillToken.refresh_token_hash == hash_session_token(refresh_token)
-            )
-        )
-        if row is None:
-            return None
-
-        access, refresh = new_session_token(), new_session_token()
-        row.access_token_hash = hash_session_token(access)
-        row.refresh_token_hash = hash_session_token(refresh)
-        row.expires_at = t.utcnow() + timedelta(seconds=settings.ALEXA_TOKEN_TTL_S)
-        await self._s.flush()
-        return access, refresh
-
-    async def for_user(self, user_id: int) -> list[t.AlexaSkillToken]:
-        """Todos los vínculos de un usuario, para mostrarlos en configuración."""
+    async def for_user(self, user_id: int) -> list[t.ApiToken]:
         return list(
             await self._s.scalars(
-                select(t.AlexaSkillToken)
-                .where(t.AlexaSkillToken.user_id == user_id)
-                .order_by(t.AlexaSkillToken.created_at.desc())
+                select(t.ApiToken)
+                .where(t.ApiToken.user_id == user_id)
+                .order_by(t.ApiToken.created_at.desc())
             )
         )
 
-    async def delete_for_user(self, user_id: int) -> int:
-        """Desvincula todo. Devuelve cuántos vínculos había.
-
-        Todos y no uno: desde la app el usuario ve "Alexa" como una sola cosa, y
-        ofrecerle desvincular la tercera de tres sería pedirle que distinga entre
-        filas que nunca vio.
-        """
+    async def delete(self, user_id: int, token_id: int) -> bool:
+        """Revoca un token. El `user_id` va en el `where` y no en un chequeo
+        aparte: así no hay forma de borrar el token de otro por descuido."""
         result = await self._s.execute(
-            delete(t.AlexaSkillToken).where(t.AlexaSkillToken.user_id == user_id)
+            delete(t.ApiToken).where(
+                t.ApiToken.id == token_id, t.ApiToken.user_id == user_id
+            )
         )
         await self._s.flush()
-        return result.rowcount or 0
-
+        return bool(result.rowcount)

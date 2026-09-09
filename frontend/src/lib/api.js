@@ -152,27 +152,21 @@ export const verifyInstrument = (id) =>
 
 export const fetchChains = () => request('/chains');
 
-// --- vínculo con Alexa -----------------------------------------------------
+// --- tokens de voz ---------------------------------------------------------
 
 /**
- * Dónde arranca el flujo de "Vincular cuenta de Alexa".
+ * Los tokens personales con los que el Atajo de Siri escribe en la lista.
  *
- * **No pasa por `request()` y no es un `fetch`.** Es una URL para navegar: el
- * backend contesta un redirect a la pantalla de autorización de Amazon, y un
- * `fetch` que sigue un redirect a otro origen muere en CORS sin decir nada útil.
- * El componente hace `window.location.href = ALEXA_LOGIN_URL`.
- *
- * Va en la raíz y no bajo `/api/v1` porque el Redirect URI registrado en el
- * Security Profile de Amazon dice `/auth/alexa/callback`, y Amazon lo compara
- * carácter por carácter. Por eso tampoco usa `BASE`.
+ * `createVoiceToken` es el único endpoint de la app que devuelve un secreto, y
+ * lo devuelve **una sola vez**: en la base queda el hash. Quien lo llame tiene
+ * que mostrarlo en el acto, porque no hay forma de volver a pedirlo.
  */
-export const ALEXA_LOGIN_URL = '/auth/alexa/login';
+export const fetchVoiceTokens = () => request('/voz/tokens');
 
-/** Si hay vínculo, desde cuándo, y si la función está configurada en el deploy.
-    Nunca devuelve tokens: el backend no los expone por ningún endpoint. */
-export const fetchAlexaStatus = () => request('/alexa/status');
+export const createVoiceToken = (name) => request('/voz/tokens', json({ name }));
 
-export const unlinkAlexa = () => request('/alexa/link', { method: 'DELETE' });
+export const deleteVoiceToken = (id) =>
+  request(`/voz/tokens/${id}`, { method: 'DELETE' });
 
 // --- ubicaciones -----------------------------------------------------------
 

@@ -17,20 +17,6 @@ primary_region = 'gru'
   REGISTRATION_OPEN = 'false'
   STATIC_DIR = '/app/static'
 
-  # Las tres URLs de retorno del account linking de Alexa. NO son credenciales
-  # —son URLs de Amazon que sólo llevan el vendor ID— y van acá y no en
-  # `fly secrets` justamente para que se puedan leer: cuando el vínculo falla,
-  # lo primero que hay que hacer es comparar esto, carácter por carácter, contra
-  # el `redirect_uri` que Alexa mandó y que quedó en los logs. Como secret son un
-  # digest opaco, y este archivo estuvo caído medio día por no poder mirar uno.
-  #
-  # Descomentar reemplazando TU_VENDOR_ID por el de la consola de Amazon
-  # (Account Linking → Alexa Redirect URLs) y después, en el mismo orden:
-  #     fly secrets unset ALEXA_LINK_REDIRECT_URIS -a ahorrito
-  # El unset va DESPUÉS: un secret con este nombre pisa lo que diga acá, así que
-  # mientras exista, esta línea no tiene ningún efecto.
-  #
-  # ALEXA_LINK_REDIRECT_URIS = '["https://layla.amazon.com/api/skill/link/TU_VENDOR_ID","https://pitangui.amazon.com/api/skill/link/TU_VENDOR_ID","https://alexa.amazon.co.jp/api/skill/link/TU_VENDOR_ID"]'
 
 [[mounts]]
   source = 'compras_data'

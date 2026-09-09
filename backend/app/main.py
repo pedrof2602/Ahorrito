@@ -15,10 +15,7 @@ from app.core.gate import access_gate
 from app.services.http import ProviderError, ProviderUnavailable
 from app.services.providers.cache import purge_expired
 from app.services.providers.registry import ProviderRegistry
-from app.web.alexa import router as alexa_web_router
-from app.web.oauth_alexa import router as oauth_alexa_router
 from app.web.privacy import router as privacy_router
-from app.web.skill import router as alexa_skill_router
 
 logging.basicConfig(level=logging.INFO)
 log = logging.getLogger(__name__)
@@ -53,47 +50,6 @@ def _check_auth_config() -> None:
         )
 
 
-def _check_alexa_config() -> None:
-    """Avisa de la config de Alexa cargada a medias.
-
-    Mismo espíritu que `_check_auth_config`: son estados que arrancan bien y
-    fallan después, lejos y sin explicación. Un vínculo que no se puede completar
-    se ve, del lado del usuario, como una app de Alexa que no hace nada al tocar
-    "Vincular cuenta"; del lado del servidor no queda ni una línea.
-
-    Todo esto es `log.error` y no una excepción **a propósito**. Alexa es una
-    feature accesoria de una app de precios: que esté mal configurada no puede
-    impedir que el sitio levante. Esa lección salió cara —un
-    `ALEXA_LINK_REDIRECT_URIS` con formato inválido dejó todo en 502 hasta que se
-    hizo tolerante el parseo en `core/config.py`— y esta función existe para que
-    el problema se vea en los logs en vez de en el uptime.
-    """
-    linking = [settings.ALEXA_LINK_CLIENT_ID, settings.ALEXA_LINK_CLIENT_SECRET]
-    if any(linking) and not all(linking):
-        log.error(
-            "Account linking de Alexa incompleto: hay que cargar "
-            "ALEXA_LINK_CLIENT_ID y ALEXA_LINK_CLIENT_SECRET, no uno solo."
-        )
-
-    if settings.ALEXA_SKILL_ID and not settings.ALEXA_LINK_REDIRECT_URIS:
-        log.error(
-            "ALEXA_SKILL_ID está cargado pero ALEXA_LINK_REDIRECT_URIS está "
-            "vacío: el skill va a contestar y nadie va a poder vincular su "
-            "cuenta. Las tres URLs salen de la consola de Amazon, en Account "
-            "Linking → Alexa Redirect URLs."
-        )
-
-    for uri in settings.ALEXA_LINK_REDIRECT_URIS:
-        if not uri.startswith("https://"):
-            # Casi siempre significa que la variable se cargó con un formato que
-            # el parseo interpretó como pudo. Amazon sólo redirige a https.
-            log.error(
-                "ALEXA_LINK_REDIRECT_URIS tiene una entrada que no es https: %r. "
-                "Se esperan las tres URLs de Amazon, en JSON o separadas por comas.",
-                uri,
-            )
-
-
 async def _purge_expired_sessions() -> None:
     """Higiene, no seguridad: una sesión vencida ya no autentica —`expires_at` se
     compara en cada request—, pero sin barrerlas la tabla acumula una fila por
@@ -121,7 +77,6 @@ async def lifespan(app: FastAPI):
     """
     await upgrade_schema()
     _check_auth_config()
-    _check_alexa_config()
     # Al arranque y no por tarea periódica: la caché no crece durante la
     # ejecución más de lo que crece el uso, y una app de escritorio se reinicia
     # bastante más seguido que la ventana de retención.
@@ -242,26 +197,6 @@ app.include_router(api_v1_router, prefix=settings.API_V1_STR)
 # propósito: el `mount` de `/` se queda con todo lo que no reclamó una ruta
 # anterior, incluido esto.
 app.include_router(privacy_router)
-
-# El flujo de "Vincular cuenta de Alexa". También antes del `mount` y por el
-# mismo motivo, pero acá no hay margen para elegir la URL: el Redirect URI está
-# registrado en el Security Profile de Amazon como `/auth/alexa/callback`, Amazon
-# lo compara literal, y moverlo rompería el vínculo de todos los que ya
-# vincularon. La ruta manda sobre dónde vive el código.
-app.include_router(alexa_web_router)
-
-# El skill de Alexa: el account linking —donde esta app es el proveedor OAuth— y
-# el endpoint que Amazon invoca cuando el usuario le habla al Echo. También antes
-# del `mount`, y las URLs también están clavadas del otro lado: quedan escritas
-# en la consola de desarrollador de Amazon y cambiarlas desvincula a todos.
-#
-# Reemplazan en la práctica a `alexa_web_router` de arriba, que quedó sin uso
-# cuando Amazon apagó la List Management REST API el 1 de julio de 2024. Los dos
-# conviven a propósito hasta que este flujo esté probado en producción.
-app.include_router(oauth_alexa_router)
-app.include_router(alexa_skill_router)
-
-
 def _mount_spa() -> bool:
     """Sirve el frontend compilado desde el mismo server que la API.
 
