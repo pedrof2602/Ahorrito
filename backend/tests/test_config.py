@@ -24,7 +24,7 @@ import pytest
 from app.core.config import Settings, parse_lista
 
 URIS = (
-    "https://ahorrito.fly.dev",
+    "https://ahorrito.ejemplo.com",
     "https://otro.ejemplo.com",
     "http://localhost:5173",
 )
@@ -68,7 +68,7 @@ def test_json_roto_no_deja_basura():
     Es deliberado: `CORS_ORIGINS` es una whitelist, y vale más que quede vacía
     —y se note— que llena de entradas inservibles que aparentan estar cargadas.
     """
-    assert parse_lista('["https://ahorrito.fly.dev",]') == []
+    assert parse_lista('["https://ahorrito.ejemplo.com",]') == []
     assert parse_lista("[roto") == []
 
 
@@ -125,8 +125,8 @@ def test_el_formato_de_fly_toml_sigue_andando(monkeypatch):
     monkeypatch.setenv("CORS_ORIGINS", "[]")
     assert Settings(_env_file=None).CORS_ORIGINS == []
 
-    monkeypatch.setenv("CORS_ORIGINS", '["https://ahorrito.fly.dev"]')
-    assert Settings(_env_file=None).CORS_ORIGINS == ["https://ahorrito.fly.dev"]
+    monkeypatch.setenv("CORS_ORIGINS", '["https://ahorrito.ejemplo.com"]')
+    assert Settings(_env_file=None).CORS_ORIGINS == ["https://ahorrito.ejemplo.com"]
 
 
 def test_los_defaults_en_codigo_no_se_rompen():

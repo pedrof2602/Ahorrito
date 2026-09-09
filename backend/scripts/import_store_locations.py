@@ -20,9 +20,9 @@ Uso:  python scripts/import_store_locations.py
       python scripts/import_store_locations.py --custom-for vos@ejemplo.com   # con más de una cuenta
       python scripts/import_store_locations.py /ruta/al/archivo.json
 
-En el deploy, con el archivo ya dentro de la imagen:
+En el contenedor, con el archivo ya dentro de la imagen:
 
-      fly ssh console -a ahorrito -C "python scripts/import_store_locations.py"
+      docker compose exec ahorrito python scripts/import_store_locations.py
 """
 
 from __future__ import annotations

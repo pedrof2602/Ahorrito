@@ -152,6 +152,86 @@ cliente, `VITE_BACKEND_ORIGIN` para el proxy).
 
 ---
 
+## 🏠 Correrlo en casa (el "deploy")
+
+Lo de arriba es para desarrollar: dos procesos, hot reload, dos puertos. Para
+usar la app de verdad —desde el celular, con la lista en la mano— hay un
+contenedor que empaqueta el SPA compilado y la API en un solo server:
+
+```bash
+sudo systemctl enable --now docker      # una vez, y que arranque con la máquina
+cp .env.docker.example .env.docker      # una vez; ver los comentarios de adentro
+mkdir -p data                           # acá vive la base, fuera de la imagen
+
+docker compose up -d --build
+```
+
+El `enable` del demonio no es opcional: `restart: unless-stopped` levanta el
+contenedor al bootear, pero solo si Docker arrancó antes.
+
+Si tu usuario no es uid 1000, `sudo chown -R 1000:1000 data` — el contenedor
+corre con ese uid y si no, no puede escribir la base.
+
+Y desde el celular, en el wifi de casa: **`http://<hostname>.local:8000`**
+(mDNS, sin averiguar ninguna IP). Si no resuelve, la IP de la máquina también
+sirve.
+
+### Arrancar con una base vacía
+
+Las migraciones crean las tablas pero no las llenan, así que una base nueva no
+tiene ni cuenta ni sucursales. Dos comandos y queda usable:
+
+```bash
+docker compose exec ahorrito python scripts/set_password.py tu@mail.com --create
+docker compose exec ahorrito python scripts/import_store_locations.py --custom-for tu@mail.com
+```
+
+El segundo es lo que evita reconstruir el mapa a mano: `data/store_locations.json`
+viaja en la imagen y trae las sucursales ya geocodificadas, que es la parte que
+cuesta minutos contra servicios de afuera. El histórico de precios se rellena
+solo a medida que buscás; el perfil, los domicilios y los medios de pago se
+cargan desde la app.
+
+El token del Atajo de Siri también hay que emitirlo de nuevo: está en Ajustes
+dentro de la app, y se pega en el atajo del teléfono.
+
+Si el celular no la ve, el sospechoso es el firewall: la app anda en la máquina y
+desde afuera no contesta, sin ningún mensaje que lo explique. Con firewalld,
+verificar antes de tocar nada:
+
+```bash
+firewall-cmd --query-port=8000/tcp        # ¿ya está permitido?
+sudo firewall-cmd --add-port=8000/tcp --permanent && sudo firewall-cmd --reload
+```
+
+En la zona `FedoraWorkstation` —la default de Fedora escritorio— el rango
+1025-65535 ya viene abierto, así que el 8000 funciona sin hacer nada. En otras
+zonas o distros, no.
+
+**Por qué en casa y no en la nube.** No es una limitación técnica: es la
+consecuencia de la licencia de los datos (ver **Alcance y uso de datos de
+terceros**, arriba de todo). La app no puede ser pública, así que un deploy
+expuesto —certificado, dominio, IP fija, la puerta de acceso— sería
+infraestructura para servir a gente que no puede usarla.
+
+De ahí salen dos decisiones que si no se explican parecen descuidos:
+
+- **`COOKIE_SECURE=false`.** En la LAN no hay HTTPS, y la cookie `Secure` no
+  viaja por `http://`. Con esto en `true` el login devuelve 200 y el request
+  siguiente 401: entrás bien y al recargar te echa.
+- **`ACCESS_KEY` vacío**, o sea la puerta de acceso apagada. Existe para que un
+  deploy público no se pueda enumerar desde afuera; en una red doméstica no hay
+  a quién frenar, y el login protege todo igual.
+
+Las dos se dan vuelta el día que esto vaya a internet — ahí aplica
+[Antes de exponerlo en internet](#antes-de-exponerlo-en-internet).
+
+La base vive en `./data/compras.db`, montada en el contenedor y **fuera de la
+imagen**: si viviera adentro, cada `--build` se llevaría puestas las cuentas, las
+listas y el histórico de precios. Es el único archivo que hay que respaldar, y
+la copia se hace con `sqlite3 data/compras.db ".backup copia.db"` y no con `cp`,
+porque en modo WAL una copia cruda puede salir inconsistente.
+
 ---
 
 ## 🛒 Proveedores de precios (Carrefour + Disco + Coto)
@@ -434,7 +514,7 @@ cd backend
 ```
 
 Para llevar el resultado a otra base sin volver a geocodificar, ver
-[Llevar las ubicaciones a otra base](#llevar-las-ubicaciones-a-otra-base-el-deploy).
+[Llevar las ubicaciones a otra base](#llevar-las-ubicaciones-a-otra-base).
 
 Cuatro cosas medidas que conviene saber antes de tocar esto:
 
@@ -552,10 +632,10 @@ Tres decisiones, con su motivo:
 No cambia ningún precio: el total del marker sigue siendo el de la cadena,
 calculado igual que en la tabla.
 
-### Llevar las ubicaciones a otra base (el deploy)
+### Llevar las ubicaciones a otra base
 
-Una base recién creada —el volumen nuevo de Fly, por ejemplo— tiene el esquema
-pero ninguna sucursal: las migraciones crean tablas, no las llenan, y una
+Una base recién creada tiene el esquema pero ninguna sucursal: las migraciones
+crean tablas, no las llenan, y una
 comparación inserta filas en `stores` **sin coordenadas**, que es justo lo que
 `located()` filtra. El mapa entonces contesta lo que corresponde, que no hay nada
 que dibujar:
@@ -567,22 +647,22 @@ Eso **no es un error del mapa ni de la API**. Si fallara el geocodificador se
 vería un 502 nombrando a `apis.datos.gob.ar`; si fallaran los tiles se verían los
 markers sobre un rectángulo vacío.
 
-Se puede correr el script de refresco allá, pero son minutos geocodificando desde
-una VM chica y el resultado depende de que los servicios de afuera contesten hoy
-lo mismo que ayer. El camino corto es llevar la corrida que ya se verificó:
+Se puede correr el script de refresco allá, pero son minutos geocodificando y el
+resultado depende de que los servicios de afuera contesten hoy lo mismo que ayer.
+El camino corto es llevar la corrida que ya se verificó:
 
 ```bash
 cd backend
 ./venv/bin/python scripts/export_store_locations.py --include-custom
 git add data/store_locations.json && git commit -m "sucursales: exportar ubicaciones"
-fly deploy                                        # el archivo viaja en la imagen
-fly ssh console -a ahorrito -C "python scripts/import_store_locations.py --custom-for vos@mail.com"
+cd .. && docker compose up -d --build             # el archivo viaja en la imagen
+docker compose exec ahorrito python scripts/import_store_locations.py --custom-for vos@mail.com
 ```
 
-Por qué así y no por `sftp`: `data/` ya se copia dentro de la imagen, así que el
-archivo llega con el deploy y no hay que subir nada por separado ni pegar base64
-en una consola. De paso queda versionado, y la próxima exportación se puede
-revisar en un diff en vez de ser un cambio invisible en un binario.
+Por qué así y no copiando el archivo suelto: `data/` ya se copia dentro de la
+imagen, así que llega con el build y no hay que subir nada por separado. De paso
+queda versionado, y la próxima exportación se puede revisar en un diff en vez de
+ser un cambio invisible en un binario.
 
 Detalles que importan:
 
@@ -652,8 +732,13 @@ cd backend
 ./venv/bin/python scripts/set_password.py tu@email.com       # asignar la contraseña
 ```
 
-En una base nueva no se crea ninguna cuenta: te registrás desde la app y sos el
-usuario 1.
+En una base nueva no se crea ninguna cuenta. Con `REGISTRATION_OPEN=true` te
+registrás desde la app y sos el usuario 1; con `false` —lo que trae el
+contenedor— `/auth/register` da 403 y la primera cuenta la creás vos:
+
+```bash
+./venv/bin/python scripts/set_password.py tu@email.com --create
+```
 
 ### Cómo funciona
 

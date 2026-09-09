@@ -1,0 +1,50 @@
+# Cómo corre Ahorrito en casa: un contenedor en la laptop, al que el celular le
+# pega por el wifi.
+#
+# No hay deploy en la nube y no es una limitación técnica: los datos de precios
+# vienen de los supermercados con licencias que no permiten uso comercial, así
+# que la app no puede ser pública. Todo el aparato de un deploy expuesto
+# —certificado, dominio, IP fija, la puerta de acceso— existiría para servir a
+# gente que no puede usarla.
+
+services:
+  ahorrito:
+    build: .
+
+    # `8000:8000` y no `127.0.0.1:8000:8000` a propósito: publicarlo en todas las
+    # interfaces es lo que hace que el celular lo vea. Con firewalld activo eso
+    # no alcanza igual, hace falta abrir el puerto una vez:
+    #   sudo firewall-cmd --add-port=8000/tcp --permanent && sudo firewall-cmd --reload
+    ports:
+      - "8090:8000"
+
+    # Las variables van en un archivo aparte, gitignoreado. Ver
+    # `.env.docker.example` para la plantilla y el porqué de cada una.
+    env_file: .env.docker
+
+    # La base vive acá afuera, no adentro de la imagen: si viviera adentro, cada
+    # `--build` la reemplazaría y se llevaría puestas las cuentas, las listas y
+    # el histórico de precios. Es el mismo motivo por el que en Fly había un
+    # volumen montado en /data.
+    #
+    # El contenedor corre como uid 1000 (ver Dockerfile), así que el directorio
+    # del host tiene que pertenecerle. Si tu usuario ya es uid 1000 —lo normal en
+    # una instalación de escritorio— no hay nada que hacer; si no:
+    #   sudo chown -R 1000:1000 data
+    volumes:
+      - ./data:/data
+
+    # Que vuelva sola después de reiniciar o suspender la laptop, sin tener que
+    # acordarse de levantarla. `unless-stopped` y no `always` para que un
+    # `docker compose stop` deliberado se respete hasta el próximo `up`.
+    restart: unless-stopped
+
+    # El healthcheck no reinicia nada por sí solo, pero hace que `docker ps`
+    # distinga "el proceso está vivo" de "la app contesta", que son cosas
+    # distintas cuando algo falla en el arranque (una migración, por ejemplo).
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/v1/health')"]
+      interval: 30s
+      timeout: 5s
+      start_period: 20s
+      retries: 3

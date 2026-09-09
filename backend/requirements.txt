@@ -19,24 +19,6 @@ rapidfuzz>=3.9.0
 # el límite de 72 bytes que trunca contraseñas largas en silencio.
 argon2-cffi>=23.1.0
 
-# Cifrado simétrico de los tokens de Amazon guardados en la base (Fernet).
-# No alcanza con hashearlos como las sesiones: un token hay que poder *usarlo*,
-# así que tiene que volver en claro y la operación tiene que ser reversible.
-cryptography>=42.0.0
-
-# Formularios `application/x-www-form-urlencoded`. FastAPI lo exige para
-# cualquier `Form()`, incluso sin subida de archivos. Lo necesitan los dos
-# extremos del account linking del skill: la pantalla de login que se abre en la
-# app de Alexa, y el `/oauth/alexa/token` que Amazon llama —el estándar OAuth 2.0
-# manda las credenciales así, no en JSON.
-python-multipart>=0.0.9
-
-# Las CA raíz públicas, para validar la cadena del certificado con el que Amazon
-# firma los requests del skill. Ya venía como dependencia transitiva de httpx;
-# se declara acá porque ahora hay código que la importa por su nombre, y una
-# dependencia transitiva puede desaparecer sin aviso en un bump de httpx.
-certifi>=2024.2.2
-
 # Persistencia e histórico de precios
 sqlalchemy>=2.0.0
 aiosqlite>=0.20.0

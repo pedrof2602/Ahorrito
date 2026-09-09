@@ -16,5 +16,10 @@ frontend/dist/
 .idea/
 .env
 
+# El contenedor de casa: las variables y la base con datos reales. `.env` no
+# alcanza para agarrar `.env.docker`, hay que nombrarlo aparte.
+.env.docker
+data/
+
 # Claude
 .claude/
