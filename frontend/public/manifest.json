@@ -1,0 +1,17 @@
+{
+  "name": "Ahorrito",
+  "short_name": "Ahorrito",
+  "description": "Comparar la lista de compras entre supermercados, con el descuento de las tarjetas ya aplicado.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfbfa",
+  "theme_color": "#1a754a",
+  "icons": [
+    {
+      "src": "/logo_ahorrito.png",
+      "sizes": "500x500",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

@@ -10,6 +10,20 @@
          navegadores actuales; los que no, muestran el ícono por defecto, que es
          exactamente lo que había hasta ahora. -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+  <!-- El logo de verdad, para cuando el celular necesita algo más que la
+         pestaña: "Agregar a inicio" en iOS/Android, y la lista de apps
+         recientes. Sin esto, ahí aparece una captura genérica de la página en
+         vez del logo. -->
+  <link rel="apple-touch-icon" href="/logo_ahorrito.png" />
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- Que abra sin la barra de Safari cuando se agrega a inicio en iOS —
+         `manifest.json` ya le pide lo mismo a Android con `display: standalone`,
+         pero iOS no lee esa parte del manifest y necesita su propia etiqueta. -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Ahorrito" />
+
   <title>Ahorrito · dónde conviene hoy</title>
   <meta name="description"
     content="Compará tu lista de compras entre supermercados, con el descuento de tus tarjetas ya aplicado." />

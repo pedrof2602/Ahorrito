@@ -6,6 +6,7 @@ import { useComparison } from './hooks/useComparison';
 import { useStoreLocations } from './hooks/useStoreLocations';
 import { buildView } from './lib/model';
 import { formatAge, formatAgeSeconds } from './lib/money';
+import { Logo } from './components/ui/Logo';
 import { SideNav } from './components/SideNav';
 import { Verdict } from './components/Verdict';
 import { ChainStrip } from './components/ChainStrip';
@@ -85,7 +86,7 @@ export function App() {
         <header className="topbar">
           <div className="topbar-row">
             <h1 className="topbar-title">
-              <span className="topbar-mark" aria-hidden>C</span>
+              <Logo size={24} />
               {/* En pantallas muy angostas el nombre cede el lugar a los
                   controles: la marca sola ya identifica la app. */}
               <span className="topbar-wordmark">Ahorrito</span>

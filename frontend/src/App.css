@@ -46,21 +46,6 @@
   letter-spacing: var(--tr-title);
 }
 
-/* La única marca de la app: el resto de la pantalla es números y nombres de
-   cadena, y necesita algo que diga "esto es Compras" sin gritarlo. */
-.topbar-mark {
-  display: grid;
-  place-items: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 8px;
-  background: linear-gradient(155deg, var(--accent), var(--accent-strong));
-  color: white;
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 3px 8px -2px color-mix(in srgb, var(--accent) 55%, transparent);
-}
-
 .topbar-actions {
   display: flex;
   align-items: center;
